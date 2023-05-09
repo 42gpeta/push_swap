@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/09 19:21:53 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/09 19:46:22 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,31 @@ int	main(int ac, char **av)
 	t_list *node1;
 	t_list *node2;
 
+
+
+	ft_init(&list);
 	int i;
 
 	i = 2;
 	
 	/* Creer la structure */
-	list.first = ft_lstnew(ft_atoi(av[1]));
-	// list.first = ft_lstnew(list.first, ft_atoi(av[1]));
-
-	// ft_create_node(52);
-	// ft_lstadd_front(&list, node1);
-	// ft_lstadd_back(list, node2)
+	list.pile_a = ft_lstnew(ft_atoi(av[1]));
 
 	while (i < ac)
 	{
 		/* Lier les structures récupérées en av[@] */
-		ft_lstadd_back(&list.first, ft_lstnew(ft_atoi(av[i])));
+		ft_lstadd_back(&list.pile_a, ft_lstnew(ft_atoi(av[i])));
 		i++;
 	}
 	
-	print_list(list.first);
+	print_list(list.pile_a);
 
 	printf("ac = %d\n i = %d\n", ac, i);
-	ft_free(list.first);
+
+	ft_swap_a(list.pile_a);
+	print_list(list.pile_a);
+	
+	ft_free(list.pile_a);
 	return (0);
 }
 

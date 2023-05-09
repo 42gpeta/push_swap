@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 19:27:09 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/09 19:52:08 by gpeta            ###   ########.fr       */
+/*   Created: 2023/05/09 19:28:36 by gpeta             #+#    #+#             */
+/*   Updated: 2023/05/09 19:29:49 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap_a(t_list *structure)
+void	ft_init(t_list *structure)
 {
-	t_list	tmp;
-	
-	tmp = structure->pile_a->next;
-	structure->pile_a->next = structure->pile_a->next->next;
-	structure->pile_a->next->next = tmp;
-	
+	structure->pile_a = 0;
+	structure->pile_b = 0;
 }
