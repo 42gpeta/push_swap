@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:28:36 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/09 19:29:49 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/12 18:55:39 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_init(t_list *structure)
 {
-	structure->pile_a = 0;
-	structure->pile_b = 0;
+	structure = NULL;
+	
+	// structure->pile_a = 0;
+	// structure->pile_b = 0;
 }

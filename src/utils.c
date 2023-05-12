@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:28:42 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/09 18:18:57 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/12 19:13:34 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,24 @@ void	print_swap(char *instruction)
 
 void	print_list(t_list *node)
 {
-	while (node)
+	t_list	*tmp;
+
+	tmp = node;
+	while (tmp != NULL)
 	{
-		ft_printf("%d\n", node->content);
-		node = node->next;
+		ft_printf("%d -> ", tmp->content);
+		tmp = tmp->next;
 	}
+	printf("\n");
 }
 
-void	ft_check_parameter(int ac)
+void	ft_check_parameter(int ac, char **av)
 {
 	if (ac < 2)
 		ft_message_error();
+	if (!av[2])
+		ft_message_error();
+
 }
 
 void	ft_message_error()

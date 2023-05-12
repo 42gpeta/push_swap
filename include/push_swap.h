@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/09 19:44:16 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/12 18:59:11 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ typedef struct s_list
 	struct s_list	*pile_b;
 	int				content;
 	struct s_list	*next;
-}	t_list;
+} 					t_list;
+
+// typedef struct s_list t_list;
 
 
 /* ************************************************************************** */
@@ -61,7 +63,8 @@ main.c
 *************/
 void	print_swap(char *instruction);
 void	print_list(t_list *node);
-void	ft_check_parameter(int ac);
+// void	print_list(t_list **node);
+void	ft_check_parameter(int ac, char **av);
 void	ft_message_error();
 
 /*************
@@ -84,7 +87,8 @@ reverse_rotate.c
 /*************
 swap.c
 *************/
-void	ft_swap_a(t_list *structure);
+// void	ft_swap_a(t_list *structure);
+void	ft_swap_a(t_list **structure);
 
 
 
