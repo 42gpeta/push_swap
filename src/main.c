@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/12 19:08:05 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/12 20:02:05 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@
 
 // 	printf("ac = %d\n i = %d\n", ac, i);
 
-// 	ft_swap_a(list.pile_a);
+// 	ft_sa_swap_a(list.pile_a);
 // 	print_list(&list.pile_a);
 	
 // 	ft_free(list.pile_a);
@@ -61,6 +61,8 @@ int	main(int ac, char **av)
 	
 	/* Creer la structure */
 	list = ft_lstnew(ft_atoi(av[1]));
+	if (!list)
+		ft_message_error();
 
 	while (i < ac)
 	{
@@ -73,7 +75,9 @@ int	main(int ac, char **av)
 
 	printf("ac = %d\n i = %d\n", ac, i);
 
-	ft_swap_a(&list);
+	// ft_sa_swap_a(&list);
+	ft_ra_rotate_a(&list);
+	
 	print_list(list);
 	
 	ft_free(list);

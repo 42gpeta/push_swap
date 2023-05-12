@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/12 18:59:11 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/12 20:03:41 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,21 @@ reverse_rotate.c
 *************/
 
 
+/*************
+rotate.c
+*************/
+void	ft_ra_rotate_a(t_list **head);
+void	ft_rb_rotate_b(t_list **head);
+void	ft_rr_rotate_a_b(t_list **head);
+
+
 
 /*************
 swap.c
 *************/
-// void	ft_swap_a(t_list *structure);
-void	ft_swap_a(t_list **structure);
+void	ft_sa_swap_a(t_list **structure);
+void	ft_sb_swap_b(t_list **structure);
+void	ft_ss_swap_a_b(t_list **head);
 
 
 
