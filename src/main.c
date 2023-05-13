@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/12 20:02:05 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/13 14:00:17 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 // 	i = 2;
 	
-// 	/* Creer la structure */
+//	/* Creer la structure */
 // 	list.pile_a = ft_lstnew(ft_atoi(av[1]));
 
 // 	while (i < ac)
@@ -49,38 +49,53 @@
 
 int	main(int ac, char **av)
 {
-	t_list *list;
+	t_list *list_main;
 
-	list = NULL;
-	ft_check_parameter(ac, av);
-
-	ft_init(list);
-	int i;
-
-	i = 2;
+	list_main = NULL;
+/* 	// ? version w/out fontion ft_linked_list()
+	// ft_check_parameter(ac, av);
+	// 
+	// ft_init(list);
 	
-	/* Creer la structure */
-	list = ft_lstnew(ft_atoi(av[1]));
-	if (!list)
-		ft_message_error();
-
-	while (i < ac)
-	{
-		/* Lier les structures récupérées en av[@] */
-		ft_lstadd_back(&list, ft_lstnew(ft_atoi(av[i])));
-		i++;
-	}
+	// int i;
+	// 
+	// i = 2;
+	// 
+	// // Creer la structure
+	// list = ft_lstnew(ft_atoi(av[1]));
+	// if (!list)
+	// 	ft_message_error();
+	// 
+	// while (i < ac)
+	// {
+	// 	// Lier les structures récupérées en av[@]
+	// 	ft_lstadd_back(&list, ft_lstnew(ft_atoi(av[i])));
+	// 	i++;
+	// } */
+	list_main = ft_linked_list(ac, av);
 	
-	print_list(list);
+	print_list(list_main);
 
-	printf("ac = %d\n i = %d\n", ac, i);
+	// print_ac_i(i, ac); 	// ? version w/out fontion ft_linked_list()
+
+/* ***************** */
+/* Test instructions */
+/* ***************** */
 
 	// ft_sa_swap_a(&list);
-	ft_ra_rotate_a(&list);
+	// ft_ra_rotate_a(&list_main);
+	ft_rra_reverse_rotate_a(&list_main);
 	
-	print_list(list);
+/* ***************** */
 	
-	ft_free(list);
+	print_list(list_main);
+
+
+/* ***************** */
+/*     FIN Prog     */
+/* ***************** */
+
+	ft_free(list_main);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/12 20:03:41 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/13 15:01:05 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_list
 	struct s_list	*pile_a;
 	struct s_list	*pile_b;
 	int				content;
+	int				index;
 	struct s_list	*next;
 } 					t_list;
 
@@ -61,11 +62,7 @@ void	ft_free(t_list *head);
 /*************
 main.c
 *************/
-void	print_swap(char *instruction);
-void	print_list(t_list *node);
-// void	print_list(t_list **node);
-void	ft_check_parameter(int ac, char **av);
-void	ft_message_error();
+
 
 /*************
 push.c
@@ -75,12 +72,16 @@ push.c
 /*************
 push_swap.c
 *************/
-void	ft_init(t_list *structure);
+// void	ft_init(t_list **structure, int ac);
+t_list	*ft_linked_list(int ac, char **av);
 
 
 /*************
 reverse_rotate.c
 *************/
+void	ft_rra_reverse_rotate_a(t_list **list);
+void	ft_rrb_reverse_rotate_b(t_list **list);
+void	ft_rrr_reverse_rotate_a_b(t_list **list);
 
 
 /*************
@@ -104,6 +105,12 @@ void	ft_ss_swap_a_b(t_list **head);
 /*************
 utils.c
 *************/
+void	print_swap(char *instruction);
+void	print_list(t_list *node);
+// void	print_list(t_list **node);
+void	ft_check_parameter(int ac, char **av);
+void	ft_message_error();
+void	print_ac_i(int i, int ac);
 
 
 

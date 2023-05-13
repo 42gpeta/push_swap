@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:02:25 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/09 19:24:05 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/13 14:56:16 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void	ft_lstadd_front(t_list **list, t_list *node)
 /* Ajout du dernier node (il contient le ABC->next = NULL) */
 void	ft_lstadd_back(t_list **list, t_list *last_node)
 {
+	// (*list)->index = 1;
+	
 	t_list	*tmp;
 
 	if (!last_node)
@@ -61,6 +63,7 @@ void	ft_lstadd_back(t_list **list, t_list *last_node)
 	}
 	tmp = ft_lstlast(*list);
 	tmp->next = last_node;
+	// (*list)->index = (*list)->index + 1;
 }
 
 /* Permet d'aller à la fin de la liste */

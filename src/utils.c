@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:28:42 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/12 19:13:34 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/13 13:23:29 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,9 @@ void	ft_message_error()
 {
 	write(1, "Error\n", 6);
 	exit(EXIT_FAILURE);
+}
+
+void	print_ac_i(int i, int ac)
+{
+	printf("ac = %d\n i = %d\n", ac, i);
 }
