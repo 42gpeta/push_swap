@@ -6,65 +6,31 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 13:50:09 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/13 17:07:18 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/15 17:57:57 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rra_reverse_rotate_a(t_list **list) // ? v1
+void	ft_rra_reverse_rotate_a(t_list **head) // ? v1
 {
 	t_list *tmp;
-	t_list *last_node;
-	int		i;
-
-	i = 0;
+	t_list *second_last;
 	
-	// tmp = ft_lstlast(*list);
-	// tmp->next = (*list);
-	tmp = (*list);
-	last_node = tmp;
+	if (!(*head) || (*head)->next == NULL)
+		ft_message_error("ft_rra_reverse_rotate_a : 'head' or 'head->next' doesn't exist");  // ! a supprimer
+		// ft_message_error();
 	
-	while ((*list)->next->next != NULL)
+	tmp = (*head);
+	second_last = NULL;
+	while (tmp->next != NULL)
 	{	
-		(*list) = (*list)->next;
-		i++;
+		second_last = tmp;	
+		tmp = tmp->next;
 	}
-	// (*list)->next->next = tmp;
-	// (*list)->next = NULL;
-	
-	
-	// while (last_node->next->next != NULL)
-	// {	
-	// 	last_node = last_node->next;
-	// 	i++;
-	// }
-	// last_node->next = NULL;
-	
-	
-	// (*list) = (*list)->next;
-	// (*list)->next = NULL;
-	
-	// last_node = ft_lstlast(*list);
-	// last_node->next = NULL;
-
-	
-	// (*list) = last_node;
-	// (*list) = tmp;
-	// (*list) = tmp->next->next;
-	// (*list) = ft_lstlast(*list);	
-	printf("ft_rra_reverse_rotate_a list content  : %d\n", (*list)->content);
-	printf("ft_rra_reverse_rotate_a list next     : %d\n", (*list)->next->content);
-	printf("ft_rra_reverse_rotate_a list next next: %p\n", (*list)->next->next);
-	printf("ft_rra_reverse_rotate_a content : %d\n", tmp->content);
-	printf("ft_rra_reverse_rotate_a    next : %p\n", tmp->next);
-	printf("ft_rra_reverse_rotate_a : %d\n", i);
-	
-	// last_node = ft_lstlast(*list);
-	// // ft_lstadd_front(list, last_node);
-	// last_node->next = NULL;
-		
-		
+	second_last->next = NULL;
+	tmp->next = (*head);
+	(*head) = tmp;
 }
 
 // void	ft_rra_reverse_rotate_a(t_list **list) // ? v2
@@ -98,12 +64,32 @@ void	ft_rra_reverse_rotate_a(t_list **list) // ? v1
 		
 // }
 
-// void	ft_rrb_reverse_rotate_b(t_list **list)
-// {
+void	ft_rrb_reverse_rotate_b(t_list **head)
+{
+	t_list *tmp;
+	t_list *second_last;
 	
-// }
+	if (!(*head) || (*head)->next == NULL)
+		ft_message_error("ft_rrb_reverse_rotate_b : 'head' or 'head->next' doesn't exist");  // ! a supprimer
+		// ft_message_error();
+	
+	tmp = (*head);
+	second_last = NULL;
+	while (tmp->next != NULL)
+	{	
+		second_last = tmp;	
+		tmp = tmp->next;
+	}
+	second_last->next = NULL;
+	tmp->next = (*head);
+	(*head) = tmp;	
+}
 
-// void	ft_rrr_reverse_rotate_a_b(t_list **list)
-// {
-	
-// }
+void	ft_rrr_reverse_rotate_a_b(t_list **head)
+{
+	if (!(*head) || (*head)->next == NULL)
+		ft_message_error("ft_rrr_reverse_rotate_a_b : 'head' or 'head->next' doesn't exist");  // ! a supprimer
+		// ft_message_error();
+	ft_rra_reverse_rotate_a(head);
+	ft_rrb_reverse_rotate_b(head);
+}

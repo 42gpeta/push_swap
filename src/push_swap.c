@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:28:36 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/13 15:01:39 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/15 17:55:09 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,9 @@ t_list	*ft_linked_list(int ac, char **av)
 	/* Creer la structure */
 	list = ft_lstnew(ft_atoi(av[1]));
 	if (!list)
-		ft_message_error();
-	// ft_init(&list, ac);
+		ft_message_error("ft_linked_list : 'List' doesn't exist"); // ! a supprimer
+		// ft_message_error();
+	// ft_init(&list, ac); // ? utile ?
 
 	while (i < ac)
 	{

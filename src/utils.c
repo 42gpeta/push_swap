@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:28:42 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/13 13:23:29 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/15 17:47:11 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,26 +45,33 @@ void	print_list(t_list *node)
 	t_list	*tmp;
 
 	tmp = node;
+	printf("\n*** PRINT LIST ***\n");
 	while (tmp != NULL)
 	{
 		ft_printf("%d -> ", tmp->content);
 		tmp = tmp->next;
 	}
-	printf("\n");
+	printf("NULL \n");
+	printf("******************\n");
 }
 
 void	ft_check_parameter(int ac, char **av)
 {
 	if (ac < 2)
-		ft_message_error();
+		ft_message_error("ft_check_parameter : ac < 2");
+		// ft_message_error();
 	if (!av[2])
-		ft_message_error();
+		ft_message_error("ft_check_parameter : av[2] doesn't exist");
+		// ft_message_error();
 
 }
 
-void	ft_message_error()
+// void	ft_message_error() // TODO version finale
+void	ft_message_error(char *message) // TODO version pour dev
 {
 	write(1, "Error\n", 6);
+	write(1, message, ft_strlen(message)); // ! a supprimer
+	write(1, "\n", 1); // ! a supprimer
 	exit(EXIT_FAILURE);
 }
 
