@@ -6,7 +6,7 @@
 #    By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
-#    Updated: 2023/05/12 18:34:59 by gpeta            ###   ########.fr        #
+#    Updated: 2023/05/15 18:15:02 by gpeta            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,8 @@ push_swap.c \
 reverse_rotate.c \
 rotate.c \
 swap.c \
-utils.c \
+error.c \
+print.c \
 # /gnl/get_next_line.c  /gnl/get_next_line_utils.c  \
 
 

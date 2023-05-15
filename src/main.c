@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/15 16:31:32 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/15 18:08:35 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ int	main(int ac, char **av)
 	// 	// Lier les structures récupérées en av[@]
 	// 	ft_lstadd_back(&list, ft_lstnew(ft_atoi(av[i])));
 	// 	i++;
-	// } */
+	// }
+	// ? version w/out fontion ft_linked_list() */
 	list_main = ft_linked_list(ac, av);
 	
 	print_list(list_main);
@@ -85,6 +86,7 @@ int	main(int ac, char **av)
 	// ft_sa_swap_a(&list);
 	// ft_ra_rotate_a(&list_main);
 	ft_rra_reverse_rotate_a(&list_main);
+	
 	
 /* ***************** */
 	

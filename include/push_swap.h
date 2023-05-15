@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/15 17:43:03 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/15 18:24:20 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,15 @@ typedef struct s_list
 /* ************************************************************************** */
 
 /*************
+error.c
+*************/
+void	ft_check_parameter(int ac, char **av);
+void	ft_check_args(char **av);
+
+// void	ft_message_error();  // TODO version finale
+void	ft_message_error(char *message); // ! a supprimer
+
+/*************
 list.c
 *************/
 t_list	*ft_create_node(int data);
@@ -62,6 +71,16 @@ void	ft_free(t_list *head);
 /*************
 main.c
 *************/
+
+
+
+/*************
+print.c
+*************/
+void	print_swap(char *instruction);
+void	print_list(t_list *node);
+// void	print_list(t_list **node);
+void	print_ac_i(int i, int ac);
 
 
 /*************
@@ -100,18 +119,6 @@ void	ft_sa_swap_a(t_list **structure);
 void	ft_sb_swap_b(t_list **structure);
 void	ft_ss_swap_a_b(t_list **head);
 
-
-
-/*************
-utils.c
-*************/
-void	print_swap(char *instruction);
-void	print_list(t_list *node);
-// void	print_list(t_list **node);
-void	ft_check_parameter(int ac, char **av);
-// void	ft_message_error();  // TODO version finale
-void	ft_message_error(char *message); // ! a supprimer
-void	print_ac_i(int i, int ac);
 
 
 

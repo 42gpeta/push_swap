@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:28:36 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/15 17:55:09 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/15 18:24:36 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_list	*ft_linked_list(int ac, char **av)
 
 	list = NULL;
 	ft_check_parameter(ac, av);
-
+	ft_check_args(av);
 	
 	int i;
 
