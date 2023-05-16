@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/15 18:24:20 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/16 15:40:46 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ main.c
 print.c
 *************/
 void	print_swap(char *instruction);
-void	print_list(t_list *node);
+void	print_list(t_list *node, char letter);
 // void	print_list(t_list **node);
 void	print_ac_i(int i, int ac);
 
@@ -98,26 +98,26 @@ t_list	*ft_linked_list(int ac, char **av);
 /*************
 reverse_rotate.c
 *************/
-void	ft_rra_reverse_rotate_a(t_list **list);
-void	ft_rrb_reverse_rotate_b(t_list **list);
-void	ft_rrr_reverse_rotate_a_b(t_list **list);
+void	ft_rra_reverse_rotate_a(t_list **head, char *instruction);
+void	ft_rrb_reverse_rotate_b(t_list **head, char *instruction);
+void	ft_rrr_reverse_rotate_a_b(t_list **head_a, t_list **head_b, char *instruction);
 
 
 /*************
 rotate.c
 *************/
-void	ft_ra_rotate_a(t_list **head);
-void	ft_rb_rotate_b(t_list **head);
-void	ft_rr_rotate_a_b(t_list **head);
+void	ft_ra_rotate_a(t_list **head, char *instruction);
+void	ft_rb_rotate_b(t_list **head, char *instruction);
+void	ft_rr_rotate_a_b(t_list **head_a, t_list **head_b, char *instruction);
 
 
 
 /*************
 swap.c
 *************/
-void	ft_sa_swap_a(t_list **structure);
-void	ft_sb_swap_b(t_list **structure);
-void	ft_ss_swap_a_b(t_list **head);
+void	ft_sa_swap_a(t_list **head, char *instruction);
+void	ft_sb_swap_b(t_list **head, char *instruction);
+void	ft_ss_swap_a_b(t_list **head_a, t_list **head_b, char *instruction);
 
 
 
