@@ -6,22 +6,22 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 13:50:09 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/16 15:48:16 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/16 18:00:12 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rra_reverse_rotate_a(t_list **head, char *instruction) // ? v1
+void	ft_rra_reverse_rotate_a(t_list **head_a, t_list **head_b, char *instruction) // ? v1
 {
 	t_list *tmp;
 	t_list *second_last;
 	
-	if (!(*head) || (*head)->next == NULL)
-		ft_message_error("ft_rra_reverse_rotate_a : 'head' or 'head->next' doesn't exist");  // ! a supprimer
-		// ft_message_error();
+	if (!(*head_a) || (*head_a)->next == NULL)
+		ft_message_error(head_a, head_b, "ft_rra_reverse_rotate_a : 'head_a' or 'head_a->next' doesn't exist");  // ! a supprimer
+		// ft_message_error(head_a, head_b);
 	
-	tmp = (*head);
+	tmp = (*head_a);
 	second_last = NULL;
 	while (tmp->next != NULL)
 	{	
@@ -29,22 +29,22 @@ void	ft_rra_reverse_rotate_a(t_list **head, char *instruction) // ? v1
 		tmp = tmp->next;
 	}
 	second_last->next = NULL;
-	tmp->next = (*head);
-	(*head) = tmp;
+	tmp->next = (*head_a);
+	(*head_a) = tmp;
 	if (ft_strncmp(instruction, "rra", 3) == 0)
 		print_swap("rra");
 }
 
-void	ft_rrb_reverse_rotate_b(t_list **head, char *instruction)
+void	ft_rrb_reverse_rotate_b(t_list **head_a, t_list **head_b, char *instruction)
 {
 	t_list *tmp;
 	t_list *second_last;
 	
-	if (!(*head) || (*head)->next == NULL)
-		ft_message_error("ft_rrb_reverse_rotate_b : 'head' or 'head->next' doesn't exist");  // ! a supprimer
-		// ft_message_error();
+	if (!(*head_b) || (*head_b)->next == NULL)
+		ft_message_error(head_a, head_b, "ft_rrb_reverse_rotate_b : 'head_b' or 'head_b->next' doesn't exist");  // ! a supprimer
+		// ft_message_error(head_a, head_b);
 	
-	tmp = (*head);
+	tmp = (*head_b);
 	second_last = NULL;
 	while (tmp->next != NULL)
 	{	
@@ -52,8 +52,8 @@ void	ft_rrb_reverse_rotate_b(t_list **head, char *instruction)
 		tmp = tmp->next;
 	}
 	second_last->next = NULL;
-	tmp->next = (*head);
-	(*head) = tmp;
+	tmp->next = (*head_b);
+	(*head_b) = tmp;
 	if (ft_strncmp(instruction, "rrb", 3) == 0)
 		print_swap("rrb");
 }
@@ -61,13 +61,13 @@ void	ft_rrb_reverse_rotate_b(t_list **head, char *instruction)
 void	ft_rrr_reverse_rotate_a_b(t_list **head_a, t_list **head_b, char *instruction)
 {
 	if (!(*head_a) || (*head_a)->next == NULL)
-		ft_message_error("ft_rrr_reverse_rotate_a_b : 'head_a' or 'head_a->next' doesn't exist");  // ! a supprimer
-		// ft_message_error();
+		ft_message_error(head_a, head_b, "ft_rrr_reverse_rotate_a_b : 'head_a' or 'head_a->next' doesn't exist");  // ! a supprimer
+		// ft_message_error(head_a, head_b);
 	if (!(*head_b) || (*head_b)->next == NULL)
-		ft_message_error("ft_rrr_reverse_rotate_a_b : 'head_b' or 'head_b->next' doesn't exist");  // ! a supprimer
-		// ft_message_error();
-	ft_rra_reverse_rotate_a(head_a, "rrr");
-	ft_rrb_reverse_rotate_b(head_b, "rrr");
+		ft_message_error(head_a, head_b, "ft_rrr_reverse_rotate_a_b : 'head_b' or 'head_b->next' doesn't exist");  // ! a supprimer
+		// ft_message_error(head_a, head_b);
+	ft_rra_reverse_rotate_a(head_a, head_b, "rrr");
+	ft_rrb_reverse_rotate_b(head_a, head_b, "rrr");
 	if (ft_strncmp(instruction, "rrr", 3) == 0)
 		print_swap("rrr");
 }

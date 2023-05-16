@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/16 15:52:52 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/16 18:24:00 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ int	main(int ac, char **av)
 	// 	i++;
 	// }
 	// ? version w/out fontion ft_linked_list() */
-	list_a = ft_linked_list(ac, av);
+	list_a = ft_linked_list(ac, av, &list_a, &list_b);
+	// list_b = ft_linked_list(ac, av);
 	
 	print_list(list_a, 'a');
 	print_list(list_b, 'b');
@@ -86,9 +87,26 @@ int	main(int ac, char **av)
 /* Test instructions */
 /* ***************** */
 
-	// ft_sa_swap_a(&list_a, "sa");
-	ft_ra_rotate_a(&list_a, "ra");
-	// ft_rra_reverse_rotate_a(&list_a, "rra");
+	// ft_sa_swap_a(&list_a, &list_b, "sa");
+	// ft_ra_rotate_a(&list_a, &list_b, "ra");
+	// ft_rra_reverse_rotate_a(&list_a, &list_b, "rra");
+	// ft_pa_push_a(&list_a, &list_b, "pa");
+	
+	// ft_pa_push_a(&list_a, &list_b, "pa");
+	// ft_pa_push_a(&list_a, &list_b, "pa");
+	// ft_pa_push_a(&list_a, &list_b, "pa");
+	
+	// ft_rrb_reverse_rotate_b(&list_a, &list_b, "rrb");
+	// ft_rb_rotate_b(&list_a, &list_b, "rb");
+	// ft_sb_swap_b(&list_a, &list_b, "sb");
+	// ft_pb_push_b(&list_a, &list_b, "pb");
+	
+	// ft_ss_swap_a_b(&list_a, &list_b, "ss");
+	// ft_rr_rotate_a_b(&list_a, &list_b, "rr");
+	ft_rrr_reverse_rotate_a_b(&list_a, &list_b, "rrr");
+
+	
+	
 	
 	
 /* ***************** */
@@ -101,7 +119,8 @@ int	main(int ac, char **av)
 /*     FIN Prog     */
 /* ***************** */
 
-	ft_free(list_a);
+	ft_free(list_a, list_b);
+	// ft_free(list_a);
 	return (0);
 }
 

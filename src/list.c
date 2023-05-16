@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:02:25 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/13 14:56:16 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/16 18:22:19 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,16 +74,37 @@ t_list	*ft_lstlast(t_list *node)
 	return (node);
 }
 
-void	ft_free(t_list *head)
+// void	ft_free(t_list *head_a)
+void	ft_free(t_list *head_a, t_list *head_b)
 {
-	t_list *tmp;
+	t_list *tmp_a;
+	t_list *tmp_b;
 
-	tmp = head->next;
-	free(head);
-	while (tmp)
+	if (head_a == NULL)
+		return ;
+	tmp_a = head_a->next;
+	free(head_a);
+	while (tmp_a)
 	{
-		head = tmp;
-		tmp = head->next;
-		free(head);
+		head_a = tmp_a;
+		tmp_a = head_a->next;
+		free(head_a);
+	}
+	
+	if (head_b == NULL)
+		return ;
+	// if (head_b)
+	// 	if (*head_b)
+	// 	{
+	// 		free(*head_b);
+	// 		return ;
+	// 	}
+	tmp_b = head_b->next;
+	free(head_b);
+	while (tmp_b)
+	{
+		head_b = tmp_b;
+		tmp_b = head_b->next;
+		free(head_b);
 	}
 }

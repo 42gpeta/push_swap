@@ -6,24 +6,24 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:15:34 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/15 18:24:55 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/16 18:06:26 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_check_parameter(int ac, char **av)
+void	ft_check_parameter(int ac, char **av, t_list **head_a, t_list **head_b)
 {
 	if (ac < 2)
-		ft_message_error("ft_check_parameter : ac < 2");
-		// ft_message_error();
+		ft_message_error(head_a, head_b, "ft_check_parameter : ac < 2");
+		// ft_message_error(head_a, head_b);
 	if (!av[2])
-		ft_message_error("ft_check_parameter : av[2] doesn't exist");
-		// ft_message_error();
+		ft_message_error(head_a, head_b, "ft_check_parameter : av[2] doesn't exist");
+		// ft_message_error(head_a, head_b);
 
 }
 
-void	ft_check_args(char **av)
+void	ft_check_args(char **av, t_list **head_a, t_list **head_b)
 {
 	int	i;
 
@@ -31,16 +31,19 @@ void	ft_check_args(char **av)
 	while (av[i])
 	{
 		if (!(ft_atoi(av[i])))
-			ft_message_error("ft_check_args : ATOI fail");
+			ft_message_error(head_a, head_b, "ft_check_args : ATOI fail");
+		// ft_message_error(head_a, head_b);
+
 		i++;
 	}
 }
 
-// void	ft_message_error() // TODO version finale
-void	ft_message_error(char *message) // TODO version pour dev
+// void	ft_message_error(t_list **head_a, t_list **head_b) // TODO version finale
+void	ft_message_error(t_list **head_a, t_list **head_b, char *message) // TODO version pour dev
 {
 	write(1, "Error\n", 6);
 	write(1, message, ft_strlen(message)); // ! a supprimer
 	write(1, "\n", 1); // ! a supprimer
+	ft_free(*head_a, *head_b);
 	exit(EXIT_FAILURE);
 }
