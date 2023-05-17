@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/16 18:03:18 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/17 14:07:13 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,16 +104,20 @@ t_list	*ft_linked_list(int ac, char **av, t_list **head_a, t_list **head_b);
 /*************
 reverse_rotate.c
 *************/
-void	ft_rra_reverse_rotate_a(t_list **head_a, t_list **head_b, char *instruction);
-void	ft_rrb_reverse_rotate_b(t_list **head_a, t_list **head_b, char *instruction);
+// void	ft_rra_reverse_rotate_a(t_list **head_a, t_list **head_b, char *instruction);
+// void	ft_rrb_reverse_rotate_b(t_list **head_a, t_list **head_b, char *instruction);
+void	ft_rra_reverse_rotate_a(t_list **head_a, char *instruction);
+void	ft_rrb_reverse_rotate_b(t_list **head_b, char *instruction);
 void	ft_rrr_reverse_rotate_a_b(t_list **head_a, t_list **head_b, char *instruction);
 
 
 /*************
 rotate.c
 *************/
-void	ft_ra_rotate_a(t_list **head_a, t_list **head_b, char *instruction);
-void	ft_rb_rotate_b(t_list **head_a, t_list **head_b, char *instruction);
+// void	ft_ra_rotate_a(t_list **head_a, t_list **head_b, char *instruction);
+// void	ft_rb_rotate_b(t_list **head_a, t_list **head_b, char *instruction);
+void	ft_ra_rotate_a(t_list **head_a, char *instruction);
+void	ft_rb_rotate_b(t_list **head_b, char *instruction);
 void	ft_rr_rotate_a_b(t_list **head_a, t_list **head_b, char *instruction);
 
 
@@ -121,8 +125,10 @@ void	ft_rr_rotate_a_b(t_list **head_a, t_list **head_b, char *instruction);
 /*************
 swap.c
 *************/
-void	ft_sa_swap_a(t_list **head_a, t_list **head_b, char *instruction);
-void	ft_sb_swap_b(t_list **head_a, t_list **head_b, char *instruction);
+// void	ft_sa_swap_a(t_list **head_a, t_list **head_b, char *instruction);
+// void	ft_sb_swap_b(t_list **head_a, t_list **head_b, char *instruction);
+void	ft_sa_swap_a(t_list **head_a, char *instruction);
+void	ft_sb_swap_b(t_list **head_b, char *instruction);
 void	ft_ss_swap_a_b(t_list **head_a, t_list **head_b, char *instruction);
 
 
