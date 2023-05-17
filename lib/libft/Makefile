@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+         #
+#    By: glodi <glodi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
-#    Updated: 2023/05/03 21:33:31 by gpeta            ###   ########.fr        #
+#    Updated: 2023/05/18 00:49:19 by glodi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,16 +25,16 @@ ft_memcpy.c ft_memmove.c ft_strchr.c ft_strrchr.c ft_strlcpy.c ft_memcmp.c ft_st
 ft_memchr.c ft_calloc.c ft_strdup.c ft_substr.c ft_strncmp.c ft_strjoin.c ft_strtrim.c \
 ft_itoa.c ft_putchar_fd.c ft_strmapi.c ft_striteri.c ft_putstr_fd.c ft_putendl_fd.c \
 ft_putnbr_fd.c ft_split.c \
-ft_lstnew.c \
+f_check.c ft_puthexa.c ft_putnbr_u.c ft_printf.c ft_puthexa_p.c ft_putstr.c ft_putchar.c ft_putnbr.c
+# ft_lstnew.c \
+ft_lstadd_back.c \
 ft_lstadd_front.c \
 ft_lstsize.c \
 ft_lstlast.c \
-ft_lstadd_back.c \
 ft_lstdelone.c \
 ft_lstclear.c \
 ft_lstiter.c \
 ft_lstmap.c \
-f_check.c ft_puthexa.c ft_putnbr_u.c ft_printf.c ft_puthexa_p.c ft_putstr.c ft_putchar.c ft_putnbr.c
 
 SRC			:= $(SRC:%=$(SRC_DIR)/%)
 

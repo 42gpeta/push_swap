@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
+/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:28:36 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/17 16:43:52 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/18 00:40:35 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,18 +60,16 @@ void	ft_index(t_list **head)
 	first = (*head);
 	tmp = (*head);
 	
-	// while (tmp->next != NULL)
-	// {
+	while (tmp)
+	{
 		tmp->index = 0;
-		while (first->next != NULL)
+		while (first)
 		{
-			// tmp = first;
-			// first->index = 0;
-			
 			if (tmp->content > first->content)
 				tmp->index++;
 			first = first->next;
 		}
 		tmp = tmp->next;
-	// }
+		first = (*head);
+	}
 }

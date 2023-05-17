@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
+/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 19:11:12 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/09 17:18:53 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/18 00:55:28 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <ctype.h>
 # include <unistd.h>
 # include <stdint.h>
+# include <stdarg.h>
 
 // Partie 1
 
@@ -86,10 +87,10 @@ void	ft_putnbr_fd(int n, int fd);
 
 int	ft_printf(const char *str, ...);
 int	ft_putchar(char c);
-int	ft_puthexa(unsigned int n, char c);
+int	ft_puthexa(int n, char c);
 int	ft_puthexa_p(void *n);
 int	ft_putnbr(int n);
-int	ft_putnbr_u(unsigned int n);
+int	ft_putnbr_u(int n);
 int	ft_putstr(char *s);
 int	f_check(va_list args, char c);
 

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthexa_p.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
+/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 17:12:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/04/28 16:16:30 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/18 00:56:38 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_puthexa_u(long unsigned int n);
+int	ft_puthexa_u(long int n);
 
 int	ft_puthexa_p(void *n)
 {
@@ -32,7 +32,7 @@ int	ft_puthexa_p(void *n)
 	return (count_final);
 }
 
-int	ft_puthexa_u(long unsigned int n)
+int	ft_puthexa_u(long int n)
 {
 	int		count;
 	char	*base;
