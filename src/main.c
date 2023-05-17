@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/17 14:17:00 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/17 14:21:52 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,9 @@ int	main(int ac, char **av)
 /* Test instructions */
 /* ***************** */
 
-	// ft_sa_swap_a(&list_a, &list_b, "sa");
-	// ft_ra_rotate_a(&list_a, &list_b, "ra");
-	// ft_rra_reverse_rotate_a(&list_a, &list_b, "rra");
+	// ft_sa_swap_a(&list_b, "sa");
+	// ft_ra_rotate_a(&list_b, "ra");
+	// ft_rra_reverse_rotate_a(&list_b, "rra");
 	// ft_pa_push_a(&list_a, &list_b, "pa");
 	
 	// ft_pb_push_b(&list_a, &list_b, "pb");
@@ -97,9 +97,9 @@ int	main(int ac, char **av)
 	// ft_pb_push_b(&list_a, &list_b, "pb");
 	// ft_pa_push_a(&list_a, &list_b, "pa");
 	
-	// ft_rrb_reverse_rotate_b(&list_a, &list_b, "rrb");
-	// ft_rb_rotate_b(&list_a, &list_b, "rb");
-	// ft_sb_swap_b(&list_a, &list_b, "sb");
+	// ft_rrb_reverse_rotate_b(&list_b, "rrb");
+	// ft_rb_rotate_b(&list_b, "rb");
+	// ft_sb_swap_b(&list_b, "sb");
 	// ft_pb_push_b(&list_a, &list_b, "pb");
 	
 	// ft_ss_swap_a_b(&list_a, &list_b, "ss");
