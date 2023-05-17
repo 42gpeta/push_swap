@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:28:36 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/16 17:59:16 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/17 16:43:52 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,28 @@ t_list	*ft_linked_list(int ac, char **av, t_list **head_a, t_list **head_b)
 	// print_ac_i(i, ac); // ! a supprimer
 
 	return (list);
+}
+
+void	ft_index(t_list **head)
+{
+	t_list	*tmp;
+	t_list	*first;
+	
+	first = (*head);
+	tmp = (*head);
+	
+	// while (tmp->next != NULL)
+	// {
+		tmp->index = 0;
+		while (first->next != NULL)
+		{
+			// tmp = first;
+			// first->index = 0;
+			
+			if (tmp->content > first->content)
+				tmp->index++;
+			first = first->next;
+		}
+		tmp = tmp->next;
+	// }
 }

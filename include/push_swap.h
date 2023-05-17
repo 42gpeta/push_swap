@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/17 14:07:13 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/17 15:51:57 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ push_swap.c
 // void	ft_init(t_list **structure, int ac);
 // t_list	*ft_linked_list(int ac, char **av);
 t_list	*ft_linked_list(int ac, char **av, t_list **head_a, t_list **head_b);
+void	ft_index(t_list **head);
 
 
 /*************
