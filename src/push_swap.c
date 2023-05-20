@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:28:36 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/18 00:40:35 by glodi            ###   ########.fr       */
+/*   Updated: 2023/05/20 16:59:40 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	ft_index(t_list **head)
 	
 	while (tmp)
 	{
-		tmp->index = 0;
+		tmp->index = 1;
 		while (first)
 		{
 			if (tmp->content > first->content)
@@ -71,5 +71,54 @@ void	ft_index(t_list **head)
 		}
 		tmp = tmp->next;
 		first = (*head);
+	}
+}
+
+// void	ft_push_first_filter(t_list **head_a)
+void	ft_push_first_filter(t_list **head_a, t_list **head_b)
+{
+	float		size;
+	// float		test = 1;
+	// t_list	*tmp;
+	size = 0;
+	size = ft_lstsize(*head_a);
+	// tmp = (*head_a);
+	
+	/* test du pourcentage de l'index */
+	// if (test < (size  / 3 * 1))
+	// 	printf("size = %2.f | test = %2.f\n%.2f < à %.2f (1/3) de %.f\n", size, test, (test / size), 0.33, size);
+	// else if (test < (size / 3 * 2))
+	// 	printf("size = %2.f | test = %2.f\n%.2f < à %.2f (2/3) de %.f\n", size, test, (test / size), 0.67, size);
+	// else
+	// 	printf("size = %2.f | test = %2.f\n%.2f > à %.2f (2/3) de %.f\n", size, test, (test / size), 0.67, size);
+	
+	// while (tmp != NULL)
+	// {
+	// 	if (tmp->index < (size / 3 * 2) && ft_lstsize(*head_a) > 1)
+	// 	{
+	// 		ft_pb_push_b(head_a, head_b, "pb");
+	// 		if (tmp->index < (size / 3 * 1))
+	// 		{
+	// 			ft_rb_rotate_b(head_b, "rb");
+	// 		}
+	// 	}
+	// 	else
+	// 		ft_ra_rotate_a(head_a, "ra");
+	// 	tmp = tmp->next;
+	// }
+
+	while ((*head_a) != NULL)
+	{
+		if ((*head_a)->index < (size / 3 * 2) /* && ft_lstsize(*head_a) > 1 */)
+		{
+			ft_pb_push_b(head_a, head_b, "pb");
+			if ((*head_a)->index < (size / 3 * 1))
+			{
+				ft_rb_rotate_b(head_b, "rb");
+			}
+		}
+		else
+			ft_ra_rotate_a(head_a, "ra");
+		(*head_a) = (*head_a)->next;
 	}
 }

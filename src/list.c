@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
+/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:02:25 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/16 18:22:19 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/20 15:34:36 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,7 @@ void	ft_free(t_list *head_a, t_list *head_b)
 	
 	if (head_b == NULL)
 		return ;
-	// if (head_b)
-	// 	if (*head_b)
-	// 	{
-	// 		free(*head_b);
-	// 		return ;
-	// 	}
+
 	tmp_b = head_b->next;
 	free(head_b);
 	while (tmp_b)
@@ -107,4 +102,17 @@ void	ft_free(t_list *head_a, t_list *head_b)
 		tmp_b = head_b->next;
 		free(head_b);
 	}
+}
+
+int	ft_lstsize(t_list *head)
+{
+	int	size;
+
+	size = 0;
+	while (head)
+	{
+		size++;
+		head = head->next;
+	}
+	return (size);
 }

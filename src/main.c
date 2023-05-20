@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
+/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/17 16:24:12 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/20 16:28:17 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,11 @@ int	main(int ac, char **av)
 	// list_b = ft_linked_list(ac, av);
 
 	ft_index(&list_a);
+
 	
 	print_list(list_a, 'a');
 	print_list(list_b, 'b');
-
+	printf("size = %d", ft_lstsize(list_a));
 	// print_ac_i(i, ac); 	// ? version w/out fontion ft_linked_list()
 
 /* ***************** */
@@ -126,6 +127,9 @@ int	main(int ac, char **av)
 	// ft_pa_push_a(&list_a, &list_b, "pa");
 	
 	
+
+	ft_push_first_filter(&list_a, &list_b);
+
 	
 	
 /* ***************** */

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
+/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/17 15:51:57 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/20 16:27:23 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	ft_lstadd_back(t_list **list, t_list *last_node);
 t_list	*ft_lstlast(t_list *node);
 void	ft_free(t_list *head_a, t_list *head_b);
 // void	ft_free(t_list *head_a);
+int		ft_lstsize(t_list *head);
 
 
 
@@ -100,6 +101,9 @@ push_swap.c
 // t_list	*ft_linked_list(int ac, char **av);
 t_list	*ft_linked_list(int ac, char **av, t_list **head_a, t_list **head_b);
 void	ft_index(t_list **head);
+void	ft_push_first_filter(t_list **head_a, t_list **head_b);
+// void	ft_push_first_filter(t_list **head_a);
+
 
 
 /*************
