@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:28:36 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/22 17:47:18 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/22 18:08:29 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	ft_index(t_list **head)
 	
 	while (tmp)
 	{
-		tmp->index = 0;
+		tmp->index = 1;
 		while (first)
 		{
 			if (tmp->content > first->content)
@@ -112,17 +112,16 @@ void	ft_push_first_filter(t_list **head_a, t_list **head_b)
 
 	// printf("tete b : %p\n", head_b);
 	// printf("tete b : %d\n", (*head_a)->index);
-	// printf("%%size : %f\n", (size * 0.67));
+	// printf("%%size : %d\n", (size / 3 * 2) / 2);
 	// printf("%%size : %d\n", (size / 3 * 2));
 	// printf("%%size : %d\n", (size / 3 * 1));
 
-	// while (ft_lstsize(*head_a) > 1)
 	while (*head_a && i < size)
 	{
-		if ((*head_a)->index < (size / 3 * 2) )
+		if ((*head_a)->index <= (size / 3 * 2))
 		{
 			ft_pb_push_b(head_a, head_b, "pb");
-			if ((*head_b)->index <= (size / 3))
+			if ((*head_b)->index < ((size / 3 * 2) / 2))
 				ft_rb_rotate_b(head_b, "rb");
 		}
 		else

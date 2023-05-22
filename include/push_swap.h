@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/22 14:34:35 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/22 18:18:25 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,10 @@ error.c
 // void	ft_check_parameter(int ac, char **av);
 // void	ft_check_parameter(int ac, char **av, t_list **head_a, t_list **head_b);
 void	ft_check_parameter(int ac, t_list **head_a, t_list **head_b);
+
+// void	ft_check_doublon(); // TODO a faire pour controler les doublons
+
+
 // void	ft_check_args(char **av);
 void	ft_check_args(char **av, t_list **head_a, t_list **head_b);
 
