@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/22 17:43:56 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/22 19:31:31 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,7 @@ int	main(int ac, char **av)
 	// ft_rb_rotate_b(&list_b, "rb");
 	
 
-	ft_push_first_filter(&list_a, &list_b);
+	ft_push_list_a_to_list_b(&list_a, &list_b);
 
 	
 	

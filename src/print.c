@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:28:42 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/17 16:12:33 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/22 19:41:38 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,11 @@ void	print_list(t_list *node, char letter)
 	}
 	printf("NULL \n");
 	printf("***********************\n");
+}
+
+void	print_list_size(t_list *head)
+{
+	printf("\nsize list : %d\n\n", ft_lstsize(head));
 }
 
 void	print_ac_i(int i, int ac)

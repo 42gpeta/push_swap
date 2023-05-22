@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:28:36 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/22 18:08:29 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/22 19:50:31 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,13 +75,17 @@ void	ft_index(t_list **head)
 	}
 }
 
-// void	ft_push_first_filter(t_list **head_a)
-void	ft_push_first_filter(t_list **head_a, t_list **head_b)
+// void	ft_push_list_a_to_list_b(t_list **head_a)
+void	ft_push_list_a_to_list_b(t_list **head_a, t_list **head_b)
 {
 	int		size;
 	int		i = 0;
 	// int		test = 1;
 	// t_list	*tmp;
+	
+	if (!(*head_a))
+		return ;
+	
 	size = 0;
 	size = ft_lstsize(*head_a);
 	// tmp = (*head_a);
@@ -128,4 +132,21 @@ void	ft_push_first_filter(t_list **head_a, t_list **head_b)
 			ft_ra_rotate_a(head_a, "ra");
 		i++;
 	}
+	
+	// while ((*head_a))
+	// {
+		// if ((*head_a)->index < size - 3)
+		while ((*head_a)->index < size - 3)
+		{
+			ft_pb_push_b(head_a, head_b, "pb");
+			if ((*head_b)->index < ((size / 3 * 2) / 2))
+				ft_rb_rotate_b(head_b, "rb");		
+		}
+	// }
+	print_list_size(*head_a);
 }
+
+// void	ft_push_list_b_to_list_a(t_list **head_a, t_list **head_b)
+// {
+	
+// }

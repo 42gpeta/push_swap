@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/22 18:18:25 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/22 19:41:02 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ print.c
 void	print_swap(char *instruction);
 void	print_list(t_list *node, char letter);
 // void	print_list(t_list **node);
+void	print_list_size(t_list *head);
 void	print_ac_i(int i, int ac);
 
 
@@ -106,8 +107,9 @@ push_swap.c
 // t_list	*ft_linked_list(int ac, char **av);
 t_list	*ft_linked_list(int ac, char **av, t_list **head_a, t_list **head_b);
 void	ft_index(t_list **head);
-void	ft_push_first_filter(t_list **head_a, t_list **head_b);
-// void	ft_push_first_filter(t_list **head_a);
+void	ft_push_list_a_to_list_b(t_list **head_a, t_list **head_b);
+// void	ft_push_list_a_to_list_b(t_list **head_a);
+void	ft_push_list_b_to_list_a(t_list **head_a, t_list **head_b);
 
 
 
