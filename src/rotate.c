@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 19:42:41 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/20 17:02:57 by glodi            ###   ########.fr       */
+/*   Updated: 2023/05/22 17:38:05 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_ra_rotate_a(t_list **head_a, char *instruction)
 	last->next = tmp;
 	if (ft_strncmp(instruction, "ra", 2) == 0)
 		print_swap("ra");
+	// print_list(*head_a, 'a'); // ! a suprimer
 }
 
 // void	ft_rb_rotate_b(t_list **head_a, t_list **head_b, char *instruction)
@@ -48,6 +49,8 @@ void	ft_rb_rotate_b(t_list **head_b, char *instruction)
 	last->next = tmp;
 	if (ft_strncmp(instruction, "rb", 2) == 0)
 		print_swap("rb");
+	// print_list(*head_b, 'b'); // ! a suprimer
+
 }
 
 void	ft_rr_rotate_a_b(t_list **head_a, t_list **head_b, char *instruction)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/20 16:28:17 by glodi            ###   ########.fr       */
+/*   Updated: 2023/05/22 17:43:56 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	main(int ac, char **av)
 	
 	print_list(list_a, 'a');
 	print_list(list_b, 'b');
-	printf("size = %d", ft_lstsize(list_a));
+	// printf("\n\nsize = %d\n\n", ft_lstsize(list_a));
 	// print_ac_i(i, ac); 	// ? version w/out fontion ft_linked_list()
 
 /* ***************** */
@@ -118,6 +118,7 @@ int	main(int ac, char **av)
 	// ft_pb_push_b(&list_a, &list_b, "pb");
 	// ft_pb_push_b(&list_a, &list_b, "pb");
 	// ft_ra_rotate_a(&list_a, "ra");
+	// ft_ra_rotate_a(&list_a, "ra");
 	// ft_rb_rotate_b(&list_b, "rb");
 	// ft_rra_reverse_rotate_a(&list_a, "rra");
 	// ft_rrb_reverse_rotate_b(&list_b, "rrb");
@@ -126,6 +127,17 @@ int	main(int ac, char **av)
 	// ft_pa_push_a(&list_a, &list_b, "pa");
 	// ft_pa_push_a(&list_a, &list_b, "pa");
 	
+	
+
+	// ft_pb_push_b(&list_a, &list_b, "pb");
+	// ft_ra_rotate_a(&list_a, "ra");
+
+	// ft_pb_push_b(&list_a, &list_b, "pb");
+	// ft_ra_rotate_a(&list_a, "ra");
+
+	// ft_pb_push_b(&list_a, &list_b, "pb");
+	// ft_pb_push_b(&list_a, &list_b, "pb");
+	// ft_rb_rotate_b(&list_b, "rb");
 	
 
 	ft_push_first_filter(&list_a, &list_b);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:56:06 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/20 17:03:38 by glodi            ###   ########.fr       */
+/*   Updated: 2023/05/22 17:38:10 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	ft_pb_push_b(t_list **head_a, t_list **head_b, char *instruction)
 	(*head_b) = tmp;
 	if (ft_strncmp(instruction, "pb", 2) == 0)
 		print_swap("pb");
+	// print_list(*head_b, 'b'); // ! a suprimer
+
 }
 
 

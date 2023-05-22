@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/20 16:27:23 by glodi            ###   ########.fr       */
+/*   Updated: 2023/05/22 14:34:35 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@
 
 typedef struct s_list
 {
-	struct s_list	*pile_a;
-	struct s_list	*pile_b;
+	// struct s_list	*pile_a;
+	// struct s_list	*pile_b;
 	int				content;
 	int				index;
 	struct s_list	*next;
@@ -50,7 +50,8 @@ typedef struct s_list
 error.c
 *************/
 // void	ft_check_parameter(int ac, char **av);
-void	ft_check_parameter(int ac, char **av, t_list **head_a, t_list **head_b);
+// void	ft_check_parameter(int ac, char **av, t_list **head_a, t_list **head_b);
+void	ft_check_parameter(int ac, t_list **head_a, t_list **head_b);
 // void	ft_check_args(char **av);
 void	ft_check_args(char **av, t_list **head_a, t_list **head_b);
 

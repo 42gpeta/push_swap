@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:28:36 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/20 16:59:40 by glodi            ###   ########.fr       */
+/*   Updated: 2023/05/22 17:47:18 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ t_list	*ft_linked_list(int ac, char **av, t_list **head_a, t_list **head_b)
 	t_list *list;
 
 	list = NULL;
-	ft_check_parameter(ac, av, head_a, head_b);
+	// ft_check_parameter(ac, av, head_a, head_b);
+	ft_check_parameter(ac, head_a, head_b);
 	ft_check_args(av, head_a, head_b);
 	
 	int i;
@@ -62,7 +63,7 @@ void	ft_index(t_list **head)
 	
 	while (tmp)
 	{
-		tmp->index = 1;
+		tmp->index = 0;
 		while (first)
 		{
 			if (tmp->content > first->content)
@@ -77,8 +78,9 @@ void	ft_index(t_list **head)
 // void	ft_push_first_filter(t_list **head_a)
 void	ft_push_first_filter(t_list **head_a, t_list **head_b)
 {
-	float		size;
-	// float		test = 1;
+	int		size;
+	int		i = 0;
+	// int		test = 1;
 	// t_list	*tmp;
 	size = 0;
 	size = ft_lstsize(*head_a);
@@ -107,18 +109,24 @@ void	ft_push_first_filter(t_list **head_a, t_list **head_b)
 	// 	tmp = tmp->next;
 	// }
 
-	while ((*head_a) != NULL)
+
+	// printf("tete b : %p\n", head_b);
+	// printf("tete b : %d\n", (*head_a)->index);
+	// printf("%%size : %f\n", (size * 0.67));
+	// printf("%%size : %d\n", (size / 3 * 2));
+	// printf("%%size : %d\n", (size / 3 * 1));
+
+	// while (ft_lstsize(*head_a) > 1)
+	while (*head_a && i < size)
 	{
-		if ((*head_a)->index < (size / 3 * 2) /* && ft_lstsize(*head_a) > 1 */)
+		if ((*head_a)->index < (size / 3 * 2) )
 		{
 			ft_pb_push_b(head_a, head_b, "pb");
-			if ((*head_a)->index < (size / 3 * 1))
-			{
+			if ((*head_b)->index <= (size / 3))
 				ft_rb_rotate_b(head_b, "rb");
-			}
 		}
 		else
 			ft_ra_rotate_a(head_a, "ra");
-		(*head_a) = (*head_a)->next;
+		i++;
 	}
 }
