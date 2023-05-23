@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:28:36 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/22 19:50:31 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/23 15:50:44 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,3 +150,66 @@ void	ft_push_list_a_to_list_b(t_list **head_a, t_list **head_b)
 // {
 	
 // }
+
+void	ft_list_a_tree_node(t_list **head_a)
+{
+	// 1 2 3
+	if ((*head_a)->index < (*head_a)->next->index && (*head_a)->next->index < (*head_a)->next->next->index)
+		return ;
+	
+	//**********************************************
+	// // 1 3 2
+	// else if (head_a->index < head_a->next->index && head_a->next->index > head_a->next->next->index)
+	// {
+	// 	ft_sa_swap_a(&head_a, "sa");
+	// 	ft_ra_rotate_a(&head_a, "ra");
+	// }
+	// // 2 3 1
+	// else if (head_a->index < head_a->next->index && head_a->next->index > head_a->next->next->index)
+	// {
+	// 	ft_rra_reverse_rotate_a(&head_a, "rra");
+	// }
+	
+	else if ((*head_a)->index < (*head_a)->next->index && (*head_a)->next->index > (*head_a)->next->next->index)
+	{
+		if ((*head_a)->index < (*head_a)->next->next->index)
+		{
+			ft_sa_swap_a(head_a, "sa");
+			ft_ra_rotate_a(head_a, "ra");
+		}
+		else if ((*head_a)->index > (*head_a)->next->next->index)
+			ft_rra_reverse_rotate_a(head_a, "rra");
+	}
+	
+	//**********************************************
+	// // 2 1 3
+	// else if (head_a->index > head_a->next->index && head_a->next->index < head_a->next->next->index)
+	// {
+	// 	ft_sa_swap_a(&head_a, "sa");
+	// }
+	// // 3 1 2
+	// else if (head_a->index > head_a->next->index && head_a->next->index < head_a->next->next->index)
+	// {
+	// 	ft_ra_rotate_a(&head_a, "ra");
+	// }
+	
+	else if ((*head_a)->index > (*head_a)->next->index && (*head_a)->next->index < (*head_a)->next->next->index)
+	{
+		if ((*head_a)->index < (*head_a)->next->next->index)
+			ft_sa_swap_a(head_a, "sa");
+		else if ((*head_a)->index > (*head_a)->next->next->index)
+			ft_ra_rotate_a(head_a, "ra");
+	}	
+	
+	
+	//**********************************************
+	// 3 2 1
+	else if ((*head_a)->index > (*head_a)->next->index && (*head_a)->next->index > (*head_a)->next->next->index)
+	{
+		ft_sa_swap_a(head_a, "sa");
+		ft_rra_reverse_rotate_a(head_a, "rra");
+	}
+	else
+		printf("pas OK 2\n");
+
+}
