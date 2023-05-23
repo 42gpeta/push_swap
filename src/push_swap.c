@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:28:36 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/23 18:28:07 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/23 19:35:23 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	ft_list_a_five_node(t_list **head_a, t_list **head_b) // ? v1
 				ft_rb_rotate_b(head_b, "rb");
 		}
 		ft_list_a_tree_node(head_a);
-		while ((*head_a)->index != (*head_b)->index + 1)
+		// while ((*head_a)->index != (*head_b)->index + 1)
 	}
 }
 
@@ -237,4 +237,12 @@ void	ft_list_a_tree_node(t_list **head_a)
 		ft_sa_swap_a(head_a, "sa");
 		ft_rra_reverse_rotate_a(head_a, "rra");
 	}
+}
+
+void	ft_list_a_two_node(t_list **head_a)
+{
+	if ((*head_a)->index > (*head_a)->next->index)
+		ft_sa_swap_a(head_a, "sa");
+	else
+		return ;
 }
