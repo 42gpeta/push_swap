@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/23 17:23:35 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/23 17:42:04 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ push_swap.c
 // t_list	*ft_linked_list(int ac, char **av);
 t_list	*ft_linked_list(int ac, char **av, t_list **head_a, t_list **head_b);
 void	ft_index(t_list **head);
+void	ft_list_a_five_node(t_list **head_a, t_list **head_b); // ? v1
 void	ft_list_a_four_node(t_list **head_a, t_list **head_b);
 // void	ft_list_a_four_node(t_list **head_a);
 void	ft_push_list_b_to_list_a(t_list **head_a, t_list **head_b);
