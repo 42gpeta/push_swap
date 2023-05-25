@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/23 19:34:43 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/25 22:07:28 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,13 @@ push.c
 *************/
 void	ft_pa_push_a(t_list **head_a, t_list **head_b, char *instruction);
 void	ft_pb_push_b(t_list **head_a, t_list **head_b, char *instruction);
+
+
+/*************
+radix.c
+*************/
+int	ft_find_max(t_list **head_a);
+
 
 
 /*************

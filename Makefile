@@ -6,7 +6,7 @@
 #    By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
-#    Updated: 2023/05/16 16:16:48 by gpeta            ###   ########.fr        #
+#    Updated: 2023/05/25 21:45:59 by gpeta            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRCS		:= \
 list.c \
 main.c \
 push.c \
+radix.c \
 push_swap.c \
 reverse_rotate.c \
 rotate.c \

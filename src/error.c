@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:15:34 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/22 18:18:07 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/25 22:05:47 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ void	ft_check_args(char **av, t_list **head_a, t_list **head_b)
 	i = 1;
 	while (av[i])
 	{
-		if (!(ft_atoi(av[i])))
+		if (ft_atoi(av[i]) == 0)
+			return ;
+		else if (!(ft_atoi(av[i])))
 			ft_message_error(head_a, head_b, "ft_check_args : ATOI fail");
 		// ft_message_error(head_a, head_b);
 
