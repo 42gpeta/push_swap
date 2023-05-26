@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/25 21:55:59 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/26 20:30:42 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,15 @@ int	main(int ac, char **av)
 	print_list(list_a, 'a');
 	print_list(list_b, 'b');
 
-	ft_find_max(&list_a);
+/* ***************** */
+/* Trouver max_bit	 */
+/* ***************** */	
+	
+	int max_bit = ft_find_index_max_bit(ft_find_max(&list_a));
+	printf("max_bit : %d\n", max_bit);
+
+	
+	// ft_radix(&list_a, &list_b);
 	
 	// printf("\n\nsize = %d\n\n", ft_lstsize(list_a));
 	// print_ac_i(i, ac); 	// ? version w/out fontion ft_linked_list()
@@ -144,7 +152,7 @@ int	main(int ac, char **av)
 	
 
 	// ft_list_a_five_node(&list_a, &list_b);
-	// ft_list_a_four_node(&list_a, &list_b);
+	ft_list_a_four_node(&list_a, &list_b);
 	// ft_list_a_tree_node(&list_a);
 	// ft_list_a_two_node(&list_a);
 	

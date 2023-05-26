@@ -6,20 +6,20 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:15:34 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/25 22:05:47 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/26 16:53:03 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	ft_check_parameter(int ac, char **av, t_list **head_a, t_list **head_b)
-void	ft_check_parameter(int ac, t_list **head_a, t_list **head_b)
+// void	ft_check_parameter(int ac, t_list **head_a, t_list **head_b)
+void	ft_check_parameter(int ac, char **av, t_list **head_a, t_list **head_b)
 {
 	if (ac < 2)
 		ft_message_error(head_a, head_b, "ft_check_parameter : ac < 2");
 		// ft_message_error(head_a, head_b);
-	// if (!av[2])
-	// 	ft_message_error(head_a, head_b, "ft_check_parameter : av[2] doesn't exist"); // ! a remettre
+	if (!av[2])
+		ft_message_error(head_a, head_b, "ft_check_parameter : av[2] doesn't exist"); // ! a remettre
 		// ft_message_error(head_a, head_b);
 
 }

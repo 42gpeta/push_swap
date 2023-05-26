@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/25 22:07:28 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/26 20:29:22 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ typedef struct s_list
 error.c
 *************/
 // void	ft_check_parameter(int ac, char **av);
-// void	ft_check_parameter(int ac, char **av, t_list **head_a, t_list **head_b);
-void	ft_check_parameter(int ac, t_list **head_a, t_list **head_b);
+void	ft_check_parameter(int ac, char **av, t_list **head_a, t_list **head_b);
+// void	ft_check_parameter(int ac, t_list **head_a, t_list **head_b);
 
 // void	ft_check_doublon(); // TODO a faire pour controler les doublons
 
@@ -104,6 +104,8 @@ void	ft_pb_push_b(t_list **head_a, t_list **head_b, char *instruction);
 radix.c
 *************/
 int	ft_find_max(t_list **head_a);
+int	ft_find_index_max_bit(int index_max);
+void	ft_radix(t_list **head_a, t_list **head_b);
 
 
 
