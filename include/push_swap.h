@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/26 21:19:29 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/30 17:22:05 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,6 +158,16 @@ void	ft_sa_swap_a(t_list **head_a, char *instruction);
 void	ft_sb_swap_b(t_list **head_b, char *instruction);
 void	ft_ss_swap_a_b(t_list **head_a, t_list **head_b, char *instruction);
 
+/*************
+turkish.c
+*************/
+int	ft_list_a_min(t_list **head_a, t_list **head_b);
+int	ft_list_b_min(t_list **head_a, t_list **head_b);
+int	ft_list_a_max(t_list **head_a, t_list **head_b);
+int	ft_list_b_max(t_list **head_a, t_list **head_b);
+
+int ft_find_cost(t_list **head_a, t_list **head_b);
+int	ft_cheapest_number(t_list **head_a, t_list **head_b);
 
 
 
