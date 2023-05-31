@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/30 16:54:35 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/31 17:28:28 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int	main(int ac, char **av)
 	// list_b = ft_linked_list(ac, av);
 
 	ft_index(&list_a);
+	// ft_find_cost(&list_a, &list_b);
 
 	
 	print_list(list_a, 'a');
@@ -99,7 +100,10 @@ int	main(int ac, char **av)
 	// ft_list_a_min(&list_a, &list_b);
 	// ft_list_b_min(&list_a, &list_b);
 
-	
+
+	// ft_find_cost(&list_a, &list_b);
+	// ft_pb_push_b(&list_a, &list_b, "pb");
+	// printf("\ncheapest cost : %d\n", ft_find_cost(&list_a, &list_b));
 
 
 	
@@ -162,7 +166,7 @@ int	main(int ac, char **av)
 	
 
 	// ft_list_a_five_node(&list_a, &list_b);
-	ft_list_a_four_node(&list_a, &list_b);
+	// ft_list_a_four_node(&list_a, &list_b);
 	// ft_list_a_tree_node(&list_a);
 	// ft_list_a_two_node(&list_a);
 	
@@ -177,6 +181,7 @@ int	main(int ac, char **av)
 /*     FIN Prog     */
 /* ***************** */
 
+	// ft_free(&list_a, &list_b);
 	ft_free(list_a, list_b);
 	// ft_free(list_a);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/30 17:22:05 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/31 17:22:05 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_list
 	// struct s_list	*pile_b;
 	int				content;
 	int				index;
+	int				cost;
 	struct s_list	*next;
 } 					t_list;
 
@@ -71,7 +72,8 @@ t_list	*ft_lstnew(int content);
 void	ft_lstadd_front(t_list **list, t_list *node);
 void	ft_lstadd_back(t_list **list, t_list *last_node);
 t_list	*ft_lstlast(t_list *node);
-void	ft_free(t_list *head_a, t_list *head_b);
+// void	ft_free(t_list **head_a, t_list **head_b); // ? v3
+void	ft_free(t_list *head_a, t_list *head_b); // ? v2
 // void	ft_free(t_list *head_a);
 int		ft_lstsize(t_list *head);
 
@@ -166,7 +168,7 @@ int	ft_list_b_min(t_list **head_a, t_list **head_b);
 int	ft_list_a_max(t_list **head_a, t_list **head_b);
 int	ft_list_b_max(t_list **head_a, t_list **head_b);
 
-int ft_find_cost(t_list **head_a, t_list **head_b);
+void ft_find_cost(t_list **head_a, t_list **head_b);
 int	ft_cheapest_number(t_list **head_a, t_list **head_b);
 
 

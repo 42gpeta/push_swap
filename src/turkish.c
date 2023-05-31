@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 16:13:59 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/30 17:44:10 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/31 15:59:37 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,22 +92,46 @@ int	ft_list_b_max(t_list **head_a, t_list **head_b)
 	return (i);
 }
 
-int ft_find_cost(t_list **head_a, t_list **head_b)
+void ft_find_cost(t_list **head_a, t_list **head_b)
 {
+	// ft_pb_push_b(head_a, head_b, "pb");
+	
 	int	i;
-	int	cost;
+	// int	cost;
 	t_list *tmp;
 	
 	if (!(*head_a))
 		ft_message_error(head_a, head_b, "ft_find_cost : head doen't exist.");
 	
 	i = 1;
-	cost = i;
 	tmp = (*head_a);
+	// tmp->cost = 1;
 	
-	while ()
-	if (tmp->index + 1 == ft_list_b_max(head_a, head_b)
+	while (tmp)
+	{
+		// if (tmp->index + 1 == ft_list_b_max(head_a, head_b))
+		// 	i = cost;
+		
+		// if (tmp->index > (*head_b)->index)
+		// {
+		// 	if (i < cost)
+		// 		cost = i++;
+		// }
+		// else
+		// 	i++;
+
+		tmp->cost = i;
+		tmp = tmp->next;
+		
+		
+		i++;
+	}
+	// printf("\ncheapest cost : %d\n", cost);
+	
+
+	// return (cost);
 }
+
 
 int	ft_cheapest_number(t_list **head_a, t_list **head_b)
 {
@@ -130,7 +154,7 @@ int	ft_cheapest_number(t_list **head_a, t_list **head_b)
 		ft_find_cost(head_a, head_b);
 	}
 	
-
+	return(cost);
 
 }
 
