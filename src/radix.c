@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 21:45:17 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/26 21:20:11 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/13 19:43:11 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,35 +48,51 @@ void	ft_radix(t_list **head_a)
 {
 	t_list *tmp;
 	int		i;
-	int		test;
+	// int		test;
 
-	i = ft_find_index_max_bit(ft_find_max(head_a));
+	// // i = ft_find_index_max_bit(ft_find_max(head_a));
+	i = 7;
 
 
 	tmp = (*head_a);
-	// test = tmp->index & 1;
-	// test = 24 | 0;
-	test = 2 >> i;
+	// // test = tmp->index & 1;
+	// // test = 24 | 0;
+	// test = 2 >> i;
 
-	printf("LSB = %d\n", tmp->index >> i);
-	printf("LSB test = %d\n", test);
-	// while (i > 0)
+	// printf("LSB = %d\n", tmp->index >> i);
+	// printf("LSB test = %d\n", test);
+	
+	// while (i >= 0)
 	// {
-	// 	printf("\n TOUR \n\n");
-	// 	if (tmp->index >> i == 1)
+	// 	// printf("\n\tTOUR %d\t\n\n", i);
+	// 	if (((tmp->content >> i) & 1) == 0)
 	// 	{
 	// 		ft_pb_push_b(head_a, head_b, "pb");
-	// 		print_list(*head_a, 'a');
-	// 		print_list(*head_b, 'b');
+	// 		// print_list(*head_a, 'a');
+	// 		// print_list(*head_b, 'b');
 	// 	}
 	// 	else
 	// 	{
 	// 		ft_ra_rotate_a(head_a, "ra");
-	// 		print_list(*head_a, 'a');
-	// 		print_list(*head_b, 'b');
+	// 		// print_list(*head_a, 'a');
+	// 		// print_list(*head_b, 'b');
 	// 	}
 	// 	i--;
-	// 	printf("\n FIN TOUR \n\n");
+	// 	// printf("\n\tFIN\tTOUR \n\n");
 
 	// }
+
+	// ----------------------------------------------
+
+	printf("test: %d\n", tmp->content);
+	// test = tmp->content >> 1 & 1;
+	
+	// printf("&: %d\n", tmp->content >> 1 & 1);
+	for (i = 7; i >= 0; i--)
+	{
+		// if (((tmp->content >> i) & 1) == 0)
+			printf("i:%d = %d\n", i, tmp->content >> i & 1);
+	}
+
+
 }

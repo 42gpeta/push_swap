@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/31 17:28:28 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/13 18:31:50 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,9 @@ int	main(int ac, char **av)
 	
 	// int max_bit = ft_find_index_max_bit(ft_find_max(&list_a));
 	// printf("max_bit : %d\n", max_bit);
+
+	// ft_radix(&list_a);
+	ft_radix(&list_a, &list_b);
 
 
 		/* ***************** */
