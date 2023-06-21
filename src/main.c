@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/13 18:31:50 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/21 17:49:38 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,37 +79,10 @@ int	main(int ac, char **av)
 	// list_b = ft_linked_list(ac, av);
 
 	ft_index(&list_a);
-	// ft_find_cost(&list_a, &list_b);
 
 	
 	print_list(list_a, 'a');
 	print_list(list_b, 'b');
-
-		/* ***************** */
-		/* RADIX : Trouver max_bit	 */
-		/* ***************** */	
-	
-	// int max_bit = ft_find_index_max_bit(ft_find_max(&list_a));
-	// printf("max_bit : %d\n", max_bit);
-
-	// ft_radix(&list_a);
-	ft_radix(&list_a, &list_b);
-
-
-		/* ***************** */
-		/* TURKISH			*/
-		/* ***************** */	
-	
-	// ft_list_a_min(&list_a, &list_b);
-	// ft_list_b_min(&list_a, &list_b);
-
-
-	// ft_find_cost(&list_a, &list_b);
-	// ft_pb_push_b(&list_a, &list_b, "pb");
-	// printf("\ncheapest cost : %d\n", ft_find_cost(&list_a, &list_b));
-
-
-	
 	
 	// printf("\n\nsize = %d\n\n", ft_lstsize(list_a));
 	// print_ac_i(i, ac); 	// ? version w/out fontion ft_linked_list()
@@ -168,10 +141,12 @@ int	main(int ac, char **av)
 	// ft_rb_rotate_b(&list_b, "rb");
 	
 
-	// ft_list_a_five_node(&list_a, &list_b);
-	// ft_list_a_four_node(&list_a, &list_b);
-	// ft_list_a_tree_node(&list_a);
-	// ft_list_a_two_node(&list_a);
+	// ft_sort_five_node(&list_a, &list_b); // ! non OK
+	// ft_sort_four_node(&list_a, &list_b);
+	// ft_sort_tree_node(&list_a);
+	// ft_sort_two_node(&list_a);
+
+	ft_pre_sort(&list_a, &list_b);
 	
 	
 /* ***************** */
@@ -184,7 +159,6 @@ int	main(int ac, char **av)
 /*     FIN Prog     */
 /* ***************** */
 
-	// ft_free(&list_a, &list_b);
 	ft_free(list_a, list_b);
 	// ft_free(list_a);
 	return (0);

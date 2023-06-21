@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/13 18:46:24 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/21 17:49:38 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,13 @@ typedef struct s_list
 	// struct s_list	*pile_b;
 	int				content;
 	int				index;
-	int				cost;
 	struct s_list	*next;
+	int				move;
+	int				method; // sum of combinaison (ex: ra + rrb)
+	int				ra;
+	int				rb;
+	int				rra;
+	int				rrb;
 } 					t_list;
 
 // typedef struct s_list t_list;
@@ -48,11 +53,19 @@ typedef struct s_list
 /* ************************************************************************** */
 
 /*************
+algo.c
+*************/
+void	ft_pre_sort(t_list **head_a, t_list **head_b);
+void	ft_leave_three_biggest_in_a(t_list **head_a, t_list **head_b, int size);
+
+
+
+/*************
 error.c
 *************/
 // void	ft_check_parameter(int ac, char **av);
-void	ft_check_parameter(int ac, char **av, t_list **head_a, t_list **head_b);
-// void	ft_check_parameter(int ac, t_list **head_a, t_list **head_b);
+// void	ft_check_parameter(int ac, char **av, t_list **head_a, t_list **head_b);
+void	ft_check_parameter(int ac, t_list **head_a, t_list **head_b);
 
 // void	ft_check_doublon(); // TODO a faire pour controler les doublons
 
@@ -72,8 +85,7 @@ t_list	*ft_lstnew(int content);
 void	ft_lstadd_front(t_list **list, t_list *node);
 void	ft_lstadd_back(t_list **list, t_list *last_node);
 t_list	*ft_lstlast(t_list *node);
-// void	ft_free(t_list **head_a, t_list **head_b); // ? v3
-void	ft_free(t_list *head_a, t_list *head_b); // ? v2
+void	ft_free(t_list *head_a, t_list *head_b);
 // void	ft_free(t_list *head_a);
 int		ft_lstsize(t_list *head);
 
@@ -103,29 +115,19 @@ void	ft_pb_push_b(t_list **head_a, t_list **head_b, char *instruction);
 
 
 /*************
-radix.c
-*************/
-int	ft_find_max(t_list **head_a);
-int	ft_find_index_max_bit(int index_max);
-// void	ft_radix(t_list **head_a, t_list **head_b);
-void	ft_radix(t_list **head_a);
-
-
-
-/*************
 push_swap.c
 *************/
 // void	ft_init(t_list **structure, int ac);
 // t_list	*ft_linked_list(int ac, char **av);
 t_list	*ft_linked_list(int ac, char **av, t_list **head_a, t_list **head_b);
 void	ft_index(t_list **head);
-void	ft_list_a_five_node(t_list **head_a, t_list **head_b); // ? v1
-void	ft_list_a_four_node(t_list **head_a, t_list **head_b);
-// void	ft_list_a_four_node(t_list **head_a);
+void	ft_sort_five_node(t_list **head_a, t_list **head_b); // ? v1
+void	ft_sort_four_node(t_list **head_a, t_list **head_b);
+// void	ft_sort_four_node(t_list **head_a);
 void	ft_push_list_b_to_list_a(t_list **head_a, t_list **head_b);
-// void	ft_list_a_tree_node(t_list *head_a);
-void	ft_list_a_tree_node(t_list **head_a);
-void	ft_list_a_two_node(t_list **head_a);
+// void	ft_sort_tree_node(t_list *head_a);
+void	ft_sort_tree_node(t_list **head_a);
+void	ft_sort_two_node(t_list **head_a);
 
 
 
@@ -160,16 +162,6 @@ void	ft_sa_swap_a(t_list **head_a, char *instruction);
 void	ft_sb_swap_b(t_list **head_b, char *instruction);
 void	ft_ss_swap_a_b(t_list **head_a, t_list **head_b, char *instruction);
 
-/*************
-turkish.c
-*************/
-int	ft_list_a_min(t_list **head_a, t_list **head_b);
-int	ft_list_b_min(t_list **head_a, t_list **head_b);
-int	ft_list_a_max(t_list **head_a, t_list **head_b);
-int	ft_list_b_max(t_list **head_a, t_list **head_b);
-
-void ft_find_cost(t_list **head_a, t_list **head_b);
-int	ft_cheapest_number(t_list **head_a, t_list **head_b);
 
 
 

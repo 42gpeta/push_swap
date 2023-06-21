@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
+/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:02:25 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/31 17:22:44 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/05/20 15:34:36 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ t_list	*ft_lstlast(t_list *node)
 }
 
 // void	ft_free(t_list *head_a)
-void	ft_free(t_list *head_a, t_list *head_b) // ? v2
+void	ft_free(t_list *head_a, t_list *head_b)
 {
 	t_list *tmp_a;
 	t_list *tmp_b;
@@ -103,47 +103,6 @@ void	ft_free(t_list *head_a, t_list *head_b) // ? v2
 		free(head_b);
 	}
 }
-
-// void	ft_free(t_list **head_a, t_list **head_b) // ? v3
-// {
-// 	t_list *tmp_a;
-// 	t_list *tmp_b;
-
-// 	if (head_a == NULL)
-// 		return ;
-// 	// tmp_a = head_a->next;
-// 	tmp_a = (*head_a);
-// 	(*head_a) = (*head_a)->next;
-// 	free(tmp_a);
-// 	while ((*head_a))
-// 	{
-// 		tmp_a = (*head_a);
-// 		(*head_a) = (*head_a)->next;
-// 		free(tmp_a);
-// 	}
-	
-// 	if (!(*head_b) || !(*head_b)->next)
-// 		return ;
-// 	tmp_b = (*head_b);
-// 	(*head_b) = (*head_b)->next;
-// 	free(tmp_b);
-// 	while ((*head_b))
-// 	{
-// 		tmp_b = (*head_b);
-// 		(*head_b) = (*head_b)->next;
-// 		free(tmp_b);
-// 	}
-
-
-	// tmp_b = head_b->next;
-	// free(head_b);
-	// while (tmp_b)
-	// {
-	// 	head_b = tmp_b;
-	// 	tmp_b = head_b->next;
-	// 	free(head_b);
-	// }
-// }
 
 int	ft_lstsize(t_list *head)
 {

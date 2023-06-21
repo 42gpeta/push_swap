@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:28:36 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/23 19:35:23 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/21 17:49:38 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,10 @@ void	ft_index(t_list **head)
 	}
 }
 
-void	ft_list_a_five_node(t_list **head_a, t_list **head_b) // ? v1
+void	ft_sort_five_node(t_list **head_a, t_list **head_b) // ! non terminée ; ? v1
 {
 	if (ft_lstsize(*head_a) == 3)
-		ft_list_a_tree_node(head_a);
+		ft_sort_tree_node(head_a);
 
 	else if (ft_lstsize(*head_a) > 4)
 	{
@@ -89,14 +89,14 @@ void	ft_list_a_five_node(t_list **head_a, t_list **head_b) // ? v1
 			if ((*head_b)->index < (*head_b)->next->index)
 				ft_rb_rotate_b(head_b, "rb");
 		}
-		ft_list_a_tree_node(head_a);
+		ft_sort_tree_node(head_a);
 		// while ((*head_a)->index != (*head_b)->index + 1)
 	}
 }
 
 
-// void	ft_list_a_four_node(t_list **head_a)
-// void	ft_list_a_four_node(t_list **head_a, t_list **head_b) // ? v1
+// void	ft_sort_four_node(t_list **head_a)
+// void	ft_sort_four_node(t_list **head_a, t_list **head_b) // ? v1
 // {
 // 	int		size;
 // 	int		i = 0;
@@ -166,17 +166,17 @@ void	ft_list_a_five_node(t_list **head_a, t_list **head_b) // ? v1
 // 	print_list_size(*head_a);
 // }
 
-void	ft_list_a_four_node(t_list **head_a, t_list **head_b) // ? v2
+void	ft_sort_four_node(t_list **head_a, t_list **head_b) // ? v2
 {
 	int i = 0;
 	
 	if (ft_lstsize(*head_a) == 3)
-		ft_list_a_tree_node(head_a);
+		ft_sort_tree_node(head_a);
 	
 	else if (ft_lstsize(*head_a) > 3)
 	{
 		ft_pb_push_b(head_a, head_b, "pb");
-		ft_list_a_tree_node(head_a);
+		ft_sort_tree_node(head_a);
 		while ((*head_a) && i < ft_lstsize(*head_a))
 		{
 			if ((*head_a)->index == (*head_b)->index + 1)
@@ -194,8 +194,6 @@ void	ft_list_a_four_node(t_list **head_a, t_list **head_b) // ? v2
 			// ft_sa_swap_a(head_a, "sa");
 	}
 	// else if (ft_lstsize(*head_a) > 4)
-
-	
 }
 
 
@@ -204,7 +202,7 @@ void	ft_list_a_four_node(t_list **head_a, t_list **head_b) // ? v2
 	
 // }
 
-void	ft_list_a_tree_node(t_list **head_a)
+void	ft_sort_tree_node(t_list **head_a)
 {
 	// 1 2 3
 	if ((*head_a)->index < (*head_a)->next->index && (*head_a)->next->index < (*head_a)->next->next->index)
@@ -239,7 +237,7 @@ void	ft_list_a_tree_node(t_list **head_a)
 	}
 }
 
-void	ft_list_a_two_node(t_list **head_a)
+void	ft_sort_two_node(t_list **head_a)
 {
 	if ((*head_a)->index > (*head_a)->next->index)
 		ft_sa_swap_a(head_a, "sa");
