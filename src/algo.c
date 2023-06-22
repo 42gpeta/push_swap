@@ -32,15 +32,15 @@ void	ft_pre_sort(t_list **head_a, t_list **head_b)
 	ft_count_rrb(head_b);
 	printf("\ngreater : index[%d]", ft_nearest_index(head_a, head_b, 12)); // ! a supprimer
 
-	ft_rr_rotate_a_b(head_a,head_b,"rr");
-	ft_pa_push_a(head_a,head_b,"pa");
-	ft_rb_rotate_b(head_b,"rb");
-	ft_rrb_reverse_rotate_b(head_b,"rrb");
-	ft_rrb_reverse_rotate_b(head_b,"rrb");
+	// ft_rr_rotate_a_b(head_a,head_b,"rr");
+	// ft_pa_push_a(head_a,head_b,"pa");
+	// ft_rb_rotate_b(head_b,"rb");
+	// ft_rrb_reverse_rotate_b(head_b,"rrb");
+	// ft_rrb_reverse_rotate_b(head_b,"rrb");
 
-	ft_count_ra(head_a, head_b);
+	// ft_count_ra(head_a, head_b);
 	ft_count_rra(head_a, head_b);
-
+	ft_best_combination(head_a, head_b);
 
 
 
@@ -112,7 +112,7 @@ int	ft_nearest_index(t_list **head_a, t_list **head_b, int index_target)
 	return (greater);
 }
 
-void	ft_count_ra(t_list **head_a, t_list **head_b)
+int	ft_count_ra(t_list **head_a, t_list **head_b)
 {
 	t_list *tmp;
 	int	i;
@@ -126,7 +126,7 @@ void	ft_count_ra(t_list **head_a, t_list **head_b)
 		tmp = tmp->next;
 	}
 	tmp->ra = i;
-
+	return (tmp->index);
 }
 
 void	ft_count_rra(t_list **head_a, t_list **head_b)
@@ -144,4 +144,98 @@ void	ft_count_rra(t_list **head_a, t_list **head_b)
 	}
 	tmp->rra = ft_lstsize(*head_a) - i;
 
+}
+
+void	ft_best_combination(t_list **head_a, t_list **head_b)
+{
+	// int ra_rb;
+	// int ra_rrb;
+	// int rra_rb;
+	// int rra_rrb;
+	int i;
+	int min;
+	int petit;
+	int result[4];
+
+	result[0] = ft_combine_ra_rb(head_a, head_b);
+	result[1] = ft_combine_ra_rrb(head_a, head_b);
+	result[2] = ft_combine_rra_rb(head_a, head_b);
+	result[3] = ft_combine_rra_rrb(head_a, head_b);
+
+	for (i = 0; i < 4 ; i++) // ! a supprimer
+		printf("\nResultat index[%d]: %d\n", i, result[i]); // ! a supprimer
+
+	i = 0;
+	min = 0;
+	petit = result[0];
+	while (i < 4)
+	{
+		if (result[i] < petit)
+		{	
+			min = i;
+			petit = result[i];
+		}
+		i++;
+	}
+	printf("\nL'index le + petit est : %d\n", min);
+}
+
+int	ft_combine_ra_rb(t_list **head_a, t_list **head_b)
+{
+	t_list *tmp;
+	int greater;
+	
+	tmp = (*head_a);
+	greater = ft_count_ra(head_a, head_b);
+	// printf("\nindex de a visé %d\n", greater);
+
+	while (tmp->index != greater)
+		tmp = tmp->next;
+	printf("\nra = %d | rb = %d \nsum = %d\n", tmp->ra, (*head_b)->rb, tmp->ra + (*head_b)->rb);
+	return (tmp->ra + (*head_b)->rb);
+}
+
+int	ft_combine_ra_rrb(t_list **head_a, t_list **head_b)
+{
+	t_list *tmp;
+	int greater;
+	
+	tmp = (*head_a);
+	greater = ft_count_ra(head_a, head_b);
+	// printf("\nindex de a visé %d\n", greater);
+
+	while (tmp->index != greater)
+		tmp = tmp->next;
+	printf("\nra = %d | rrb = %d \nsum = %d\n", tmp->ra, (*head_b)->rrb, tmp->ra + (*head_b)->rrb);
+	return (tmp->ra + (*head_b)->rrb);
+}
+
+int	ft_combine_rra_rb(t_list **head_a, t_list **head_b)
+{
+	t_list *tmp;
+	int greater;
+	
+	tmp = (*head_a);
+	greater = ft_count_ra(head_a, head_b);
+	// printf("\nindex de a visé %d\n", greater);
+
+	while (tmp->index != greater)
+		tmp = tmp->next;
+	printf("\nrra = %d | rb = %d \nsum = %d\n", tmp->rra, (*head_b)->rb, tmp->rra + (*head_b)->rb);
+	return (tmp->rra + (*head_b)->rb);
+}
+
+int	ft_combine_rra_rrb(t_list **head_a, t_list **head_b)
+{
+	t_list *tmp;
+	int greater;
+	
+	tmp = (*head_a);
+	greater = ft_count_ra(head_a, head_b);
+	// printf("\nindex de a visé %d\n", greater);
+
+	while (tmp->index != greater)
+		tmp = tmp->next;
+	printf("\nrra = %d | rrb = %d \nsum = %d\n", tmp->rra, (*head_b)->rrb, tmp->rra + (*head_b)->rrb);
+	return (tmp->rra + (*head_b)->rrb);
 }
