@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:28:42 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/22 19:41:38 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/22 15:05:23 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,31 @@ void	print_list(t_list *node, char letter)
 	t_list	*tmp;
 
 	tmp = node;
-	printf("\n*** PRINT LIST %c ***\n", letter);
-	while (tmp != NULL)
+
+	if (letter == 'a')
 	{
-		ft_printf("%d [%d] -> ", tmp->content, tmp->index);
-		tmp = tmp->next;
+		printf("\n*** PRINT LIST %c (%d nodes) ***\n", letter, ft_lstsize(node));
+		while (tmp != NULL)
+		{
+			// ft_printf("%d [%d] -> ", tmp->content, tmp->index);
+			ft_printf("%d [%d] ra= %d|rra= %d --->  ", tmp->content, tmp->index, tmp->ra, tmp->rra);
+			tmp = tmp->next;
+		}
+		printf("NULL \n");
+		printf("***********************\n");
+	}	
+	else
+	{
+		printf("\n*** PRINT LIST %c (%d nodes) ***\n", letter, ft_lstsize(node));
+		while (tmp != NULL)
+		{
+			// ft_printf("%d [%d] -> ", tmp->content, tmp->index);
+			ft_printf("%d [%d] rb= %d|rrb= %d --->  ", tmp->content, tmp->index, tmp->rb, tmp->rrb);
+			tmp = tmp->next;
+		}
+		printf("NULL \n");
+		printf("***********************\n");		
 	}
-	printf("NULL \n");
-	printf("***********************\n");
 }
 
 void	print_list_size(t_list *head)

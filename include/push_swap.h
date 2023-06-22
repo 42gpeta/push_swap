@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/21 17:49:38 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/22 14:53:46 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,11 @@ algo.c
 *************/
 void	ft_pre_sort(t_list **head_a, t_list **head_b);
 void	ft_leave_three_biggest_in_a(t_list **head_a, t_list **head_b, int size);
+// void	ft_count_rb(t_list **head_b, int index);
+void	ft_count_rb(t_list **head_b);
+void	ft_count_rrb(t_list **head_b);
+
+void	ft_count_all_rb(t_list **head_b);
 
 
 

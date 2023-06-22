@@ -22,8 +22,15 @@ void	ft_pre_sort(t_list **head_a, t_list **head_b)
 			ft_ra_rotate_a(head_a, "ra");
 		i++;
 	}
-	ft_leave_three_biggest_in_a(head_a,head_b, size);
-	ft_sort_tree_node(head_a);
+	if (ft_lstsize(*head_a) > 2)
+	{
+		ft_leave_three_biggest_in_a(head_a,head_b, size);
+		ft_sort_tree_node(head_a);
+	}
+	// ft_count_rb(head_b, (*head_b)->next->index);
+	ft_count_rb(head_b);
+	ft_count_rrb(head_b);
+	// ft_count_all_rb(head_b);
 }
 
 void	ft_leave_three_biggest_in_a(t_list **head_a, t_list **head_b, int size)
@@ -41,3 +48,43 @@ void	ft_leave_three_biggest_in_a(t_list **head_a, t_list **head_b, int size)
 		i++;
 	}
 }
+
+// void	ft_count_rb(t_list **head_b, int target_node)
+void	ft_count_rb(t_list **head_b)
+{
+	int	i;
+	t_list *tmp;
+
+	i = -1;
+	tmp = (*head_b);
+	while (tmp)
+	{
+		tmp->rb = ++i;
+		tmp = tmp->next;
+	}
+
+}
+
+void	ft_count_rrb(t_list **head_b)
+{
+	t_list *tmp;
+
+	tmp = (*head_b);
+	while (tmp)
+	{
+		tmp->rrb = ft_lstsize(*head_b) - tmp->rb;
+		tmp = tmp->next;
+	}
+}
+// void	ft_count_all_rb(t_list **head_b)
+// {
+// 	t_list *tmp;
+
+// 	tmp = (*head_b);
+// 	while (tmp)
+// 	{
+// 		ft_count_rb(&tmp, tmp->index);
+// 		tmp = tmp->next;
+// 	}
+
+// }
