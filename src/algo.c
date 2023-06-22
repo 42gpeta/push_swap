@@ -30,7 +30,9 @@ void	ft_pre_sort(t_list **head_a, t_list **head_b)
 	// ft_count_rb(head_b, (*head_b)->next->index);
 	ft_count_rb(head_b);
 	ft_count_rrb(head_b);
-	// ft_count_all_rb(head_b);
+	// ft_nearest_index(head_a,head_b,2,1);
+	printf("greater : index[%d]", ft_nearest_index(head_a,2));
+
 }
 
 void	ft_leave_three_biggest_in_a(t_list **head_a, t_list **head_b, int size)
@@ -76,15 +78,24 @@ void	ft_count_rrb(t_list **head_b)
 		tmp = tmp->next;
 	}
 }
-// void	ft_count_all_rb(t_list **head_b)
-// {
-// 	t_list *tmp;
 
-// 	tmp = (*head_b);
-// 	while (tmp)
-// 	{
-// 		ft_count_rb(&tmp, tmp->index);
-// 		tmp = tmp->next;
-// 	}
+// void	ft_nearest_index(t_list **head_a, t_list **head_b, int index_target, int i)
 
-// }
+// Find the smaller in the list A greater than one relative to my target in list B
+int	ft_nearest_index(t_list **head_a, int index_target)
+{
+	t_list *tmp;
+	int		greater;
+
+	tmp = (*head_a);
+	
+	// on cherche le plus petit ecart quand on se retourve avec un index > a l'index target
+	greater = tmp->index;
+	while (tmp)
+	{
+		if (tmp->index > index_target && tmp->index < greater)
+			greater = tmp->index;
+		tmp = tmp->next;
+	}
+	return (greater);
+}

@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/22 14:53:46 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/22 17:46:04 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct s_list
 	int				rb;
 	int				rra;
 	int				rrb;
+	int				greater;
 } 					t_list;
 
 // typedef struct s_list t_list;
@@ -60,8 +61,9 @@ void	ft_leave_three_biggest_in_a(t_list **head_a, t_list **head_b, int size);
 // void	ft_count_rb(t_list **head_b, int index);
 void	ft_count_rb(t_list **head_b);
 void	ft_count_rrb(t_list **head_b);
+// void	ft_nearest_index(t_list **head_a, t_list **head_b, int index_target, int i);
+int		ft_nearest_index(t_list **head_a, int index_target);
 
-void	ft_count_all_rb(t_list **head_b);
 
 
 
