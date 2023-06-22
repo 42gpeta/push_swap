@@ -30,8 +30,19 @@ void	ft_pre_sort(t_list **head_a, t_list **head_b)
 	// ft_count_rb(head_b, (*head_b)->next->index);
 	ft_count_rb(head_b);
 	ft_count_rrb(head_b);
-	// ft_nearest_index(head_a,head_b,2,1);
-	printf("greater : index[%d]", ft_nearest_index(head_a,2));
+	printf("\ngreater : index[%d]", ft_nearest_index(head_a, head_b, 12)); // ! a supprimer
+
+	ft_rr_rotate_a_b(head_a,head_b,"rr");
+	ft_pa_push_a(head_a,head_b,"pa");
+	ft_rb_rotate_b(head_b,"rb");
+	ft_rrb_reverse_rotate_b(head_b,"rrb");
+	ft_rrb_reverse_rotate_b(head_b,"rrb");
+
+	ft_count_ra(head_a, head_b);
+	ft_count_rra(head_a, head_b);
+
+
+
 
 }
 
@@ -82,7 +93,7 @@ void	ft_count_rrb(t_list **head_b)
 // void	ft_nearest_index(t_list **head_a, t_list **head_b, int index_target, int i)
 
 // Find the smaller in the list A greater than one relative to my target in list B
-int	ft_nearest_index(t_list **head_a, int index_target)
+int	ft_nearest_index(t_list **head_a, t_list **head_b, int index_target)
 {
 	t_list *tmp;
 	int		greater;
@@ -90,7 +101,8 @@ int	ft_nearest_index(t_list **head_a, int index_target)
 	tmp = (*head_a);
 	
 	// on cherche le plus petit ecart quand on se retourve avec un index > a l'index target
-	greater = tmp->index;
+	// greater = tmp->index;
+	greater = ft_lstsize(*head_a) + ft_lstsize(*head_b);
 	while (tmp)
 	{
 		if (tmp->index > index_target && tmp->index < greater)
@@ -98,4 +110,38 @@ int	ft_nearest_index(t_list **head_a, int index_target)
 		tmp = tmp->next;
 	}
 	return (greater);
+}
+
+void	ft_count_ra(t_list **head_a, t_list **head_b)
+{
+	t_list *tmp;
+	int	i;
+
+	i = 0;
+	tmp = (*head_a);
+	while (tmp && tmp->index != ft_nearest_index(head_a, head_b, (*head_b)->index))
+	{
+		i++;
+		// tmp->ra = i++;
+		tmp = tmp->next;
+	}
+	tmp->ra = i;
+
+}
+
+void	ft_count_rra(t_list **head_a, t_list **head_b)
+{
+	t_list *tmp;
+	int	i;
+
+	i = 0;
+	tmp = (*head_a);
+	while (tmp && tmp->index != ft_nearest_index(head_a, head_b, (*head_b)->index))
+	{
+		i++;
+		// tmp->ra = i++;
+		tmp = tmp->next;
+	}
+	tmp->rra = ft_lstsize(*head_a) - i;
+
 }
