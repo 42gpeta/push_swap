@@ -48,7 +48,10 @@ void	ft_pre_sort(t_list **head_a, t_list **head_b)
 
 		ft_execute_combination(head_a, head_b, ft_index_of_best_combination(head_a, head_b));
 	}
-	
+
+	ft_raise_first_index(head_a, ft_up_first_index_ra(head_a), ft_up_first_index_rra(head_a));
+	// while ((*head_a)->index != 1)
+	// 	ft_ra_rotate_a(head_a, "ra");
 
 	// t_list *target_a = ft_pull_ra_rra_from_nearest_index(head_a, head_b);
 
@@ -294,7 +297,7 @@ void	ft_execute_ra_rb(t_list **head_a, t_list **head_b, t_list *nearest_index)
 		ft_rb_rotate_b(head_b, "rb");
 		rb--;
 	}
-	ft_pa_push_a(head_a, head_b, "pb");
+	ft_pa_push_a(head_a, head_b, "pa");
 }
 
 void	ft_execute_ra_rrb(t_list **head_a, t_list **head_b, t_list *nearest_index)
@@ -319,7 +322,7 @@ void	ft_execute_ra_rrb(t_list **head_a, t_list **head_b, t_list *nearest_index)
 		ft_rrb_reverse_rotate_b(head_b, "rrb");
 		rrb--;
 	}
-	ft_pa_push_a(head_a, head_b, "pb");
+	ft_pa_push_a(head_a, head_b, "pa");
 }
 
 void	ft_execute_rra_rb(t_list **head_a, t_list **head_b, t_list *nearest_index)
@@ -344,7 +347,7 @@ void	ft_execute_rra_rb(t_list **head_a, t_list **head_b, t_list *nearest_index)
 		ft_rb_rotate_b(head_b, "rb");
 		rb--;
 	}
-	ft_pa_push_a(head_a, head_b, "pb");
+	ft_pa_push_a(head_a, head_b, "pa");
 }
 
 
@@ -374,6 +377,80 @@ void	ft_execute_rra_rrb(t_list **head_a, t_list **head_b, t_list *nearest_index)
 		ft_rrb_reverse_rotate_b(head_b, "rrb");
 		rrb--;
 	}
-	ft_pa_push_a(head_a, head_b, "pb");
+	ft_pa_push_a(head_a, head_b, "pa");
 }
 
+void	ft_raise_first_index(t_list **head_a, int ra, int rra)
+{
+	// printf("ra|rra : %d|%d\n", ra, rra); // ! a supprimer
+
+	// ft_do_ra(head_a);
+
+
+	if (ra < rra)
+	{
+		ft_do_ra(head_a);
+		// printf("RA\n"); // ! a supprimer
+	}
+	else if (rra < ra)
+	{
+		ft_do_rra(head_a);
+		// printf("RRA\n"); // ! a supprimer
+	}
+
+
+}
+
+int		ft_up_first_index_ra(t_list **head_a)
+{
+	int nb_ra;
+	t_list *tmp;
+
+	nb_ra = 0;
+	tmp = (*head_a);
+	while (tmp->index != 1)
+	{
+		tmp = tmp->next;
+		nb_ra++;
+	}
+		
+	return (nb_ra);
+}
+
+int		ft_up_first_index_rra(t_list **head_a)
+{
+	int nb_rra;
+
+	nb_rra = ft_lstsize(*head_a) - ft_up_first_index_ra(head_a);
+	return (nb_rra);
+}
+
+void	ft_do_ra(t_list **head_a)
+{
+	int nb_ra;
+
+	nb_ra = 0;
+	while ((*head_a)->index != 1)
+		ft_ra_rotate_a(head_a, "ra");
+	// while (nb_ra < ft_up_first_index_ra(head_a))
+	// {
+	// 	ft_ra_rotate_a(head_a, "ra");
+	// 	nb_ra++;
+	// }
+	// return (nb_ra);
+}
+
+void	ft_do_rra(t_list **head_a)
+{
+	int nb_rra;
+
+	nb_rra = 0;
+	while ((*head_a)->index != 1)
+		ft_rra_reverse_rotate_a(head_a, "rra");
+	// while (nb_rra < ft_up_first_index_rra(head_a))
+	// {
+	// 	ft_rra_reverse_rotate_a(head_a, "ra");
+	// 	nb_rra++;
+	// }
+	// return (nb_rra);
+}

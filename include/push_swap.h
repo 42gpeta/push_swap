@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/23 16:18:41 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/23 17:57:01 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,14 @@ void	ft_execute_ra_rb(t_list **head_a, t_list **head_b, t_list *nearest_index);
 void	ft_execute_ra_rrb(t_list **head_a, t_list **head_b, t_list *nearest_index);
 void	ft_execute_rra_rb(t_list **head_a, t_list **head_b, t_list *nearest_index);
 void	ft_execute_rra_rrb(t_list **head_a, t_list **head_b, t_list *nearest_index);
+
+void	ft_raise_first_index(t_list **head_a, int ra, int rra);
+int		ft_up_first_index_ra(t_list **head_a);
+int		ft_up_first_index_rra(t_list **head_a);
+void	ft_do_ra(t_list **head_a);
+void	ft_do_rra(t_list **head_a);
+
+
 
 
 /*************
