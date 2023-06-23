@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/22 21:00:37 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/23 15:53:16 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,22 @@ int		ft_nearest_index(t_list **head_a, t_list **head_b, int index_target);
 int	ft_count_ra(t_list **head_a, t_list **head_b);
 void	ft_count_rra(t_list **head_a, t_list **head_b);
 
-void	ft_best_combination(t_list **head_a, t_list **head_b);
+// void	ft_index_of_best_combination(t_list **head_a, t_list **head_b);
+int	ft_index_of_best_combination(t_list **head_a, t_list **head_b);
 
-int	ft_combine_ra_rb(t_list **head_a, t_list **head_b);
-int	ft_combine_ra_rrb(t_list **head_a, t_list **head_b);
-int	ft_combine_rra_rb(t_list **head_a, t_list **head_b);
-int	ft_combine_rra_rrb(t_list **head_a, t_list **head_b);
+int	ft_count_the_shoot_ra_rb(t_list **head_a, t_list **head_b);
+int	ft_count_the_shoot_ra_rrb(t_list **head_a, t_list **head_b);
+int	ft_count_the_shoot_rra_rb(t_list **head_a, t_list **head_b);
+int	ft_count_the_shoot_rra_rrb(t_list **head_a, t_list **head_b);
+
+void	ft_execute_combination(t_list **head_a, t_list **head_b, int nb_combination);
+
+void	*ft_pull_ra_rra_from_nearest_index(t_list **head_a, t_list **head_b);
+
+void	ft_execute_ra_rb(t_list **head_a, t_list **head_b, t_list *nearest_index);
+void	ft_execute_ra_rrb(t_list **head_a, t_list **head_b, t_list *nearest_index);
+void	ft_execute_rra_rb(t_list **head_a, t_list **head_b, t_list *nearest_index);
+void	ft_execute_rra_rrb(t_list **head_a, t_list **head_b, t_list *nearest_index);
 
 
 /*************
