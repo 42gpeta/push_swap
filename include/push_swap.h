@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/23 15:53:16 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/23 16:18:41 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,8 @@ t_list	*ft_create_node(int data);
 
 t_list	*ft_lstnew(int content);
 void	ft_lstadd_front(t_list **list, t_list *node);
-void	ft_lstadd_back(t_list **list, t_list *last_node);
+// void	ft_lstadd_back(t_list **list, t_list *last_node); // ? v1
+int	ft_lstadd_back(t_list **list, t_list *last_node); // ? v2
 t_list	*ft_lstlast(t_list *node);
 void	ft_free(t_list *head_a, t_list *head_b);
 // void	ft_free(t_list *head_a);

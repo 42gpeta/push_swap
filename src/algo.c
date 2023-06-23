@@ -28,22 +28,26 @@ void	ft_pre_sort(t_list **head_a, t_list **head_b)
 		ft_sort_tree_node(head_a);
 	}
 	// ft_count_rb(head_b, (*head_b)->next->index);
-	ft_count_rb(head_b);
-	ft_count_rrb(head_b);
-	printf("\ngreater : index[%d]", ft_nearest_index(head_a, head_b, 12)); // ! a supprimer
+	
+	while ((*head_b))
+	{
 
-	ft_rr_rotate_a_b(head_a,head_b,"rr");
-	ft_pa_push_a(head_a,head_b,"pa");
-	ft_rb_rotate_b(head_b,"rb");
-	ft_rrb_reverse_rotate_b(head_b,"rrb");
-	ft_rrb_reverse_rotate_b(head_b,"rrb");
+		ft_count_rb(head_b);
+		ft_count_rrb(head_b);
+		// printf("\ngreater : index[%d]", ft_nearest_index(head_a, head_b, 12)); // ! a supprimer
 
-	ft_count_ra(head_a, head_b);
-	ft_count_rra(head_a, head_b);
-	ft_index_of_best_combination(head_a, head_b);
+		// ft_rr_rotate_a_b(head_a,head_b,"rr");
+		// ft_pa_push_a(head_a,head_b,"pa");
+		// ft_rb_rotate_b(head_b,"rb");
+		// ft_rrb_reverse_rotate_b(head_b,"rrb");
+		// ft_rrb_reverse_rotate_b(head_b,"rrb");
 
-	ft_execute_combination(head_a, head_b, ft_index_of_best_combination(head_a, head_b));
-	ft_count_ra(head_a, head_b);
+		ft_count_ra(head_a, head_b);
+		ft_count_rra(head_a, head_b);
+		ft_index_of_best_combination(head_a, head_b);
+
+		ft_execute_combination(head_a, head_b, ft_index_of_best_combination(head_a, head_b));
+	}
 	
 
 	// t_list *target_a = ft_pull_ra_rra_from_nearest_index(head_a, head_b);
@@ -167,8 +171,8 @@ int	ft_index_of_best_combination(t_list **head_a, t_list **head_b)
 	result[2] = ft_count_the_shoot_rra_rb(head_a, head_b);
 	result[3] = ft_count_the_shoot_rra_rrb(head_a, head_b);
 
-	for (i = 0; i < 4 ; i++) // ! a supprimer
-		printf("\nResultat index[%d]: %d\n", i, result[i]); // ! a supprimer
+	// for (i = 0; i < 4 ; i++) // ! a supprimer
+	// 	printf("\nResultat index[%d]: %d\n", i, result[i]); // ! a supprimer
 
 	i = 0;
 	min = 0;
@@ -197,7 +201,7 @@ int	ft_count_the_shoot_ra_rb(t_list **head_a, t_list **head_b)
 
 	while (tmp->index != greater)
 		tmp = tmp->next;
-	printf("\nra = %d | rb = %d \nsum = %d\n", tmp->ra, (*head_b)->rb, tmp->ra + (*head_b)->rb);
+	// printf("\nra = %d | rb = %d \nsum = %d\n", tmp->ra, (*head_b)->rb, tmp->ra + (*head_b)->rb);
 	return (tmp->ra + (*head_b)->rb);
 }
 
@@ -212,7 +216,7 @@ int	ft_count_the_shoot_ra_rrb(t_list **head_a, t_list **head_b)
 
 	while (tmp->index != greater)
 		tmp = tmp->next;
-	printf("\nra = %d | rrb = %d \nsum = %d\n", tmp->ra, (*head_b)->rrb, tmp->ra + (*head_b)->rrb);
+	// printf("\nra = %d | rrb = %d \nsum = %d\n", tmp->ra, (*head_b)->rrb, tmp->ra + (*head_b)->rrb);
 	return (tmp->ra + (*head_b)->rrb);
 }
 
@@ -227,7 +231,7 @@ int	ft_count_the_shoot_rra_rb(t_list **head_a, t_list **head_b)
 
 	while (tmp->index != greater)
 		tmp = tmp->next;
-	printf("\nrra = %d | rb = %d \nsum = %d\n", tmp->rra, (*head_b)->rb, tmp->rra + (*head_b)->rb);
+	// printf("\nrra = %d | rb = %d \nsum = %d\n", tmp->rra, (*head_b)->rb, tmp->rra + (*head_b)->rb);
 	return (tmp->rra + (*head_b)->rb);
 }
 
@@ -242,7 +246,7 @@ int	ft_count_the_shoot_rra_rrb(t_list **head_a, t_list **head_b)
 
 	while (tmp->index != greater)
 		tmp = tmp->next;
-	printf("\nrra = %d | rrb = %d \nsum = %d\n", tmp->rra, (*head_b)->rrb, tmp->rra + (*head_b)->rrb);
+	// printf("\nrra = %d | rrb = %d \nsum = %d\n", tmp->rra, (*head_b)->rrb, tmp->rra + (*head_b)->rrb);
 	return (tmp->rra + (*head_b)->rrb);
 }
 

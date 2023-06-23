@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/21 17:49:38 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/23 16:48:42 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ int	main(int ac, char **av)
 	ft_index(&list_a);
 
 	
-	print_list(list_a, 'a');
-	print_list(list_b, 'b');
+	// print_list(list_a, 'a');
+	// print_list(list_b, 'b');
 	
 	// printf("\n\nsize = %d\n\n", ft_lstsize(list_a));
 	// print_ac_i(i, ac); 	// ? version w/out fontion ft_linked_list()
@@ -151,8 +151,8 @@ int	main(int ac, char **av)
 	
 /* ***************** */
 	
-	print_list(list_a, 'a');
-	print_list(list_b, 'b');
+	// print_list(list_a, 'a');
+	// print_list(list_b, 'b');
 
 
 /* ***************** */
