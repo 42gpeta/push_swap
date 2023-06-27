@@ -1,1 +1,7 @@
 .nfs*
+push_swap_visualizer
+CMakeFiles
+dependencies
+_deps
+_deps/*
+CMakeCache.txt

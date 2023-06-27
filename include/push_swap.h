@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
+/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/23 17:57:01 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/26 17:27:31 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ void	ft_count_rb(t_list **head_b);
 void	ft_count_rrb(t_list **head_b);
 int		ft_nearest_index(t_list **head_a, t_list **head_b, int index_target);
 // int		ft_nearest_index(t_list **head_a, int index_target);
-int	ft_count_ra(t_list **head_a, t_list **head_b);
+// int	ft_count_ra(t_list **head_a, t_list **head_b); // ? v1
+int	ft_count_ra(t_list **head_a, t_list **head_b); // ? v2
 void	ft_count_rra(t_list **head_a, t_list **head_b);
 
 // void	ft_index_of_best_combination(t_list **head_a, t_list **head_b);
