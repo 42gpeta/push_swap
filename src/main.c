@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/26 16:38:38 by glodi            ###   ########.fr       */
+/*   Updated: 2023/06/27 16:59:02 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,10 +149,13 @@ int	main(int ac, char **av)
 	ft_pre_sort(&list_a, &list_b);
 	
 	
+	// ft_sort_tree_node(&list_a);
+	
+	
 /* ***************** */
 	
-	print_list(list_a, 'a');
-	print_list(list_b, 'b');
+	// print_list(list_a, 'a');
+	// print_list(list_b, 'b');
 
 
 /* ***************** */

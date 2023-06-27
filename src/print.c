@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:28:42 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/26 16:44:14 by glodi            ###   ########.fr       */
+/*   Updated: 2023/06/27 14:23:26 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	print_list(t_list *node, char letter)
 		while (tmp != NULL)
 		{
 			// ft_printf("%d [%d] -> ", tmp->content, tmp->index);
-			ft_printf("%d [%d] rb|rrb = %d|%d ; ra|rra = %d|%d --->  ", tmp->content, tmp->index, tmp->rb, tmp->rrb, tmp->ra, tmp->rra);
+			ft_printf("%d [%d] rb|rrb = %d|%d ; ra|rra = %d|%d --->  \n", tmp->content, tmp->index, tmp->rb, tmp->rrb, tmp->ra, tmp->rra);
 			tmp = tmp->next;
 		}
 		printf("NULL \n");

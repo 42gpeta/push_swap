@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:28:36 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/23 17:03:36 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/27 15:44:13 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -251,7 +251,7 @@ void	ft_sort_tree_node(t_list **head_a)
 		return ;
 	//**********************************************
 	// 1 3 2 et 2 3 1
-	else if ((*head_a)->index < (*head_a)->next->index && (*head_a)->next->index > (*head_a)->next->next->index)
+	if ((*head_a)->index < (*head_a)->next->index && (*head_a)->next->index > (*head_a)->next->next->index)
 	{
 		if ((*head_a)->index < (*head_a)->next->next->index)
 		{
@@ -263,7 +263,7 @@ void	ft_sort_tree_node(t_list **head_a)
 	}
 	//**********************************************
 	// 2 1 3 et 3 1 2
-	else if ((*head_a)->index > (*head_a)->next->index && (*head_a)->next->index < (*head_a)->next->next->index)
+	if ((*head_a)->index > (*head_a)->next->index && (*head_a)->next->index < (*head_a)->next->next->index)
 	{
 		if ((*head_a)->index < (*head_a)->next->next->index)
 			ft_sa_swap_a(head_a, "sa");
@@ -272,7 +272,7 @@ void	ft_sort_tree_node(t_list **head_a)
 	}	
 	//**********************************************
 	// 3 2 1
-	else if ((*head_a)->index > (*head_a)->next->index && (*head_a)->next->index > (*head_a)->next->next->index)
+	if ((*head_a)->index > (*head_a)->next->index && (*head_a)->next->index > (*head_a)->next->next->index)
 	{
 		ft_sa_swap_a(head_a, "sa");
 		ft_rra_reverse_rotate_a(head_a, "rra");
