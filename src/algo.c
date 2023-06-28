@@ -9,11 +9,6 @@ void	ft_pre_sort(t_list **head_a, t_list **head_b)
 	i = 0;
 	while (*head_a && i < size)
 	{
-		// if (ft_lstsize(*head_a) > 4)
-		// {
-		// 	ft_leave_three_biggest_in_a(head_a,head_b, size);
-		// 	ft_sort_tree_node(head_a);
-		// }
 		if ((*head_a)->index <= (size / 3 * 2))
 		{
 			ft_pb_push_b(head_a, head_b, "pb");
@@ -26,52 +21,35 @@ void	ft_pre_sort(t_list **head_a, t_list **head_b)
 		else
 			ft_ra_rotate_a(head_a, "ra");
 		i++;
-
 	}
-	ft_leave_three_biggest_in_a(head_a,head_b, size);
-	ft_sort_tree_node(head_a);
-	// ft_count_rb(head_b, (*head_b)->next->index);
+
+		// ft_leave_three_biggest_in_a(head_a,head_b, size);
+		// ft_sort_tree_node(head_a);
+
+		ft_nearest_index_for_B_node(head_a, head_b);
+		// print_list(*head_b, 'b');
 	
-
-	// t_list *tmp_b = (*head_b);
-	// // ft_nearest_index(head_a,head_b, 2);
-	// while (tmp_b)
+	// while ((*head_b))
 	// {
-	// 	ft_nearest_index(head_a, head_b, tmp_b);
-	// 	tmp_b = tmp_b->next;
+
+	// 	ft_count_rb(head_b);
+	// 	ft_count_rrb(head_b);
+	// 	// printf("\ngreater : index[%d]", ft_nearest_index(head_a, head_b, 12)); // ! a supprimer
+
+	// 	// ft_rr_rotate_a_b(head_a,head_b,"rr");
+	// 	// ft_pa_push_a(head_a,head_b,"pa");
+	// 	// ft_rb_rotate_b(head_b,"rb");
+	// 	// ft_rrb_reverse_rotate_b(head_b,"rrb");
+	// 	// ft_rrb_reverse_rotate_b(head_b,"rrb");
+
+	// 	ft_count_ra(head_a, head_b);
+	// 	ft_count_rra(head_a, head_b);
+	// 	ft_index_of_best_combination(head_a, head_b);
+
+	// 	ft_execute_combination(head_a, head_b, ft_index_of_best_combination(head_a, head_b));
 	// }
-
-	while ((*head_b))
-	{
-
-		ft_count_rb(head_b);
-		ft_count_rrb(head_b);
-		// printf("\ngreater : index[%d]", ft_nearest_index(head_a, head_b, 12)); // ! a supprimer
-
-			// ft_rr_rotate_a_b(head_a,head_b,"rr");
-			// ft_pa_push_a(head_a,head_b,"pa");
-			// ft_rb_rotate_b(head_b,"rb");
-			// ft_rrb_reverse_rotate_b(head_b,"rrb");
-			// ft_rrb_reverse_rotate_b(head_b,"rrb");
-
-		// printf("ra + rb = %d\n",ft_count_ra(head_a, head_b));
-		ft_count_ra(head_a, head_b);
-		ft_count_rra(head_a, head_b);
-		ft_index_of_best_combination(head_a, head_b);
-
-		ft_execute_combination(head_a, head_b, ft_index_of_best_combination(head_a, head_b));
-	}
-
-	ft_raise_first_index(head_a, ft_up_first_index_ra(head_a), ft_up_first_index_rra(head_a));
-			while ((*head_a)->index != 1)
-				ft_ra_rotate_a(head_a, "ra");
-
-			// t_list *target_a = ft_pull_ra_rra_from_nearest_index(head_a, head_b);
-
-			// printf("node %d[%d] : ra|rra = %d|%d\n", target_a->content, target_a->index, target_a->ra, target_a->rra); // ! a supprimer 
-			// printf("index du content %p\n", ft_pull_ra_rra_from_nearest_index(head_a, head_b));
-
-
+	// while ((*head_a)->index != 1)
+	// 	ft_ra_rotate_a(head_a, "ra");
 
 }
 
@@ -81,7 +59,7 @@ void	ft_leave_three_biggest_in_a(t_list **head_a, t_list **head_b, int size)
 
 	i = 0;
 
-	while(*head_a && i < ft_lstsize(*head_a))
+	while(*head_a && i <= ft_lstsize(*head_a))
 	{
 		if ((*head_a)->index <= (size - 3))
 			ft_pb_push_b(head_a,head_b,"pb");
@@ -91,528 +69,38 @@ void	ft_leave_three_biggest_in_a(t_list **head_a, t_list **head_b, int size)
 	}
 }
 
-// void	ft_count_rb(t_list **head_b, int target_node)
-void	ft_count_rb(t_list **head_b)
+// Trouve l'index supérieur (à un node de B) le + proche
+void	ft_nearest_index_for_B_node(t_list **head_a, t_list **head_b)
 {
-	int	i;
-	t_list *tmp;
-
-	i = -1;
-	tmp = (*head_b);
-	while (tmp)
-	{
-		tmp->rb = ++i;
-		tmp = tmp->next;
-	}
-
-}
-
-void	ft_count_rrb(t_list **head_b)
-{
-	t_list *tmp;
-
-	tmp = (*head_b);
-	while (tmp)
-	{
-		tmp->rrb = ft_lstsize(*head_b) - tmp->rb;
-		tmp = tmp->next;
-	}
-}
-
-// void	ft_nearest_index(t_list **head_a, t_list **head_b, int index_target, int i)
-
-// Find the smaller in the list A greater than one relative to my target in list B
-int	ft_nearest_index(t_list **head_a, t_list **head_b, t_list *target_in_B)
-{
-	t_list *tmp;
-	// t_list *tmp_b;
-	int		greater_in_A;
-	int		nb_ra;
-
-	tmp = (*head_a);
-	// tmp_b = (*head_b);
-	nb_ra = 0;
-	
-	// on cherche le plus petit ecart quand on se retrouve avec un index > a l'index target
-	// greater_in_A = tmp->index;
-	greater_in_A = ft_lstsize(*head_a) + ft_lstsize(*head_b);
-	while (tmp)
-	{
-		nb_ra++;
-		if (tmp->index >= target_in_B->index && tmp->index < greater_in_A)
-		{
-			greater_in_A = tmp->index;
-			target_in_B->ra = nb_ra;
-		}
-		tmp = tmp->next;
-	}
-	return (greater_in_A);
-}
-
-
-int	ft_count_ra(t_list **head_a, t_list **head_b) // ? v1
-{
-	t_list *tmp;
-	int	i;
-
-	i = 0;
-	tmp = (*head_a);
-	while (tmp && tmp->index != ft_nearest_index(head_a, head_b, (*head_b)->index))
-	{
-		i++;
-		// tmp->ra = i++;
-		tmp = tmp->next;
-	}
-	tmp->ra = i;
-	return (tmp->index);
-}
-
-// int	ft_count_ra(t_list **head_a, t_list **head_b) // ? v2
-// {
-// 	t_list *tmp;
-// 	t_list *tmp_b;
-// 	t_list *target;
-// 	int	i;
-
-// 	i = 0;
-// 	tmp = (*head_a);
-// 	target = (*head_b);
-// 	tmp_b = (*head_b);
-
-// 	while (target)
-// 	{
-
-// 		while (tmp && tmp->index != ft_nearest_index(head_a, head_b, target->index))
-// 		{
-// 			i++;
-// 			// tmp->ra = i++;
-// 			tmp = tmp->next;
-// 		}
-// 		tmp->ra = i;
-
-// 		while (tmp_b->index != target->index)
-// 			tmp_b = tmp_b->next;
-// 		tmp_b->ra = i;
-
-// 		tmp_b = (*head_b);
-// 		tmp = (*head_a);
-// 		target = target->next;
-
-// 	}	
-
-// 	return (tmp->index);
-// 	// return (tmp_b->ra + tmp_b->rb);
-// }
-
-void	ft_count_rra(t_list **head_a, t_list **head_b)
-{
-	t_list *tmp;
-	int	i;
-
-	i = 0;
-	tmp = (*head_a);
-	while (tmp && tmp->index != ft_nearest_index(head_a, head_b, (*head_b)->index))
-	{
-		i++;
-		// tmp->ra = i++;
-		tmp = tmp->next;
-	}
-	tmp->rra = ft_lstsize(*head_a) - i;
-
-}
-
-// int	ft_index_of_best_combination(t_list **head_a, t_list **head_b) // ? v1
-// {
-// 	int i;
-// 	int min;
-// 	int petit;
-// 	int result[4];
-
-// 	result[0] = ft_count_the_shoot_ra_rb(head_a, head_b);
-// 	result[1] = ft_count_the_shoot_ra_rrb(head_a, head_b);
-// 	result[2] = ft_count_the_shoot_rra_rb(head_a, head_b);
-// 	result[3] = ft_count_the_shoot_rra_rrb(head_a, head_b);
-
-// 	// for (i = 0; i < 4 ; i++) // ! a supprimer
-// 	// 	printf("\nResultat index[%d]: %d\n", i, result[i]); // ! a supprimer
-
-// 	i = 0;
-// 	min = 0;
-// 	petit = result[0];
-// 	while (i < 4)
-// 	{
-// 		if (result[i] < petit)
-// 		{	
-// 			min = i;
-// 			petit = result[i];
-// 		}
-// 		i++;
-// 	}
-// 	// printf("\nL'index le + petit est : %d\n", min); // ! a supprimer
-// 	return (min);
-// 	// return (3);
-// }
-
-int	ft_index_of_best_combination(t_list **head_a, t_list **head_b) // ? v2
-{
-	int i;
-	int min;
-	int petit;
-	int result[4];
-
-	result[0] = ft_count_the_shoot_ra_rb(head_a, head_b);
-	result[1] = ft_count_the_shoot_ra_rrb(head_a, head_b);
-	result[2] = ft_count_the_shoot_rra_rb(head_a, head_b);
-	result[3] = ft_count_the_shoot_rra_rrb(head_a, head_b);
-
-	// for (i = 0; i < 4 ; i++) // ! a supprimer
-	// 	printf("\nResultat index[%d]: %d\n", i, result[i]); // ! a supprimer
-
-	i = 0;
-	min = 0;
-	petit = result[i];
-	while (i < 4)
-	{
-		// if (result[i] < result[i+1])
-		if (result[i] < petit)
-		{	
-			min = i;
-			petit = result[i];
-		}
-		i++;
-	}
-	// printf("\nL'index le + petit est : %d\n", min); // ! a supprimer
-	return (min);
-	// return (result[2]);
-}
-
-// int	ft_count_the_shoot_ra_rb(t_list **head_a, t_list **head_b) // ? v1
-// {
-// 	t_list *tmp;
-// 	int greater;
-	
-// 	tmp = (*head_a);
-// 	greater = ft_count_ra(head_a, head_b);
-// 	// printf("\nindex de a visé %d\n", greater); // ! a supprimer
-
-// 	while (tmp->index != greater)
-// 		tmp = tmp->next;
-// 	// printf("\nra = %d | rb = %d \nsum = %d\n", tmp->ra, (*head_b)->rb, tmp->ra + (*head_b)->rb);
-// 	return (tmp->ra + (*head_b)->rb);
-// }
-
-// int	ft_count_the_shoot_ra_rb(t_list **head_a, t_list **head_b) // ? v2
-// {
-// 	t_list *tmp;
-// 	t_list *tmp_b;
-// 	t_list *target;
-// 	int	i;
-
-// 	i = 0;
-// 	tmp = (*head_a);
-// 	target = (*head_b);
-// 	tmp_b = (*head_b);
-		
-// 		while (tmp && tmp->index != ft_nearest_index(head_a, head_b, target->index))
-// 		{
-// 			i++;
-// 			// tmp->ra = i++;
-// 			tmp = tmp->next;
-// 		}
-// 		tmp->ra = i;
-
-// 		while (tmp_b->index != target->index)
-// 			tmp_b = tmp_b->next;
-// 		tmp_b->ra = i;
-
-// 		tmp_b = (*head_b);
-// 		target = target->next;
-
-
-// 	// return (tmp->index);
-// 	return (tmp_b->ra + tmp_b->rb);
-// }
-
-int	ft_count_the_shoot_ra_rb(t_list **head_a, t_list **head_b) // ? v3
-{
-	t_list *tmp;
+	t_list *tmp_a;
 	t_list *tmp_b;
-	t_list *target;
-	int	i;
+	int		nearest_index;
+	int		i;
 
-	i = 0;
-	tmp = (*head_a);
-	target = (*head_b);
-	tmp_b = (*head_b);
-		
-		while (tmp && tmp->index != ft_nearest_index(head_a, head_b, target->index))
+	tmp_b = *head_b;
+	// on cherche le plus petit ecart quand on se retrouve avec un index > à l'index target
+	while (tmp_b)
+	{
+		tmp_a = *head_a;
+		i = 0;
+		nearest_index = ft_lstsize(*head_a) + ft_lstsize(*head_b);
+		printf("\e[103;5mnodeB : %d\e[0m\n", tmp_b->index);
+		printf("nearest : %d\n", nearest_index);
+		while (tmp_a)
 		{
+			
+			printf("tmp_a index : %d\n --> %d > %d = %d\n  --> %d < %d = %d\n",tmp_a->index, tmp_a->index, tmp_b->index, (tmp_a->index > tmp_b->index), tmp_a->index, nearest_index, (tmp_a->index < nearest_index));
+			if (tmp_a->index > tmp_b->index && tmp_a->index < nearest_index)
+			{
+				nearest_index = tmp_a->index;
+				tmp_b->ra = i;
+				printf("  \e[31mnew_rearest = %d\n -> tmp_b->ra = %i\e[0m\n", nearest_index, i);
+			}
+
+			tmp_a = tmp_a->next;
 			i++;
-			// tmp->ra = i++;
-			tmp = tmp->next;
 		}
-		tmp->ra = i;
-
-		while (tmp_b->index != target->index)
-			tmp_b = tmp_b->next;
-		tmp_b->ra = i;
-
-		tmp_b = (*head_b);
-		target = target->next;
-
-
-	// return (tmp->index);
-	return (tmp_b->ra + tmp_b->rb);
-}
-
-int	ft_count_the_shoot_ra_rrb(t_list **head_a, t_list **head_b)
-{
-	t_list *tmp;
-	int greater;
-	
-	tmp = (*head_a);
-	greater = ft_count_ra(head_a, head_b);
-	// printf("\nindex de a visé %d\n", greater); // ! a supprimer
-
-	while (tmp->index != greater)
-		tmp = tmp->next;
-	// printf("\nra = %d | rrb = %d \nsum = %d\n", tmp->ra, (*head_b)->rrb, tmp->ra + (*head_b)->rrb);
-	return (tmp->ra + (*head_b)->rrb);
-}
-
-int	ft_count_the_shoot_rra_rb(t_list **head_a, t_list **head_b)
-{
-	t_list *tmp;
-	int greater;
-	
-	tmp = (*head_a);
-	greater = ft_count_ra(head_a, head_b);
-	// printf("\nindex de a visé %d\n", greater); // ! a supprimer
-
-	while (tmp->index != greater)
-		tmp = tmp->next;
-	// printf("\nrra = %d | rb = %d \nsum = %d\n", tmp->rra, (*head_b)->rb, tmp->rra + (*head_b)->rb);
-	return (tmp->rra + (*head_b)->rb);
-}
-
-int	ft_count_the_shoot_rra_rrb(t_list **head_a, t_list **head_b)
-{
-	t_list *tmp;
-	int greater;
-	
-	tmp = (*head_a);
-	greater = ft_count_ra(head_a, head_b);
-	// printf("\nindex de a visé %d\n", greater); // ! a supprimer
-
-	while (tmp->index != greater)
-		tmp = tmp->next;
-	// printf("\nrra = %d | rrb = %d \nsum = %d\n", tmp->rra, (*head_b)->rrb, tmp->rra + (*head_b)->rrb);
-	return (tmp->rra + (*head_b)->rrb);
-}
-
-void	ft_execute_combination(t_list **head_a, t_list **head_b, int index)
-{
-	if (index == 0)
-		ft_execute_ra_rb(head_a, head_b, ft_pull_ra_rra_from_nearest_index(head_a, head_b));
-	else if (index == 1)
-		ft_execute_ra_rrb(head_a, head_b, ft_pull_ra_rra_from_nearest_index(head_a, head_b));
-	else if (index == 2)
-		ft_execute_rra_rb(head_a, head_b, ft_pull_ra_rra_from_nearest_index(head_a, head_b));
-	else if (index == 3)
-		ft_execute_rra_rrb(head_a, head_b, ft_pull_ra_rra_from_nearest_index(head_a, head_b));
-}
-
-void	*ft_pull_ra_rra_from_nearest_index(t_list **head_a, t_list **head_b)
-{
-	t_list *tmp;
-
-	tmp = (*head_a);
-	while(tmp && tmp->index != ft_nearest_index(head_a, head_b, (*head_b)->index))
-		tmp = tmp->next;
-	return (tmp);
-}
-
-// void	*ft_pointer_to_target_b(t_list **head_b)
-// {
-
-// }
-
-void	ft_execute_ra_rb(t_list **head_a, t_list **head_b, t_list *nearest_index)
-{
-	int	rb;
-	
-	rb = (*head_b)->rb;
-
-	while (nearest_index->ra && rb)
-	{
-		ft_rr_rotate_a_b(head_a, head_b, "rr");
-		nearest_index->ra--;
-		rb--;
+		tmp_b = tmp_b->next;
 	}
-	while (nearest_index->ra)
-	{
-		ft_ra_rotate_a(head_a, "ra");
-		nearest_index->ra--;
-	}
-	while (rb)
-	{
-		ft_rb_rotate_b(head_b, "rb");
-		rb--;
-	}
-	ft_pa_push_a(head_a, head_b, "pa");
-}
-
-void	ft_execute_ra_rrb(t_list **head_a, t_list **head_b, t_list *nearest_index)
-{
-	int	rrb;
-	
-	rrb = (*head_b)->rrb;
-
-	// while (nearest_index->rra && rrb)
-	// {
-	// 	ft_rrr_reverse_rotate_a_b(head_a, head_b, "rrr");
-	// 	nearest_index->rra--;
-	// 	rrb--;
-	// }
-	while (nearest_index->ra)
-	{
-		ft_ra_rotate_a(head_a, "ra");
-		nearest_index->ra--;
-	}
-	while (rrb)
-	{
-		ft_rrb_reverse_rotate_b(head_b, "rrb");
-		rrb--;
-	}
-	ft_pa_push_a(head_a, head_b, "pa");
-}
-
-void	ft_execute_rra_rb(t_list **head_a, t_list **head_b, t_list *nearest_index)
-{
-	int	rb;
-	
-	rb = (*head_b)->rb;
-
-	// while (nearest_index->rra && rb)
-	// {
-	// 	ft_rrr_reverse_rotate_a_b(head_a, head_b, "rrr");
-	// 	nearest_index->rra--;
-	// 	rb--;
-	// }
-	while (nearest_index->rra)
-	{
-		ft_rra_reverse_rotate_a(head_a, "rra");
-		nearest_index->rra--;
-	}
-	while (rb)
-	{
-		ft_rb_rotate_b(head_b, "rb");
-		rb--;
-	}
-	ft_pa_push_a(head_a, head_b, "pa");
-}
-
-
-
-
-void	ft_execute_rra_rrb(t_list **head_a, t_list **head_b, t_list *nearest_index)
-{
-	int	rb;
-	int	rrb;
-	
-	rb = (*head_b)->rb;
-	rrb = (*head_b)->rrb;
-
-	while (nearest_index->rra && rrb)
-	{
-		ft_rrr_reverse_rotate_a_b(head_a, head_b, "rrr");
-		nearest_index->rra--;
-		rrb--;
-	}
-	while (nearest_index->rra)
-	{
-		ft_rra_reverse_rotate_a(head_a, "rra");
-		nearest_index->rra--;
-	}
-	while (rrb)
-	{
-		ft_rrb_reverse_rotate_b(head_b, "rrb");
-		rrb--;
-	}
-	ft_pa_push_a(head_a, head_b, "pa");
-}
-
-void	ft_raise_first_index(t_list **head_a, int ra, int rra)
-{
-	// printf("ra|rra : %d|%d\n", ra, rra); // ! a supprimer
-
-	// ft_do_ra(head_a);
-
-
-	if (ra < rra)
-	{
-		ft_do_ra(head_a);
-		// printf("RA\n"); // ! a supprimer
-	}
-	else if (rra < ra)
-	{
-		ft_do_rra(head_a);
-		// printf("RRA\n"); // ! a supprimer
-	}
-
-
-}
-
-int		ft_up_first_index_ra(t_list **head_a)
-{
-	int nb_ra;
-	t_list *tmp;
-
-	nb_ra = 0;
-	tmp = (*head_a);
-	while (tmp->index != 1)
-	{
-		tmp = tmp->next;
-		nb_ra++;
-	}
-		
-	return (nb_ra);
-}
-
-int		ft_up_first_index_rra(t_list **head_a)
-{
-	int nb_rra;
-
-	nb_rra = ft_lstsize(*head_a) - ft_up_first_index_ra(head_a);
-	return (nb_rra);
-}
-
-void	ft_do_ra(t_list **head_a)
-{
-	// int nb_ra;
-
-	// nb_ra = 0;
-	while ((*head_a)->index != 1)
-		ft_ra_rotate_a(head_a, "ra");
-	// while (nb_ra < ft_up_first_index_ra(head_a))
-	// {
-	// 	ft_ra_rotate_a(head_a, "ra");
-	// 	nb_ra++;
-	// }
-	// return (nb_ra);
-}
-
-void	ft_do_rra(t_list **head_a)
-{
-	// int nb_rra;
-
-	// nb_rra = 0;
-	while ((*head_a)->index != 1)
-		ft_rra_reverse_rotate_a(head_a, "rra");
-	// while (nb_rra < ft_up_first_index_rra(head_a))
-	// {
-	// 	ft_rra_reverse_rotate_a(head_a, "ra");
-	// 	nb_rra++;
-	// }
-	// return (nb_rra);
+	// return (tmp_a);
 }
