@@ -201,8 +201,10 @@ t_list	*ft_find_node_with_cheapest_ra_rb_shoot(t_list **head_a, t_list **head_b)
 	while (tmp_b)
 	{
 		if ((tmp_b->ra + tmp_b->rb) < ra_rb)
+		{
 			cheapest = tmp_b;
 			ra_rb = tmp_b->ra + tmp_b->rb;
+		}	
 		tmp_b = tmp_b->next; 
 	}
 	return (cheapest);
@@ -219,8 +221,10 @@ t_list	*ft_find_node_with_cheapest_ra_rrb_shoot(t_list **head_a, t_list **head_b
 	while (tmp_b)
 	{
 		if ((tmp_b->ra + tmp_b->rrb) < ra_rrb)
+		{
 			cheapest = tmp_b;
 			ra_rrb = tmp_b->ra + tmp_b->rrb;
+		}	
 		tmp_b = tmp_b->next; 
 	}
 	return (cheapest);
@@ -237,8 +241,10 @@ t_list	*ft_find_node_with_cheapest_rra_rb_shoot(t_list **head_a, t_list **head_b
 	while (tmp_b)
 	{
 		if ((tmp_b->rra + tmp_b->rb) < rra_rb)
+		{
 			cheapest = tmp_b;
 			rra_rb = tmp_b->rra + tmp_b->rb;
+		}	
 		tmp_b = tmp_b->next; 
 	}
 	return (cheapest);
@@ -255,8 +261,10 @@ t_list	*ft_find_node_with_cheapest_rra_rrb_shoot(t_list **head_a, t_list **head_
 	while (tmp_b)
 	{
 		if ((tmp_b->rra + tmp_b->rrb) < rra_rrb)
+		{
 			cheapest = tmp_b;
 			rra_rrb = tmp_b->rra + tmp_b->rrb;
+		}
 		tmp_b = tmp_b->next; 
 	}
 	return (cheapest);
@@ -271,11 +279,11 @@ int	ft_choose_best_combination(t_list **head_a, t_list **head_b)
 
 	cheapest[0] = ft_find_node_with_cheapest_ra_rb_shoot(head_a, head_b)->ra + ft_find_node_with_cheapest_ra_rb_shoot(head_a, head_b)->rb;
 	// printf("TOTAL CHEAPEST 1 = %d\n", cheapest[0]); // ! a supprimer
-	cheapest[1] = ft_find_node_with_cheapest_ra_rrb_shoot(head_a, head_b)->ra + ft_find_node_with_cheapest_ra_rb_shoot(head_a, head_b)->rrb;
+	cheapest[1] = ft_find_node_with_cheapest_ra_rrb_shoot(head_a, head_b)->ra + ft_find_node_with_cheapest_ra_rrb_shoot(head_a, head_b)->rrb;
 	// printf("TOTAL CHEAPEST 2 = %d\n", cheapest[1]); // ! a supprimer
-	cheapest[2] = ft_find_node_with_cheapest_rra_rb_shoot(head_a, head_b)->rra + ft_find_node_with_cheapest_ra_rb_shoot(head_a, head_b)->rb;
+	cheapest[2] = ft_find_node_with_cheapest_rra_rb_shoot(head_a, head_b)->rra + ft_find_node_with_cheapest_rra_rb_shoot(head_a, head_b)->rb;
 	// printf("TOTAL CHEAPEST 3 = %d\n", cheapest[2]); // ! a supprimer
-	cheapest[3] = ft_find_node_with_cheapest_rra_rrb_shoot(head_a, head_b)->rra + ft_find_node_with_cheapest_ra_rb_shoot(head_a, head_b)->rrb;
+	cheapest[3] = ft_find_node_with_cheapest_rra_rrb_shoot(head_a, head_b)->rra + ft_find_node_with_cheapest_rra_rrb_shoot(head_a, head_b)->rrb;
 	// printf("TOTAL CHEAPEST 4 = %d\n", cheapest[3]); // ! a supprimer
 	
 	i = 0;
