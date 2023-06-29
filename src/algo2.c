@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	ft_pre_sort(t_list **head_a, t_list **head_b)
+void	ft_sort(t_list **head_a, t_list **head_b)
 {
 	int		size;
 	int		i;

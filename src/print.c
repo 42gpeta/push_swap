@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:28:42 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/28 17:26:56 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/29 15:04:34 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	print_list(t_list *node, char letter)
 		while (tmp != NULL)
 		{
 			// ft_printf("%d [%d] -> ", tmp->content, tmp->index);
-			ft_printf("%d [%d] ra|rra = %d|%d --->  ", tmp->content, tmp->index, tmp->ra, tmp->rra);
+			ft_printf("%d [%d] ra|rra = %d|%d --->  \n", tmp->content, tmp->index, tmp->ra, tmp->rra);
 			tmp = tmp->next;
 		}
 		printf("NULL \n");

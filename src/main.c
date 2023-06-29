@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/28 17:29:03 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/29 14:39:59 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,13 +146,13 @@ int	main(int ac, char **av)
 	// ft_sort_tree_node(&list_a);
 	// ft_sort_two_node(&list_a);
 
-	ft_pre_sort(&list_a, &list_b);
+	ft_sort(&list_a, &list_b);
 	
 	
 /* ***************** */
 	
-	// print_list(list_a, 'a');
-	// print_list(list_b, 'b');
+	print_list(list_a, 'a');
+	print_list(list_b, 'b');
 
 
 /* ***************** */

@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/28 17:23:37 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/29 15:03:42 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,18 @@ typedef struct s_list
 /*************
 algo.c
 *************/
-void	ft_pre_sort(t_list **head_a, t_list **head_b);
+void	ft_sort(t_list **head_a, t_list **head_b);
 void	ft_leave_three_biggest_in_a(t_list **head_a, t_list **head_b, int size);
 // void	ft_count_rb(t_list **head_b, int index);
 void	ft_count_rb(t_list **head_b);
 void	ft_count_rrb(t_list **head_b);
 // int		ft_nearest_index(t_list **head_a, t_list **head_b, int index_target);
-void	ft_nearest_index_for_B_node(t_list **head_a, t_list **head_b);
 // int		ft_nearest_index(t_list **head_a, int index_target);
+void	ft_nearest_index_for_B_node(t_list **head_a, t_list **head_b);
+void	ft_count_rb_and_rrb(t_list **head_b);
+
+t_list	*ft_find_node_with_cheapest_ra_rb_shoot(t_list **head_a, t_list **head_b);
+
 int	ft_count_ra(t_list **head_a, t_list **head_b);
 void	ft_count_rra(t_list **head_a, t_list **head_b);
 
