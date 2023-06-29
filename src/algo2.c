@@ -295,7 +295,7 @@ void	ft_execute_ra_rb(t_list **head_a, t_list **head_b, t_list *nearest_index)
 		ft_rb_rotate_b(head_b, "rb");
 		rb--;
 	}
-	ft_pa_push_a(head_a, head_b, "pb");
+	ft_pa_push_a(head_a, head_b, "pa");
 }
 
 void	ft_execute_ra_rrb(t_list **head_a, t_list **head_b, t_list *nearest_index)

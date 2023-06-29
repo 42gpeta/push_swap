@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/29 15:03:42 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/29 19:07:02 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,14 @@ typedef struct s_list
 /*************
 algo.c
 *************/
+// void	ft_pre_sort(t_list **head_a, t_list **head_b, int size);
+int	ft_pre_sort(t_list **head_a, t_list **head_b, int size);
+
 void	ft_sort(t_list **head_a, t_list **head_b);
-void	ft_leave_three_biggest_in_a(t_list **head_a, t_list **head_b, int size);
+// void	ft_leave_three_biggest_in_a(t_list **head_a, t_list **head_b, int size);
+void	ft_leave_three_biggest_in_a(t_list **head_a, t_list **head_b, int max_size, int size);
+
+
 // void	ft_count_rb(t_list **head_b, int index);
 void	ft_count_rb(t_list **head_b);
 void	ft_count_rrb(t_list **head_b);
@@ -67,6 +73,15 @@ void	ft_nearest_index_for_B_node(t_list **head_a, t_list **head_b);
 void	ft_count_rb_and_rrb(t_list **head_b);
 
 t_list	*ft_find_node_with_cheapest_ra_rb_shoot(t_list **head_a, t_list **head_b);
+t_list	*ft_find_node_with_cheapest_ra_rrb_shoot(t_list **head_a, t_list **head_b);
+t_list	*ft_find_node_with_cheapest_rra_rb_shoot(t_list **head_a, t_list **head_b);
+t_list	*ft_find_node_with_cheapest_rra_rrb_shoot(t_list **head_a, t_list **head_b);
+
+// t_list	*ft_choose_best_combination(t_list **head_a, t_list **head_b);
+int	ft_choose_best_combination(t_list **head_a, t_list **head_b);
+void	ft_execute_best_combination(t_list **head_a, t_list **head_b, int index);
+
+
 
 int	ft_count_ra(t_list **head_a, t_list **head_b);
 void	ft_count_rra(t_list **head_a, t_list **head_b);
@@ -87,6 +102,8 @@ void	ft_execute_ra_rb(t_list **head_a, t_list **head_b, t_list *nearest_index);
 void	ft_execute_ra_rrb(t_list **head_a, t_list **head_b, t_list *nearest_index);
 void	ft_execute_rra_rb(t_list **head_a, t_list **head_b, t_list *nearest_index);
 void	ft_execute_rra_rrb(t_list **head_a, t_list **head_b, t_list *nearest_index);
+
+void	ft_put_index_one_on_top(t_list **head_a);
 
 
 /*************

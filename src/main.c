@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/29 14:39:59 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/29 18:30:52 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,8 +151,8 @@ int	main(int ac, char **av)
 	
 /* ***************** */
 	
-	print_list(list_a, 'a');
-	print_list(list_b, 'b');
+	// print_list(list_a, 'a');
+	// print_list(list_b, 'b');
 
 
 /* ***************** */
