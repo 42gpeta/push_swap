@@ -50,10 +50,19 @@ void	ft_sort(t_list **head_a, t_list **head_b)
 		i++;
 	} */ // ? correspond à ft_pre_sort()
 		
-			// ft_pre_sort(head_a, head_b, size);
+	// ft_pre_sort(head_a, head_b, size);
+	if (size != 6)
+	{
 
-			ft_leave_three_biggest_in_a(head_a,head_b, size, ft_pre_sort(head_a, head_b, size));
-			ft_sort_tree_node(head_a);
+		ft_leave_three_biggest_in_a(head_a,head_b, size, ft_pre_sort(head_a, head_b, size));
+		ft_sort_tree_node(head_a);
+	}
+	// if (ft_lstsize(head_a) > 2)
+	else
+	{
+		if ((*head_a)->index > (*head_a)->next->index)
+			ft_ra_rotate_a(head_a, "ra");
+	}
 
 	while ((*head_b))
 	{

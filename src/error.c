@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:15:34 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/30 18:14:30 by glodi            ###   ########.fr       */
+/*   Updated: 2023/06/30 21:37:14 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,35 @@ int	ft_arg_is_available_number(char *str)
 
 	if (INT_MIN < nbr && nbr < INT_MAX)
 	{
-		printf("atol de %s:%lld\n", str, nbr);
+		// printf("atol de %s:%lld\n", str, nbr); // ! a supprimer
 		return (1);
 	}
 	return (0);
 }
 
-/* void	ft_check_doublon(char **av, int len_tab) // TODO a faire pour controler les doublons
+void	ft_check_doublon(t_list **head_a, t_list **head_b, char **av) // TODO a faire pour controler les doublons
 {
-	char doublon[len_tab];
-
-	while (av)
+	int i;
+	int j;
+	
+	i = 1;
+	while (av[i])
 	{
-		if (av[i] == doublon[j])
+		j = i + 1;
+		while (av[j])
+		{
+			// printf("av[%d] %s | av[%d] %s\n", i, av[i], j, av[j]); // ! a supprimer
+			if (ft_strlen(av[i]) == ft_strlen(av[j]) && ft_strncmp(av[i],av[j],ft_strlen(av[i])) == 0)
+			{
+				// printf("coucou\n"); // ! a supprimer
+				ft_message_error(head_a, head_b, "ft_check_doublon : doublon");
+			}	
+			j++;
 			
-			
+		}
+		i++;
 	}
-} */
+}
 
 
 void	ft_check_args(char **av, t_list **head_a, t_list **head_b)
@@ -67,7 +79,7 @@ void	ft_check_args(char **av, t_list **head_a, t_list **head_b)
 
 	if (ft_check_doublon() == 0)
 		ft_message_error(head_a, head_b, "ft_check_args : presence d'un doublon"); */
-		
+	ft_check_doublon(head_a, head_b, av);
 	
 	i = 1;
 	

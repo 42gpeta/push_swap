@@ -1,5 +1,6 @@
 .nfs*
 push_swap_visualizer
+push_swap_tester
 CMakeFiles
 dependencies
 _deps
