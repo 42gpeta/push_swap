@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/30 16:57:41 by glodi            ###   ########.fr       */
+/*   Updated: 2023/06/30 22:09:01 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,10 @@ int	main(int ac, char **av)
 	list_a = ft_linked_list(ac, av, &list_a, &list_b);
 	// list_b = ft_linked_list(ac, av);
 
+
 	ft_index(&list_a);
 
+	ft_is_sorted(&list_a, &list_b);
 	
 	// print_list(list_a, 'a');
 	// print_list(list_b, 'b');

@@ -53,7 +53,6 @@ void	ft_sort(t_list **head_a, t_list **head_b)
 	// ft_pre_sort(head_a, head_b, size);
 	if (size != 6)
 	{
-
 		ft_leave_three_biggest_in_a(head_a,head_b, size, ft_pre_sort(head_a, head_b, size));
 		ft_sort_tree_node(head_a);
 	}
@@ -431,7 +430,7 @@ void	ft_put_index_one_on_top(t_list **head_a)
 	int		rra;
 
 	tmp_a = *head_a;
-
+	ra = 0;
 	while (tmp_a->index != 1)
 	{
 		tmp_a = tmp_a->next;
@@ -452,4 +451,20 @@ void	ft_put_index_one_on_top(t_list **head_a)
 			ft_rra_reverse_rotate_a(head_a, "rra");
 	}
 
+}
+void	ft_is_sorted(t_list **head_a, t_list **head_b)
+{
+	t_list *tmp;
+
+	tmp = (*head_a);
+	
+	while (tmp && tmp->next)
+	{
+		if (tmp->index > tmp->next->index)
+			return;
+		tmp = tmp->next;
+	}
+	ft_message_error(head_a, head_b, "ft_is_sorted : OK"); // TODO envoyer : "OK"
+
+	
 }
