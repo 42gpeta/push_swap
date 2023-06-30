@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
+/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:28:36 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/29 18:43:30 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/30 13:51:42 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ t_list	*ft_linked_list(int ac, char **av, t_list **head_a, t_list **head_b) // ?
 	// ft_check_parameter(ac, av, head_a, head_b);
 	
 	// ft_check_parameter(ac, head_a, head_b);
-	// ft_check_args(av, head_a, head_b);
+	ft_check_args(av, head_a, head_b);
 	
 	int i;
 

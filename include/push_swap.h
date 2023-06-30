@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
+/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/29 19:07:02 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/06/30 16:04:45 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@
 
 # include "libft.h"
 
-
+# define INT_MIN -2147483648
+# define INT_MAX 2147483647
 
 /* ************************************************************************** */
 /*							      	 STRUCTURE							      */
@@ -119,8 +120,14 @@ void	ft_check_parameter(int ac, t_list **head_a, t_list **head_b);
 // void	ft_check_args(char **av);
 void	ft_check_args(char **av, t_list **head_a, t_list **head_b);
 
+int	ft_arg_is_available_number(char *str);
+
+
 // void	ft_message_error(t_list **head_a, t_list **head_b);  // TODO version finale
 void	ft_message_error(t_list **head_a, t_list **head_b, char *message); // ! a supprimer
+long long int	ft_atol(const char *nptr);
+
+
 
 /*************
 list.c
