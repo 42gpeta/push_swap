@@ -1,0 +1,98 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algo_utils_find_node.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/01 17:37:50 by glodi             #+#    #+#             */
+/*   Updated: 2023/07/01 18:18:15 by glodi            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+// Trouve l'index supérieur le + proche de chaque node de B 
+t_list	*ft_find_node_with_cheapest_ra_rb_shoot(t_list **head_a, t_list **head_b)
+{
+	t_list *tmp_b;
+	t_list *cheapest;
+	int ra_rb;
+
+	tmp_b = *head_b;
+	ra_rb = ft_lstsize(*head_a) + ft_lstsize(*head_b);
+	while (tmp_b)
+	{
+		if ((tmp_b->ra + tmp_b->rb) < ra_rb)
+		{
+			cheapest = tmp_b;
+			ra_rb = tmp_b->ra + tmp_b->rb;
+		}	
+		tmp_b = tmp_b->next; 
+	}
+	return (cheapest);
+}
+
+// Trouve l'index supérieur le + proche de chaque node de B 
+t_list	*ft_find_node_with_cheapest_ra_rrb_shoot(t_list **head_a, t_list **head_b)
+{
+	t_list *tmp_b;
+	t_list *cheapest;
+	int ra_rrb;
+
+	tmp_b = *head_b;
+	ra_rrb = ft_lstsize(*head_a) + ft_lstsize(*head_b);
+	while (tmp_b)
+	{
+		if ((tmp_b->ra + tmp_b->rrb) < ra_rrb)
+		{
+			cheapest = tmp_b;
+			ra_rrb = tmp_b->ra + tmp_b->rrb;
+		}	
+		tmp_b = tmp_b->next; 
+	}
+	return (cheapest);
+}
+
+// Trouve l'index supérieur le + proche de chaque node de B 
+t_list	*ft_find_node_with_cheapest_rra_rb_shoot(t_list **head_a, t_list **head_b)
+{
+	t_list *tmp_b;
+	t_list *cheapest;
+	int rra_rb;
+
+	tmp_b = *head_b;
+	rra_rb = ft_lstsize(*head_a) + ft_lstsize(*head_b);
+	while (tmp_b)
+	{
+		if ((tmp_b->rra + tmp_b->rb) < rra_rb)
+		{
+			cheapest = tmp_b;
+			rra_rb = tmp_b->rra + tmp_b->rb;
+		}	
+		tmp_b = tmp_b->next; 
+	}
+	return (cheapest);
+}
+
+// Trouve l'index supérieur le + proche de chaque node de B 
+t_list	*ft_find_node_with_cheapest_rra_rrb_shoot(t_list **head_a, t_list **head_b)
+{
+	t_list *tmp_b;
+	t_list *cheapest;
+	int rra_rrb;
+
+	tmp_b = *head_b;
+	cheapest = tmp_b;
+	rra_rrb = ft_lstsize(*head_a) + ft_lstsize(*head_b);
+	while (tmp_b)
+	{
+		if ((tmp_b->rra + tmp_b->rrb) < rra_rrb)
+		{
+			cheapest = tmp_b;
+			rra_rrb = tmp_b->rra + tmp_b->rrb;
+		}
+		tmp_b = tmp_b->next; 
+	}
+	return (cheapest);
+}

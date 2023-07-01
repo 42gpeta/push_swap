@@ -3,28 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   list.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
+/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:02:25 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/23 16:40:11 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/07/01 18:21:09 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Création d'un node */
-t_list	*ft_create_node(int data)
-{
-	t_list	*cell;
 
-	cell = malloc(sizeof(t_list) * 1);
-	if (!cell)
-		return (NULL);
-	cell->content = data;
-	cell->next = NULL;
-
-	return (cell);
-}
 
 /* Création de la liste */
 t_list	*ft_lstnew(int content)
@@ -95,65 +83,6 @@ t_list	*ft_lstlast(t_list *node)
 	while (node && node->next != NULL)
 		node = node->next;
 	return (node);
-}
-
-// void	ft_free(t_list *head_a)
-// void	ft_free(t_list *head_a, t_list *head_b)
-// {
-// 	t_list *tmp_a;
-// 	t_list *tmp_b;
-
-// 	if (head_a == NULL)
-// 		return ;
-// 	tmp_a = head_a->next;
-// 	free(head_a);
-// 	while (tmp_a)
-// 	{
-// 		head_a = tmp_a;
-// 		tmp_a = head_a->next;
-// 		free(head_a);
-// 	}
-	
-// 	if (head_b == NULL)
-// 		return ;
-
-// 	tmp_b = head_b->next;
-// 	free(head_b);
-// 	while (tmp_b)
-// 	{
-// 		head_b = tmp_b;
-// 		tmp_b = head_b->next;
-// 		free(head_b);
-// 	}
-// }
-
-void	ft_free(t_list *head_a, t_list *head_b)
-{
-	t_list *tmp_a;
-	t_list *tmp_b;
-
-	if (head_a == NULL)
-		return ;
-	tmp_a = head_a->next;
-	free(head_a);
-	while (tmp_a)
-	{
-		head_a = tmp_a;
-		tmp_a = head_a->next;
-		free(head_a);
-	}
-	
-	if (head_b == NULL)
-		return ;
-
-	tmp_b = head_b->next;
-	free(head_b);
-	while (tmp_b)
-	{
-		head_b = tmp_b;
-		tmp_b = head_b->next;
-		free(head_b);
-	}
 }
 
 int	ft_lstsize(t_list *head)

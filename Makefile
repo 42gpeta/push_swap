@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+         #
+#    By: glodi <glodi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
-#    Updated: 2023/06/23 18:04:27 by gpeta            ###   ########.fr        #
+#    Updated: 2023/07/01 18:12:54 by glodi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,16 +31,34 @@ lib/libft/include \
 
 SRC_DIR		:= src
 SRCS		:= \
+algo.c \
+algo_utils_conbination.c \
+algo_utils_count.c \
+algo_utils_count_shoot.c \
+algo_utils_execute.c \
+algo_utils_find_node.c \
+error.c \
 list.c \
+list_utils.c \
 main.c \
 push.c \
 push_swap.c \
 reverse_rotate.c \
 rotate.c \
+sort.c \
 swap.c \
-error.c \
 print.c \
-algo.c \
+# ! print.c a suprimer
+# list.c \
+# main.c \
+# push.c \
+# push_swap.c \
+# reverse_rotate.c \
+# rotate.c \
+# swap.c \
+# error.c \
+# print.c \
+# algo.c \
 # /gnl/get_next_line.c  /gnl/get_next_line_utils.c  \
 
 

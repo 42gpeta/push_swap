@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:15:34 by gpeta             #+#    #+#             */
-/*   Updated: 2023/07/01 15:05:53 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/01 18:21:52 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,29 +139,3 @@ void	ft_message_error(t_list **head_a, t_list **head_b, char *message) // TODO v
 	exit(EXIT_FAILURE);
 }
 
-long long int	ft_atol(const char *nptr)
-{
-	long long int	i;
-	long long int	sign;
-	long long int	res;
-
-	i = 0;
-	sign = 1;
-	res = 0;
-	while (nptr[i] == 32 || (nptr[i] >= 7 && nptr[i] <= 13))
-		i++;
-	while (nptr[i] == '+' || nptr[i] == '-')
-	{
-		if (nptr[i + 1] == '+' || nptr[i + 1] == '-')
-			return (0);
-		if (nptr[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (nptr[i] != '\0' && nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		res = res * 10 + nptr[i] - '0';
-		i++;
-	}
-	return (res * sign);
-}
