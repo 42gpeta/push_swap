@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 17:35:25 by glodi             #+#    #+#             */
-/*   Updated: 2023/07/01 17:42:27 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/01 18:40:35 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,9 @@ int	ft_choose_best_combination(t_list **head_a, t_list **head_b)
 	// printf("TOTAL CHEAPEST 4 = %d\n", cheapest[3]); // ! a supprimer
 	
 	i = 0;
-	// index_w_cheapest_shoot = 0; // ! a supprimer
 	smallest_sum = ft_lstsize(*head_a) + ft_lstsize(*head_b);
 	while (i < 4)
 	{
-		// printf("index: %d | sum: %d\n", index_w_cheapest_shoot, smallest_sum); // ! a supprimer
 		if (cheapest[i] < smallest_sum)
 		{	
 			index_w_cheapest_shoot = i;
@@ -42,7 +40,6 @@ int	ft_choose_best_combination(t_list **head_a, t_list **head_b)
 		i++;
 
 	}
-	// printf("\nLe node avec le sum le + petit est: %d[%d]\n", ft_find_node_with_cheapest_ra_rb_shoot(head_a, head_b)->content, ft_find_node_with_cheapest_ra_rb_shoot(head_a, head_b)->index); // ! a supprimer
 	return (index_w_cheapest_shoot);
 }
 
@@ -56,7 +53,4 @@ void	ft_execute_best_combination(t_list **head_a, t_list **head_b, int index)
 		ft_execute_rra_rb(head_a, head_b, ft_find_node_with_cheapest_rra_rb_shoot(head_a, head_b));
 	else if (index == 3)
 		ft_execute_rra_rrb(head_a, head_b, ft_find_node_with_cheapest_rra_rrb_shoot(head_a, head_b));
-
-
-	// return (index_w_cheapest_shoot);
 }

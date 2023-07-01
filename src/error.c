@@ -6,23 +6,17 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:15:34 by gpeta             #+#    #+#             */
-/*   Updated: 2023/07/01 18:21:52 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/01 18:58:17 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	ft_check_parameter(int ac, char **av, t_list **head_a, t_list **head_b)
-void	ft_check_parameter(int ac, t_list **head_a, t_list **head_b)
+void	ft_check_parameter(int ac, t_list **head_a, t_list **head_b) // TODO ajouter dans le main en faisant un exit propre : sans rien envoyer
 {
 	if (ac < 2)
 		ft_message_error(head_a, head_b, "ft_check_parameter : ac < 2");
 		// ft_message_error(head_a, head_b);
-	// if (!av[2])
-	// 	ft_message_error(head_a, head_b, "ft_check_parameter : av[2] doesn't exist"); // ! a remettre
-		// ft_message_error(head_a, head_b);
-
-
 }
 
 int	ft_arg_is_available_number(char *str)
@@ -30,12 +24,8 @@ int	ft_arg_is_available_number(char *str)
 	long long int nbr;
 
 	nbr = ft_atol(str);
-
 	if (INT_MIN < nbr && nbr < INT_MAX)
-	{
-		// printf("atol de %s:%lld\n", str, nbr); // ! a supprimer
 		return (1);
-	}
 	return (0);
 }
 
@@ -50,14 +40,10 @@ void	ft_check_doublon(t_list **head_a, t_list **head_b, char **av) // TODO a fai
 		j = i + 1;
 		while (av[j])
 		{
-			// printf("av[%d] %s | av[%d] %s\n", i, av[i], j, av[j]); // ! a supprimer
 			if (ft_strlen(av[i]) == ft_strlen(av[j]) && ft_strncmp(av[i],av[j],ft_strlen(av[i])) == 0)
-			{
-				// printf("coucou\n"); // ! a supprimer
 				ft_message_error(head_a, head_b, "ft_check_doublon : doublon");
-			}	
+				// ft_message_error(head_a, head_b);
 			j++;
-			
 		}
 		i++;
 	}
@@ -70,61 +56,29 @@ void	ft_check_args(char **av, t_list **head_a, t_list **head_b)
 	int	j;
 	long long int	arg;
 	
-/* 	int len_args;
-
-	len_args = 1;
-	while (av[len_args])
-		len_args++;
-	printf("len_args = %d\n", len_args);
-
-	if (ft_check_doublon() == 0)
-		ft_message_error(head_a, head_b, "ft_check_args : presence d'un doublon"); */
 	ft_check_doublon(head_a, head_b, av);
-	
 	i = 1;
-	
 	while (av[i])
 	{
-/* 		if (av[i] == 34)
-			printf("erreur \"\"\n"); */
-		
 		if (ft_arg_is_available_number(av[i]) != 1)
 			ft_message_error(head_a, head_b, "ft_check_args : > ou < aux INT définis");
-		
+			// ft_message_error(head_a, head_b);
 		j = 0;
 		if (av[i][j] == '-')
 			j++;
-		if (av[i][j] == 0 /* && av[i][j+1] == 34 */)
+		if (av[i][j] == 0)
 		{
 			// printf("av[%d] = %s\n", i, av[i]); // ! a supprimer
 			ft_message_error(head_a, head_b, "ft_check_args : c'est une combi de \"\"");
-		}	
-			
-		
+			// ft_message_error(head_a, head_b);
+		}
 		while (av[i][j])
 		{
 			if (ft_isdigit(av[i][j]) == 0)
 				ft_message_error(head_a, head_b, "ft_check_args : c'est pas un chiffre");
+				// ft_message_error(head_a, head_b);
 			j++;
 		}
-			
-		// arg = ft_atol(av[i]);
-		// if (av[i] == 0)
-		// {
-		// 	printf("av = 0\n");
-		// 	i++;
-		// }
-		
-		// if (!arg)
-		// {
-		// 	printf("arret sur %s\n", av[i]);
-		// 	ft_message_error(head_a, head_b, "ft_check_args : ATOI fail");
-		// }	
-			// ft_message_error(head_a, head_b);
-		// if (ft_isprint(ft_atoi(av[i][0])) == 1)
-		// 	ft_message_error(head_a, head_b, "ft_check_args : not a number");
-		// 	// ft_message_error(head_a, head_b);
-		// printf("char|int %s|%lld\n", av[i], arg); // ! a supprimer
 		i++;
 	}
 }
@@ -138,4 +92,3 @@ void	ft_message_error(t_list **head_a, t_list **head_b, char *message) // TODO v
 	ft_free(*head_a, *head_b);
 	exit(EXIT_FAILURE);
 }
-

@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 17:38:18 by glodi             #+#    #+#             */
-/*   Updated: 2023/07/01 18:22:00 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/01 18:51:29 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,8 @@ void	ft_free(t_list *head_a, t_list *head_b)
 		tmp_a = head_a->next;
 		free(head_a);
 	}
-	
 	if (head_b == NULL)
 		return ;
-
 	tmp_b = head_b->next;
 	free(head_b);
 	while (tmp_b)
@@ -54,36 +52,6 @@ void	ft_free(t_list *head_a, t_list *head_b)
 		free(head_b);
 	}
 }
-
-// void	ft_free(t_list *head_a)
-// void	ft_free(t_list *head_a, t_list *head_b)
-// {
-// 	t_list *tmp_a;
-// 	t_list *tmp_b;
-
-// 	if (head_a == NULL)
-// 		return ;
-// 	tmp_a = head_a->next;
-// 	free(head_a);
-// 	while (tmp_a)
-// 	{
-// 		head_a = tmp_a;
-// 		tmp_a = head_a->next;
-// 		free(head_a);
-// 	}
-	
-// 	if (head_b == NULL)
-// 		return ;
-
-// 	tmp_b = head_b->next;
-// 	free(head_b);
-// 	while (tmp_b)
-// 	{
-// 		head_b = tmp_b;
-// 		tmp_b = head_b->next;
-// 		free(head_b);
-// 	}
-// }
 
 long long int	ft_atol(const char *nptr)
 {

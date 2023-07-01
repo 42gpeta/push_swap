@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 17:36:39 by glodi             #+#    #+#             */
-/*   Updated: 2023/07/01 17:58:49 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/01 18:40:54 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,4 @@ void	ft_count_rb_and_rrb(t_list **head_b)
 		tmp = tmp->next;
 		i++;
 	}
-	// tmp->rrb = ft_lstsize(*head_b) - tmp->rb;
-
 }

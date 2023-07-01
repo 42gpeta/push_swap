@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
+/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 19:42:41 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/23 17:15:41 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/07/01 19:03:06 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ void	ft_ra_rotate_a(t_list **head_a, char *instruction)
 	tmp->next = NULL;
 	last->next = tmp;
 	if (ft_strncmp(instruction, "ra", 2) == 0)
-		print_swap("ra");
-	// print_list(*head_a, 'a'); // ! a suprimer
+		ft_print_swap("ra");
 }
 
 // void	ft_rb_rotate_b(t_list **head_a, t_list **head_b, char *instruction)
@@ -48,23 +47,13 @@ void	ft_rb_rotate_b(t_list **head_b, char *instruction)
 	tmp->next = NULL;
 	last->next = tmp;
 	if (ft_strncmp(instruction, "rb", 2) == 0)
-		print_swap("rb");
-	// print_list(*head_b, 'b'); // ! a suprimer
-
+		ft_print_swap("rb");
 }
 
 void	ft_rr_rotate_a_b(t_list **head_a, t_list **head_b, char *instruction)
 {
-	// if ((*head_a) == NULL || (*head_a)->next == NULL)
-	// 	return ;
-		// ft_message_error(head_a, head_b, "ft_rr_rotate_a_b : 'head_a' doen't exist"); // ! a supprimer
-		// ft_message_error(head_a, head_b);
-	// if ((*head_b) == NULL || (*head_b)->next == NULL)
-	// 	return ;
-		// ft_message_error(head_a, head_b, "ft_rr_rotate_a_b : 'head_b' doen't exist"); // ! a supprimer
-		// ft_message_error(head_a, head_b);
 	ft_ra_rotate_a(head_a, "rr");
 	ft_rb_rotate_b(head_b, "rr");
 	if (ft_strncmp(instruction, "rr", 2) == 0)
-		print_swap("rr");
+		ft_print_swap("rr");
 }

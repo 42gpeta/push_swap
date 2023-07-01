@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/07/01 18:23:32 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/01 18:38:01 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 /**** INCLUDE A supprimer ****/ // ! a supprimer
 # include <stdio.h>
 # include <stdlib.h>
-
 
 /* ************************************************************************** */
 /*							      	 INCLUDE							      */
@@ -36,13 +35,10 @@ typedef struct s_list
 	int				content;
 	int				index;
 	struct s_list	*next;
-	int				move;
-	int				method; // sum of combinaison (ex: ra + rrb)
 	int				ra;
 	int				rb;
 	int				rra;
 	int				rrb;
-	int				greater;
 } 					t_list;
 
 /* ************************************************************************** */
@@ -62,26 +58,12 @@ algo_utils_conbination.c
 *************/
 int		ft_choose_best_combination(t_list **head_a, t_list **head_b);
 void	ft_execute_best_combination(t_list **head_a, t_list **head_b, int index);
-// int		ft_index_of_best_combination(t_list **head_a, t_list **head_b);
-// void	ft_execute_combination(t_list **head_a, t_list **head_b, int nb_combination);
 
 /*************
 algo_utils_count.c
 *************/
-// void	ft_count_rb(t_list **head_b);
-// void	ft_count_rrb(t_list **head_b);
 void	ft_nearest_index_for_B_node(t_list **head_a, t_list **head_b);
 void	ft_count_rb_and_rrb(t_list **head_b);
-// int		ft_count_ra(t_list **head_a, t_list **head_b);
-// void	ft_count_rra(t_list **head_a, t_list **head_b);
-
-/*************
-algo_utils_count_shoot.c // ! a supprimer
-*************/
-// int		ft_count_the_shoot_ra_rb(t_list **head_a, t_list **head_b);
-// int		ft_count_the_shoot_ra_rrb(t_list **head_a, t_list **head_b);
-// int		ft_count_the_shoot_rra_rb(t_list **head_a, t_list **head_b);
-// int		ft_count_the_shoot_rra_rrb(t_list **head_a, t_list **head_b);
 
 /*************
 algo_utils_execute.c
@@ -129,21 +111,17 @@ t_list	*ft_create_node(int data);
 void	ft_free(t_list *head_a, t_list *head_b);
 long long int	ft_atol(const char *nptr);
 
-
 /*************
 main.c
 *************/
 
-
-
 /*************
 print.c // ! a supprimer
 *************/
-void	print_swap(char *instruction);
+void	ft_print_swap(char *instruction);
 void	print_list(t_list *node, char letter);
 void	print_list_size(t_list *head);
 void	print_ac_i(int i, int ac);
-
 
 /*************
 push.c

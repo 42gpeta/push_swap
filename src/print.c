@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
+/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:28:42 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/29 18:09:39 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/07/01 18:55:38 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_swap(char *instruction)
+void	ft_print_swap(char *instruction)
 {
 	if (ft_strncmp(instruction, "sa", 2) == 0)
 		write(1, "sa\n", 3);
@@ -38,7 +38,7 @@ void	print_swap(char *instruction)
 		write(1, "rr\n", 3);
 }
 
-void	print_list(t_list *node, char letter)
+void	print_list(t_list *node, char letter) // ! a supprimer
 {
 	t_list	*tmp;
 
@@ -66,16 +66,16 @@ void	print_list(t_list *node, char letter)
 			tmp = tmp->next;
 		}
 		printf("NULL \n");
-		printf("***********************\n");		
+		printf("***********************\n");
 	}
 }
 
-void	print_list_size(t_list *head)
+void	print_list_size(t_list *head) // ! a supprimer
 {
 	printf("\nsize list : %d\n\n", ft_lstsize(head));
 }
 
-void	print_ac_i(int i, int ac)
+void	print_ac_i(int i, int ac) // ! a supprimer
 {
 	printf("ac = %d\n i = %d\n", ac, i);
 }

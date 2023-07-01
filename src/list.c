@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:02:25 by gpeta             #+#    #+#             */
-/*   Updated: 2023/07/01 18:21:09 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/01 18:52:40 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,8 @@
 /* Création de la liste */
 t_list	*ft_lstnew(int content)
 {
-	// static int i = 5;
 	t_list	*head;
 
-	// i--;
-	// if (i == 0)
-	// 	return (NULL);
 	head = malloc(sizeof(t_list));
 	if (!head)
 		return (NULL);
@@ -40,28 +36,8 @@ void	ft_lstadd_front(t_list **list, t_list *node)
 }
 
 /* Ajout du dernier node (il contient le ABC->next = NULL) */
-// void	ft_lstadd_back(t_list **list, t_list *last_node) // ? v1
-// {
-// 	// (*list)->index = 1;
-	
-// 	t_list	*tmp;
-
-// 	if (!last_node)
-// 		return ;
-// 	if (!*list)
-// 	{
-// 		*list = last_node;
-// 		return ;
-// 	}
-// 	tmp = ft_lstlast(*list);
-// 	tmp->next = last_node;
-// 	// (*list)->index = (*list)->index + 1;
-// }
-
-int	ft_lstadd_back(t_list **list, t_list *last_node) // ? v2
+int	ft_lstadd_back(t_list **list, t_list *last_node)
 {
-	// (*list)->index = 1;
-	
 	t_list	*tmp;
 
 	if (!last_node)
@@ -73,7 +49,6 @@ int	ft_lstadd_back(t_list **list, t_list *last_node) // ? v2
 	}
 	tmp = ft_lstlast(*list);
 	tmp->next = last_node;
-	// (*list)->index = (*list)->index + 1;
 	return(0);
 }
 

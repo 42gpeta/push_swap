@@ -6,7 +6,7 @@
 #    By: glodi <glodi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
-#    Updated: 2023/07/01 18:12:54 by glodi            ###   ########.fr        #
+#    Updated: 2023/07/01 18:33:16 by glodi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,6 @@ SRCS		:= \
 algo.c \
 algo_utils_conbination.c \
 algo_utils_count.c \
-algo_utils_count_shoot.c \
 algo_utils_execute.c \
 algo_utils_find_node.c \
 error.c \
@@ -49,6 +48,7 @@ sort.c \
 swap.c \
 print.c \
 # ! print.c a suprimer
+# algo_utils_count_shoot.c \
 # list.c \
 # main.c \
 # push.c \
