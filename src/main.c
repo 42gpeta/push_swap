@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/30 22:09:01 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/01 16:12:23 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,9 @@ int	main(int ac, char **av)
 
 	list_a = NULL;
 	list_b = NULL;
+
+	if (ac <= 2)
+		return (0);
 /* 	// ? version w/out fontion ft_linked_list()
 	// ft_check_parameter(ac, av);
 	// 
@@ -81,7 +84,12 @@ int	main(int ac, char **av)
 
 	ft_index(&list_a);
 
-	ft_is_sorted(&list_a, &list_b);
+	// ft_is_sorted(&list_a, &list_b);
+	if (ft_is_sorted(&list_a) == 1)
+	{
+		ft_free(list_a, list_b);
+		return (0);
+	}
 	
 	// print_list(list_a, 'a');
 	// print_list(list_b, 'b');
@@ -144,11 +152,18 @@ int	main(int ac, char **av)
 	
 
 	// ft_sort_five_node(&list_a, &list_b); // ! non OK
-	// ft_sort_four_node(&list_a, &list_b);
-	// ft_sort_tree_node(&list_a);
-	// ft_sort_two_node(&list_a);
-
-	ft_sort(&list_a, &list_b);
+	
+	// printf("%d nodes\n", ac - 1); // ! a supprimer
+	if (ac == 3)
+		ft_sort_two_node(&list_a);
+	else if (ac == 4)
+		ft_sort_tree_node(&list_a);
+	else if (ac == 5)
+		ft_sort_four_node(&list_a, &list_b);
+	else if (ac == 6)
+		ft_sort_five_node(&list_a, &list_b);
+	else
+		ft_sort(&list_a, &list_b);
 	
 	
 /* ***************** */

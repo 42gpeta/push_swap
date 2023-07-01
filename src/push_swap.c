@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:28:36 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/30 13:51:42 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/01 15:54:20 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,25 +118,74 @@ void	ft_index(t_list **head)
 	}
 }
 
-void	ft_sort_five_node(t_list **head_a, t_list **head_b) // ! non terminée ; ? v1
+// void	ft_sort_five_node(t_list **head_a, t_list **head_b) // ! non terminée ; ? v1
+// {
+// 	// if (ft_lstsize(*head_a) == 3)
+// 	// 	ft_sort_tree_node(head_a);
+
+// 	// else if (ft_lstsize(*head_a) > 4)
+// 	// {
+		
+// 	int i;
+
+// 	i = 0;
+// 	while ((*head_a) && i < 5)
+// 	{
+// 		if ((*head_a)->index > 3)
+// 			ft_pb_push_b(head_a, head_b, "pb");
+// 		(*head_a) = (*head_a)->next;
+// 		i++;
+// 	}
+// 	if ((*head_b)->index < (*head_b)->next->index)
+// 		ft_rb_rotate_b(head_b, "rb");
+// 	print_list(head_a, 'a');
+// 	print_list(head_b, 'b');
+// 	ft_sort_tree_node(head_a);
+// 	ft_pa_push_a(head_a, head_b, "pa");
+// 	ft_pa_push_a(head_a, head_b, "pa");
+// 		// while ((*head_a)->index != (*head_b)->index + 1)
+// 	// }
+// 	printf("5!\n");
+// }
+
+void	ft_sort_five_node(t_list **head_a, t_list **head_b) // ! non terminée ; ? v2
 {
-	if (ft_lstsize(*head_a) == 3)
-		ft_sort_tree_node(head_a);
+	// if (ft_lstsize(*head_a) == 3)
+	// 	ft_sort_tree_node(head_a);
 
-	else if (ft_lstsize(*head_a) > 4)
+	// else if (ft_lstsize(*head_a) > 4)
+	// {
+		
+	int i;
+	int size;
+	int max_index;
+
+	i = 0;
+	size = ft_lstsize(*head_a);
+	max_index = 5;
+	while(size > 0)
 	{
-		while ((*head_a) && ft_lstsize(*head_a) > 3)
-		{
-			ft_pb_push_b(head_a, head_b, "pb");
-			ft_pb_push_b(head_a, head_b, "pb");
-			if ((*head_b)->index < (*head_b)->next->index)
-				ft_rb_rotate_b(head_b, "rb");
-		}
-		ft_sort_tree_node(head_a);
-		// while ((*head_a)->index != (*head_b)->index + 1)
-	}
-}
 
+		if ((*head_a)->index > 2)
+		{
+			ft_ra_rotate_a(head_a,"ra");
+		}
+		else
+			ft_pb_push_b(head_a,head_b,"pb");
+		size--;
+		// stop = ft_lstsize(*head_a);
+	}	
+	
+		
+	// print_list(head_a, 'a');
+	// print_list(head_b, 'b');
+	ft_sort_tree_node(head_a);
+	ft_pa_push_a(head_a, head_b, "pa");
+	ft_pa_push_a(head_a, head_b, "pa");
+		// while ((*head_a)->index != (*head_b)->index + 1)
+	// }
+	// printf("5!\n"); // ! a supprimer
+}
 
 // void	ft_sort_four_node(t_list **head_a)
 // void	ft_sort_four_node(t_list **head_a, t_list **head_b) // ? v1

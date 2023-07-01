@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:15:34 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/30 21:37:14 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/01 15:05:53 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,12 @@ void	ft_check_args(char **av, t_list **head_a, t_list **head_b)
 		j = 0;
 		if (av[i][j] == '-')
 			j++;
-		if (av[i][j] == NULL /* && av[i][j+1] == 34 */)
+		if (av[i][j] == 0 /* && av[i][j+1] == 34 */)
+		{
+			// printf("av[%d] = %s\n", i, av[i]); // ! a supprimer
 			ft_message_error(head_a, head_b, "ft_check_args : c'est une combi de \"\"");
+		}	
+			
 		
 		while (av[i][j])
 		{
@@ -128,9 +132,9 @@ void	ft_check_args(char **av, t_list **head_a, t_list **head_b)
 // void	ft_message_error(t_list **head_a, t_list **head_b) // TODO version finale
 void	ft_message_error(t_list **head_a, t_list **head_b, char *message) // TODO version pour dev
 {
-	write(1, "Error\n", 6);
-	write(1, message, ft_strlen(message)); // ! a supprimer
-	write(1, "\n", 1); // ! a supprimer
+	write(2, "Error\n", 6);
+	write(2, message, ft_strlen(message)); // ! a supprimer
+	write(2, "\n", 1); // ! a supprimer
 	ft_free(*head_a, *head_b);
 	exit(EXIT_FAILURE);
 }

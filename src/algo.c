@@ -50,7 +50,7 @@ void	ft_sort(t_list **head_a, t_list **head_b)
 		i++;
 	} */ // ? correspond à ft_pre_sort()
 		
-	// ft_pre_sort(head_a, head_b, size);
+	ft_pre_sort(head_a, head_b, size);
 	if (size != 6)
 	{
 		ft_leave_three_biggest_in_a(head_a,head_b, size, ft_pre_sort(head_a, head_b, size));
@@ -265,6 +265,7 @@ t_list	*ft_find_node_with_cheapest_rra_rrb_shoot(t_list **head_a, t_list **head_
 	int rra_rrb;
 
 	tmp_b = *head_b;
+	cheapest = tmp_b;
 	rra_rrb = ft_lstsize(*head_a) + ft_lstsize(*head_b);
 	while (tmp_b)
 	{
@@ -452,7 +453,8 @@ void	ft_put_index_one_on_top(t_list **head_a)
 	}
 
 }
-void	ft_is_sorted(t_list **head_a, t_list **head_b)
+// int	ft_is_sorted(t_list **head_a, t_list **head_b)
+int	ft_is_sorted(t_list **head_a)
 {
 	t_list *tmp;
 
@@ -461,10 +463,10 @@ void	ft_is_sorted(t_list **head_a, t_list **head_b)
 	while (tmp && tmp->next)
 	{
 		if (tmp->index > tmp->next->index)
-			return;
+			return (0);
 		tmp = tmp->next;
 	}
-	ft_message_error(head_a, head_b, "ft_is_sorted : OK"); // TODO envoyer : "OK"
-
+	// ft_message_error(head_a, head_b, "ft_is_sorted : OK"); // TODO envoyer : "OK"
+	return (1);
 	
 }

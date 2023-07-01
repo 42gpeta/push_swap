@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/06/30 22:01:38 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/01 16:09:44 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,8 @@ void	ft_execute_rra_rrb(t_list **head_a, t_list **head_b, t_list *nearest_index)
 
 void	ft_put_index_one_on_top(t_list **head_a);
 
-void	ft_is_sorted(t_list **head_a, t_list **head_b);
+// void	ft_is_sorted(t_list **head_a, t_list **head_b);
+int	ft_is_sorted(t_list **head_a);
 
 
 
