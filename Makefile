@@ -6,12 +6,11 @@
 #    By: glodi <glodi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
-#    Updated: 2023/07/03 00:54:51 by glodi            ###   ########.fr        #
+#    Updated: 2023/07/03 01:03:38 by glodi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		:= push_swap
-
 
 #-------------------------------------------------------#
 #	INGREDIENTS											#
@@ -20,13 +19,11 @@ NAME 		:= push_swap
 LIBS		:= ft
 LIBS_TARGET := \
 lib/libft/libft.a \
-# lib/libmlx/libmlx_Linux.a \
-# lib/libmlx/libmlx.a \
+
 
 INCS		:= \
 include \
 lib/libft/include \
-# lib/libmlx \
 
 
 SRC_DIR		:= src
@@ -48,19 +45,6 @@ sort.c \
 sort_utils.c \
 swap.c \
 print.c \
-# ! print.c a suprimer
-# algo_utils_count_shoot.c \
-# list.c \
-# main.c \
-# push.c \
-# push_swap.c \
-# reverse_rotate.c \
-# rotate.c \
-# swap.c \
-# error.c \
-# print.c \
-# algo.c \
-# /gnl/get_next_line.c  /gnl/get_next_line_utils.c  \
 
 
 SRCS		:= $(SRCS:%=$(SRC_DIR)/%)
@@ -71,13 +55,10 @@ DEPS		:= $(OBJS:.o=.d)
 
 CC 			:= cc
 CFLAGS 		:= -Wall -Wextra -Werror 
-# CFLAGS 		:= -Wall -Wextra 
-# CFLAGS 		:= 
 CPPFLAG		:= $(addprefix -I ,$(INCS)) -MMD -MP
 LDFLAGS		:= $(addprefix -L ,$(dir $(LIBS_TARGET)))
 LDLIBS		:= $(addprefix -l ,$(LIBS))
 NORMINETTE	:=	norminette -R CheckForbiddenSourceHeader ./*/*.c ./*/*.h
-# MLX_FLAGS	:= -lXext -lX11 -lz -lm
 
 #-------------------------------------------------------#
 #	UTENSILS											#
@@ -85,9 +66,7 @@ NORMINETTE	:=	norminette -R CheckForbiddenSourceHeader ./*/*.c ./*/*.h
 
 RM			:= rm -f
 MAKEFLAGS	+= --silent --no-print-directory
-# MAKEFLAGS	+= --no-print-directory
 DIR_DUP		= mkdir -p $(@D)
-
 
 #-------------------------------------------------------#
 #	RECIPES												#
@@ -123,11 +102,8 @@ re:
 #				PUSH_SWAP				#
 # ************************************* #
 
-
-
 .PHONY: all clean fclean re
 .SILENT:
-
 
 ###############################################
 ##	NORMINETTE : COLORMINETTE (@VEGRET)
