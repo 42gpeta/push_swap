@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/07/01 18:55:23 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/02 23:07:35 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ int	main(int ac, char **av)
 
 	list_a = NULL;
 	list_b = NULL;
-	if (ac <= 2)
-		return (0);
+	/* if (ac <= 2)
+		return (0); */
+	ft_is_enough_parameter(ac);
 	list_a = ft_linked_list(ac, av, &list_a, &list_b);
 	ft_index(&list_a);
 	if (ft_is_sorted(&list_a) == 1)

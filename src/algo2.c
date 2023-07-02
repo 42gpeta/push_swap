@@ -24,7 +24,7 @@ void	ft_sort(t_list **head_a, t_list **head_b)
 	}
 	// if (ft_lstsize(*head_a) > 2)
 	// {
-		ft_leave_three_biggest_in_a(head_a,head_b, size);
+		ft_leave_3_biggest_in_a(head_a,head_b, size);
 		ft_sort_tree_node(head_a);
 	// }
 	// ft_count_rb(head_b, (*head_b)->next->index);
@@ -60,7 +60,7 @@ void	ft_sort(t_list **head_a, t_list **head_b)
 
 }
 
-void	ft_leave_three_biggest_in_a(t_list **head_a, t_list **head_b, int size)
+void	ft_leave_3_biggest_in_a(t_list **head_a, t_list **head_b, int size)
 {
 	int		i;
 

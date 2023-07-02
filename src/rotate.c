@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 19:42:41 by gpeta             #+#    #+#             */
-/*   Updated: 2023/07/01 19:03:06 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/03 00:33:49 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 // void	ft_ra_rotate_a(t_list **head_a, t_list **head_b, char *instruction)
 void	ft_ra_rotate_a(t_list **head_a, char *instruction)
 {
-	t_list *tmp;
-	t_list *last;
+	t_list	*tmp;
+	t_list	*last;
 
 	if ((*head_a) == NULL || (*head_a)->next == NULL)
 		return ;
-		// ft_message_error(head_a, head_b, "ft_ra_rotate_a : 'head_a' doen't exist"); // ! a supprimer
-		// ft_message_error(head_a, head_b);
 	tmp = (*head_a);
 	(*head_a) = (*head_a)->next;
 	last = ft_lstlast(*head_a);
@@ -34,13 +32,11 @@ void	ft_ra_rotate_a(t_list **head_a, char *instruction)
 // void	ft_rb_rotate_b(t_list **head_a, t_list **head_b, char *instruction)
 void	ft_rb_rotate_b(t_list **head_b, char *instruction)
 {
-	t_list *tmp;
-	t_list *last;
+	t_list	*tmp;
+	t_list	*last;
 
 	if ((*head_b) == NULL || (*head_b)->next == NULL)
 		return ;
-		// ft_message_error(head_a, head_b, "ft_rb_rotate_b : 'head_b' doen't exist"); // ! a supprimer
-		// ft_message_error(head_a, head_b);
 	tmp = (*head_b);
 	(*head_b) = (*head_b)->next;
 	last = ft_lstlast(*head_b);
@@ -50,7 +46,7 @@ void	ft_rb_rotate_b(t_list **head_b, char *instruction)
 		ft_print_swap("rb");
 }
 
-void	ft_rr_rotate_a_b(t_list **head_a, t_list **head_b, char *instruction)
+void	ft_rr_rotate(t_list **head_a, t_list **head_b, char *instruction)
 {
 	ft_ra_rotate_a(head_a, "rr");
 	ft_rb_rotate_b(head_b, "rr");

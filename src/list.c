@@ -6,15 +6,13 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:02:25 by gpeta             #+#    #+#             */
-/*   Updated: 2023/07/01 18:52:40 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/02 23:24:39 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
-/* Création de la liste */
+/* List creation */
 t_list	*ft_lstnew(int content)
 {
 	t_list	*head;
@@ -27,7 +25,7 @@ t_list	*ft_lstnew(int content)
 	return (head);
 }
 
-/* Ajout du 2ème élément de la liste (très loin du NULL) */
+/* Add new node in front of the list (far of the first) */
 void	ft_lstadd_front(t_list **list, t_list *node)
 {
 	if (*list)
@@ -35,24 +33,24 @@ void	ft_lstadd_front(t_list **list, t_list *node)
 	*list = node;
 }
 
-/* Ajout du dernier node (il contient le ABC->next = NULL) */
+/* Add the last node with ->next = NULL */
 int	ft_lstadd_back(t_list **list, t_list *last_node)
 {
 	t_list	*tmp;
 
 	if (!last_node)
-		return(-1);
+		return (-1);
 	if (!*list)
 	{
 		*list = last_node;
-		return(-1);
+		return (-1);
 	}
 	tmp = ft_lstlast(*list);
 	tmp->next = last_node;
-	return(0);
+	return (0);
 }
 
-/* Permet d'aller à la fin de la liste */
+/* Go to the last node */
 t_list	*ft_lstlast(t_list *node)
 {
 	while (node && node->next != NULL)

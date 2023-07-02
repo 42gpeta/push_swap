@@ -16,6 +16,13 @@
 
 [Markdown sheet cheat](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
+### Visualiseur/testeur
+[Complexity](https://github.com/SimonCROS/push_swap_tester)
+
+[Testeur alexandm6656](https://github.com/alexandm6656/Public-42)
+
+[Visualizer](https://github.com/o-reo/push_swap_visualizer)
+
 ***
 ## Consignes
 

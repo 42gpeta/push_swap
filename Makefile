@@ -6,7 +6,7 @@
 #    By: glodi <glodi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
-#    Updated: 2023/07/01 18:33:16 by glodi            ###   ########.fr        #
+#    Updated: 2023/07/02 23:42:24 by glodi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,7 @@ push_swap.c \
 reverse_rotate.c \
 rotate.c \
 sort.c \
+sort_utils.c \
 swap.c \
 print.c \
 # ! print.c a suprimer

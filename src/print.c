@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:28:42 by gpeta             #+#    #+#             */
-/*   Updated: 2023/07/01 18:55:38 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/02 23:26:27 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_print_swap(char *instruction)
 	else if (ft_strncmp(instruction, "ss", 2) == 0)
 		write(1, "ss\n", 3);
 	else if (ft_strncmp(instruction, "pa", 2) == 0)
-		write(1, "pa\n", 3);	
+		write(1, "pa\n", 3);
 	else if (ft_strncmp(instruction, "pb", 2) == 0)
 		write(1, "pb\n", 3);
 	else if (ft_strncmp(instruction, "rra", 3) == 0)
