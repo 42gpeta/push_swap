@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 17:35:45 by glodi             #+#    #+#             */
-/*   Updated: 2023/07/03 00:33:49 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/03 00:39:33 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	ft_sort(t_list **head_a, t_list **head_b)
 	}
 	ft_put_index_one_on_top(head_a);
 }
+
 /* Leave 3 biggest in node A */
 void	ft_leave_3_biggest(t_list **h_a, t_list **h_b, int max_i, int size)
 {

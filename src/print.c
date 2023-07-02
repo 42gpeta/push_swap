@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:28:42 by gpeta             #+#    #+#             */
-/*   Updated: 2023/07/02 23:26:27 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/03 00:45:58 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,46 +36,4 @@ void	ft_print_swap(char *instruction)
 		write(1, "rb\n", 3);
 	else if (ft_strncmp(instruction, "rr", 2) == 0)
 		write(1, "rr\n", 3);
-}
-
-void	print_list(t_list *node, char letter) // ! a supprimer
-{
-	t_list	*tmp;
-
-	tmp = node;
-
-	if (letter == 'a')
-	{
-		printf("\n*** PRINT LIST %c (%d nodes) ***\n", letter, ft_lstsize(node));
-		while (tmp != NULL)
-		{
-			ft_printf("%d [%d] -> ", tmp->content, tmp->index);
-			// ft_printf("%d [%d] ra|rra = %d|%d --->  \n", tmp->content, tmp->index, tmp->ra, tmp->rra);
-			tmp = tmp->next;
-		}
-		printf("NULL \n");
-		printf("***********************\n");
-	}	
-	else
-	{
-		printf("\n*** PRINT LIST %c (%d nodes) ***\n", letter, ft_lstsize(node));
-		while (tmp != NULL)
-		{
-			// ft_printf("%d [%d] -> ", tmp->content, tmp->index);
-			ft_printf("%d [%d] rb|rrb = %d|%d ; ra|rra = %d|%d --->  \n", tmp->content, tmp->index, tmp->rb, tmp->rrb, tmp->ra, tmp->rra);
-			tmp = tmp->next;
-		}
-		printf("NULL \n");
-		printf("***********************\n");
-	}
-}
-
-void	print_list_size(t_list *head) // ! a supprimer
-{
-	printf("\nsize list : %d\n\n", ft_lstsize(head));
-}
-
-void	print_ac_i(int i, int ac) // ! a supprimer
-{
-	printf("ac = %d\n i = %d\n", ac, i);
 }

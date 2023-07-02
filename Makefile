@@ -6,7 +6,7 @@
 #    By: glodi <glodi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
-#    Updated: 2023/07/02 23:42:24 by glodi            ###   ########.fr        #
+#    Updated: 2023/07/03 00:54:51 by glodi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,7 @@ OBJS		:= $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
 DEPS		:= $(OBJS:.o=.d)
 
 CC 			:= cc
-# CFLAGS 		:= -Wall -Wextra -Werror 
+CFLAGS 		:= -Wall -Wextra -Werror 
 # CFLAGS 		:= -Wall -Wextra 
 # CFLAGS 		:= 
 CPPFLAG		:= $(addprefix -I ,$(INCS)) -MMD -MP

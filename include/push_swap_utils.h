@@ -6,16 +6,12 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/07/03 00:08:07 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/03 00:53:45 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_UTILS_H
 # define PUSH_SWAP_UTILS_H
-
-/**** INCLUDE A supprimer ****/ // ! a supprimer
-# include <stdio.h>
-# include <stdlib.h>
 
 /* ************************************************************************** */
 /*							      	 FUNCTIONS							      */

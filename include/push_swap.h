@@ -6,16 +6,12 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/07/03 00:35:17 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/03 00:53:13 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
-/**** INCLUDE A supprimer ****/ // ! a supprimer
-# include <stdio.h>
-# include <stdlib.h>
 
 /* ************************************************************************** */
 /*							      	 INCLUDE							      */
@@ -89,8 +85,7 @@ void	ft_is_enough_parameter(int ac);
 void	ft_check_args(char **av, t_list **head_a, t_list **head_b);
 int		ft_arg_is_available_number(char *str);
 void	ft_check_doublon(t_list **head_a, t_list **head_b, char **av);
-void	ft_message_error(t_list **head_a, t_list **head_b);  // TODO version finale
-// void	ft_message_error(t_list **head_a, t_list **head_b, char *message); // ! a supprimer
+void	ft_message_error(t_list **head_a, t_list **head_b);
 
 /*************
 list.c
@@ -109,12 +104,9 @@ t_list	*ft_create_node(int data);
 void	ft_free(t_list *head_a, t_list *head_b);
 
 /*************
-print.c // ! a supprimer
+print.c
 *************/
 void	ft_print_swap(char *instruction);
-void	print_list(t_list *node, char letter);
-void	print_list_size(t_list *head);
-void	print_ac_i(int i, int ac);
 
 /*************
 push.c

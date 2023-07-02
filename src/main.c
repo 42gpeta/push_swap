@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:15 by gpeta             #+#    #+#             */
-/*   Updated: 2023/07/02 23:07:35 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/03 00:39:00 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 int	main(int ac, char **av)
 {
-	t_list *list_a;
-	t_list *list_b;
+	t_list	*list_a;
+	t_list	*list_b;
 
 	list_a = NULL;
 	list_b = NULL;
-	/* if (ac <= 2)
-		return (0); */
 	ft_is_enough_parameter(ac);
 	list_a = ft_linked_list(ac, av, &list_a, &list_b);
 	ft_index(&list_a);
@@ -39,13 +37,6 @@ int	main(int ac, char **av)
 		ft_sort_five_node(&list_a, &list_b);
 	else
 		ft_sort(&list_a, &list_b);
-
-	// print_list(list_a, 'a');
-	// print_list(list_b, 'b');
-
-/* ***************** */
-/*     FIN Prog     */
-/* ***************** */
 	ft_free(list_a, list_b);
 	return (0);
 }

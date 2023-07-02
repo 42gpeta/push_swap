@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:28:36 by gpeta             #+#    #+#             */
-/*   Updated: 2023/07/02 23:30:33 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/03 00:49:11 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,14 @@ t_list	*ft_linked_list(int ac, char **av, t_list **head_a, t_list **head_b)
 	list = NULL;
 	ft_check_args(av, head_a, head_b);
 	i = 2;
-	/* Creer la structure */
 	list = ft_lstnew(ft_atoi(av[1]));
 	if (!list)
 		ft_message_error(head_a, head_b);
-		// ft_message_error(head_a, head_b, "ft_linked_list : 'List' doesn't exist"); // ! a supprimer
 	while (i < ac)
 	{
-		/* Lier les structures récupérées en av[@] */
 		is_add_back_ok = ft_lstadd_back(&list, ft_lstnew(ft_atoi(av[i])));
 		if (is_add_back_ok == -1)
-		{
 			ft_message_error(&list, head_b);
-			// ft_message_error(&list, head_b, "lstadd_back fail");
-		}
 		i++;
 	}
 	return (list);

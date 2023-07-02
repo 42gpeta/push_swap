@@ -6,7 +6,7 @@
 /*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 17:38:47 by glodi             #+#    #+#             */
-/*   Updated: 2023/07/02 23:52:40 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/03 00:56:33 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 
 void	ft_sort_five_node(t_list **head_a, t_list **head_b)
 {
-	int		i;
 	int		size;
-	int		max_index;
 
-	i = 0;
 	size = ft_lstsize(*head_a);
-	max_index = 5;
 	while (size > 0)
 	{
 		if ((*head_a)->index > 2)
