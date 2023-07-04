@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 19:11:12 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/18 00:55:28 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/04 21:32:53 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,17 +82,15 @@ void	ft_putnbr_fd(int n, int fd);
 // void	ft_lstiter(t_list *lst, void (*f)(void *));
 // t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-
 // Printf
 
-int	ft_printf(const char *str, ...);
-int	ft_putchar(char c);
-int	ft_puthexa(int n, char c);
-int	ft_puthexa_p(void *n);
-int	ft_putnbr(int n);
-int	ft_putnbr_u(int n);
-int	ft_putstr(char *s);
-int	f_check(va_list args, char c);
-
+int		ft_printf(const char *str, ...);
+int		ft_putchar(char c);
+int		ft_puthexa(int n, char c);
+int		ft_puthexa_p(void *n);
+int		ft_putnbr(int n);
+int		ft_putnbr_u(int n);
+int		ft_putstr(char *s);
+int		f_check(va_list args, char c);
 
 #endif

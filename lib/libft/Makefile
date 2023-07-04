@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: glodi <glodi@student.42.fr>                +#+  +:+       +#+         #
+#    By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
-#    Updated: 2023/05/18 00:49:19 by glodi            ###   ########.fr        #
+#    Updated: 2023/07/04 21:33:25 by gpeta            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ CFLAGS		:= -Wall -Wextra -Werror
 CPPFLAGS	:= -MMD -MP -I include
 AR			:= ar
 ARFLAGS		:= -r -c -s
-NORMINETTE	:= norminette -R CheckForbiddenSourceHeader *.c *.h
+NORMINETTE	:= norminette
 
 
 #-------------------------------------------------------#

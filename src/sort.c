@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 17:38:47 by glodi             #+#    #+#             */
-/*   Updated: 2023/07/03 00:56:33 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/04 21:30:15 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ void	ft_sort_five_node(t_list **head_a, t_list **head_b)
 			ft_ra_rotate_a(head_a, "ra");
 		}
 		else
+		{
 			ft_pb_push_b(head_a, head_b, "pb");
+			if ((*head_b)->next && (*head_b)->index < (*head_b)->next->index)
+				ft_rb_rotate_b(head_b, "rb");
+		}
 		size--;
 	}
 	ft_sort_tree_node(head_a);

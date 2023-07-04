@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: glodi <glodi@student.42.fr>                +#+  +:+       +#+         #
+#    By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
-#    Updated: 2023/07/03 01:03:38 by glodi            ###   ########.fr        #
+#    Updated: 2023/07/04 21:33:18 by gpeta            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ CFLAGS 		:= -Wall -Wextra -Werror
 CPPFLAG		:= $(addprefix -I ,$(INCS)) -MMD -MP
 LDFLAGS		:= $(addprefix -L ,$(dir $(LIBS_TARGET)))
 LDLIBS		:= $(addprefix -l ,$(LIBS))
-NORMINETTE	:=	norminette -R CheckForbiddenSourceHeader ./*/*.c ./*/*.h
+NORMINETTE	:=	norminette
 
 #-------------------------------------------------------#
 #	UTENSILS											#

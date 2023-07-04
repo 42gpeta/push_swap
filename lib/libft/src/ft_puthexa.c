@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 17:12:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/05/18 00:55:46 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/04 21:32:08 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_puthexa(int n, char c)
 {
 	int		count;
 	char	*base;
-	
+
 	if (c == 'x')
 		base = "0123456789abcdef";
 	else if (c == 'X')
