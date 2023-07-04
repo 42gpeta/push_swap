@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:13:57 by gpeta             #+#    #+#             */
-/*   Updated: 2023/07/03 00:53:13 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/04 14:52:28 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,6 @@ int		ft_lstsize(t_list *head);
 /*************
 list_utils.c
 *************/
-t_list	*ft_create_node(int data);
 void	ft_free(t_list *head_a, t_list *head_b);
 
 /*************

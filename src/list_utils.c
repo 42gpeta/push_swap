@@ -3,28 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 17:38:18 by glodi             #+#    #+#             */
-/*   Updated: 2023/07/03 00:05:48 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/04 14:52:19 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "push_swap_utils.h"
-
-/* Création d'un node */
-t_list	*ft_create_node(int data)
-{
-	t_list	*cell;
-
-	cell = malloc(sizeof(t_list) * 1);
-	if (!cell)
-		return (NULL);
-	cell->content = data;
-	cell->next = NULL;
-	return (cell);
-}
 
 void	ft_free(t_list *head_a, t_list *head_b)
 {

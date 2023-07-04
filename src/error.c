@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:15:34 by gpeta             #+#    #+#             */
-/*   Updated: 2023/07/03 00:55:39 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/04 14:44:17 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_is_enough_parameter(int ac)
 {
-	if (ac < 3)
+	if (ac < 2)
 		exit(EXIT_SUCCESS);
 }
 
@@ -23,7 +23,7 @@ int	ft_arg_is_available_number(char *str)
 	long long int	nbr;
 
 	nbr = ft_atol(str);
-	if (INT_MIN < nbr && nbr < INT_MAX)
+	if (INT_MIN <= nbr && nbr <= INT_MAX)
 		return (1);
 	return (0);
 }

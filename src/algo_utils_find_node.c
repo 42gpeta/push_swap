@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_utils_find_node.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 17:37:50 by glodi             #+#    #+#             */
-/*   Updated: 2023/07/03 00:31:45 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/04 14:57:49 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	*ft_find_node_w_cheapest_ra_rb(t_list **head_a, t_list **head_b)
 			cheapest = tmp_b;
 			ra_rb = tmp_b->ra + tmp_b->rb;
 		}
-		tmp_b = tmp_b->next; 
+		tmp_b = tmp_b->next;
 	}
 	return (cheapest);
 }
@@ -49,7 +49,7 @@ t_list	*ft_find_node_w_cheapest_ra_rrb(t_list **head_a, t_list **head_b)
 			cheapest = tmp_b;
 			ra_rrb = tmp_b->ra + tmp_b->rrb;
 		}
-		tmp_b = tmp_b->next; 
+		tmp_b = tmp_b->next;
 	}
 	return (cheapest);
 }
@@ -70,7 +70,7 @@ t_list	*ft_find_node_w_cheapest_rra_rb(t_list **head_a, t_list **head_b)
 			cheapest = tmp_b;
 			rra_rb = tmp_b->rra + tmp_b->rb;
 		}
-		tmp_b = tmp_b->next; 
+		tmp_b = tmp_b->next;
 	}
 	return (cheapest);
 }
@@ -92,7 +92,7 @@ t_list	*ft_find_node_w_cheapest_rra_rrb(t_list **head_a, t_list **head_b)
 			cheapest = tmp_b;
 			rra_rrb = tmp_b->rra + tmp_b->rrb;
 		}
-		tmp_b = tmp_b->next; 
+		tmp_b = tmp_b->next;
 	}
 	return (cheapest);
 }

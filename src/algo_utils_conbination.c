@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_utils_conbination.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 17:35:25 by glodi             #+#    #+#             */
-/*   Updated: 2023/07/03 00:31:45 by glodi            ###   ########.fr       */
+/*   Updated: 2023/07/04 14:57:20 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ int	ft_choose_best_combination(t_list **head_a, t_list **head_b)
 	int		index_w_cheapest_shoot;
 	int		smallest_sum;
 
-	cheapest[0] = ft_find_node_w_cheapest_ra_rb(head_a, head_b)->ra 
+	cheapest[0] = ft_find_node_w_cheapest_ra_rb(head_a, head_b)->ra
 		+ ft_find_node_w_cheapest_ra_rb(head_a, head_b)->rb;
-	cheapest[1] = ft_find_node_w_cheapest_ra_rrb(head_a, head_b)->ra 
+	cheapest[1] = ft_find_node_w_cheapest_ra_rrb(head_a, head_b)->ra
 		+ ft_find_node_w_cheapest_ra_rrb(head_a, head_b)->rrb;
-	cheapest[2] = ft_find_node_w_cheapest_rra_rb(head_a, head_b)->rra 
+	cheapest[2] = ft_find_node_w_cheapest_rra_rb(head_a, head_b)->rra
 		+ ft_find_node_w_cheapest_rra_rb(head_a, head_b)->rb;
-	cheapest[3] = ft_find_node_w_cheapest_rra_rrb(head_a, head_b)->rra 
+	cheapest[3] = ft_find_node_w_cheapest_rra_rrb(head_a, head_b)->rra
 		+ ft_find_node_w_cheapest_rra_rrb(head_a, head_b)->rrb;
 	i = 0;
 	smallest_sum = ft_lstsize(*head_a) + ft_lstsize(*head_b);
