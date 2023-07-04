@@ -6,3 +6,5 @@ dependencies
 _deps
 _deps/*
 CMakeCache.txt
+checker_linux
+imgui.ini
