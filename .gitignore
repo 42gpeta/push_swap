@@ -7,6 +7,3 @@ _deps
 _deps/*
 CMakeCache.txt
 checker_linux
-imgui.ini
-en.subject.pdf
-fr.subject.pdf
